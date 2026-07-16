@@ -1,204 +1,476 @@
 [
   {
-    "id": "de-1",
+    "id": "de-kinderwunschzentrum-berlin-berlin",
     "name": "Kinderwunschzentrum Berlin",
     "country": "germany",
+    "countryCode": "DE",
     "city": "Berlin",
+    "website": "https://kinderwunsch-berlin.de",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation",
+      "pgd"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://kinderwunsch-berlin.de",
+    "updatedAt": "2026-07-16T17:46:38.436Z",
     "rating": 4.7,
-    "website": "https://www.kinderwunsch-berlin.de",
-    "specialties": ["ivf", "icsi", "sperm-donation", "pgd"],
     "approximateCost": {
       "ivf": 3500,
       "icsi": 4500,
       "spermDonation": 1000
-    }
+    },
+    "description": "Ihr Kinderwunschzentrum an der Gedächtniskirche",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "stale": false
   },
   {
-    "id": "de-2",
+    "id": "de-fertility-center-hamburg-hamburg",
     "name": "Fertility Center Hamburg",
     "country": "germany",
+    "countryCode": "DE",
     "city": "Hamburg",
+    "website": "https://fertility-hamburg.de",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.8,
-    "website": "https://www.fertility-hamburg.de",
-    "specialties": ["ivf", "icsi", "sperm-donation"],
     "approximateCost": {
       "ivf": 3800,
       "icsi": 4800,
       "spermDonation": 1200
-    }
+    },
+    "stale": true
   },
   {
-    "id": "cz-1",
+    "id": "cz-ivf-clinic-prague-prag",
     "name": "IVF Clinic Prague",
     "country": "czech",
+    "countryCode": "CZ",
     "city": "Prag",
+    "website": "https://ivf-prague.cz",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.9,
-    "website": "https://www.ivf-prague.cz",
-    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
     "approximateCost": {
       "ivf": 2500,
       "icsi": 3000,
       "eggDonation": 5000,
       "spermDonation": 800
-    }
+    },
+    "stale": true
   },
   {
-    "id": "cz-2",
+    "id": "cz-reprofit-international-br-nn",
     "name": "Reprofit International",
     "country": "czech",
+    "countryCode": "CZ",
     "city": "Brünn",
+    "website": "https://reprofit.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.8,
-    "website": "https://www.reprofit.com",
-    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
     "approximateCost": {
       "ivf": 2800,
       "icsi": 3200,
       "eggDonation": 5200,
       "spermDonation": 900
-    }
+    },
+    "stale": true
   },
   {
-    "id": "cz-3",
+    "id": "cz-gennet-klinik-prag",
     "name": "Gennet Klinik",
     "country": "czech",
+    "countryCode": "CZ",
     "city": "Prag",
+    "website": "https://gennet.cz",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "pgd"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://gennet.cz",
+    "updatedAt": "2026-07-16T17:46:41.363Z",
     "rating": 4.7,
-    "website": "https://www.gennet.cz",
-    "specialties": ["ivf", "icsi", "egg-donation", "pgd"],
     "approximateCost": {
       "ivf": 2600,
       "icsi": 3100,
       "eggDonation": 4800
-    }
+    },
+    "description": "Gennet nabízí komplexní péči v oblasti lékařské genetiky, prenatální péče, léčby neplodnosti, poruch reprodukce a IVF v Praze, Liberci a Ústí nad Labem.",
+    "stale": false
   },
   {
-    "id": "pl-1",
+    "id": "pl-invicta-fertility-clinic-warschau",
     "name": "Invicta Fertility Clinic",
     "country": "poland",
+    "countryCode": "PL",
     "city": "Warschau",
+    "website": "https://invictafertility.pl",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.6,
-    "website": "https://www.invictafertility.pl",
-    "specialties": ["ivf", "icsi", "sperm-donation"],
     "approximateCost": {
       "ivf": 1800,
       "icsi": 2300,
       "spermDonation": 600
-    }
+    },
+    "stale": true
   },
   {
-    "id": "pl-2",
+    "id": "pl-bocian-clinic-stettin",
     "name": "Bocian Clinic",
     "country": "poland",
+    "countryCode": "PL",
     "city": "Stettin",
+    "website": "https://bocian.pl",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.5,
-    "website": "https://www.bocian.pl",
-    "specialties": ["ivf", "icsi"],
     "approximateCost": {
       "ivf": 1500,
       "icsi": 2000
-    }
+    },
+    "stale": true
   },
   {
-    "id": "pl-3",
+    "id": "pl-nowe-ycie-clinic-posen",
     "name": "Nowe Życie Clinic",
     "country": "poland",
+    "countryCode": "PL",
     "city": "Posen",
+    "website": "https://nowezycie.pl",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://nowezycie.pl",
+    "updatedAt": "2026-07-16T17:46:42.647Z",
     "rating": 4.7,
-    "website": "https://www.nowezycie.pl",
-    "specialties": ["ivf", "icsi", "sperm-donation"],
     "approximateCost": {
       "ivf": 1700,
       "icsi": 2200,
       "spermDonation": 700
-    }
+    },
+    "description": "Dołącz do nasw każdą niedzielę o godz. 11:00A jeśli nie możesz uczestniczyć w nabożeństwie na żywo, bądź z nami online. Dołącz do nas, gdziekolwiek jesteś. Do zobaczenia! nabożeństwo online jesteśmy społecznościązwykłych ludzi zachwyconych niezwykłością Boga W co wierzymy? wierzy",
+    "stale": false
   },
   {
-    "id": "es-1",
+    "id": "es-ivi-barcelona-barcelona",
     "name": "IVI Barcelona",
     "country": "spain",
+    "countryCode": "ES",
     "city": "Barcelona",
+    "website": "https://ivi.es",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://ivi.es",
+    "updatedAt": "2026-07-16T17:46:43.001Z",
     "rating": 4.9,
-    "website": "https://www.ivi.es",
-    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation", "pgd"],
     "approximateCost": {
       "ivf": 4500,
       "icsi": 5500,
       "eggDonation": 7500,
       "spermDonation": 1500
-    }
+    },
+    "description": "IVI es un grupo de clínicas de fertilidad y líder mundial en reproducción asistida, con tratamientos innovadores y centros en múltiples países.",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "stale": false
   },
   {
-    "id": "es-2",
+    "id": "es-eugin-barcelona-barcelona",
     "name": "Eugin Barcelona",
     "country": "spain",
+    "countryCode": "ES",
     "city": "Barcelona",
+    "website": "https://eugin.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.8,
-    "website": "https://www.eugin.com",
-    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
     "approximateCost": {
       "ivf": 4800,
       "icsi": 5800,
       "eggDonation": 7800,
       "spermDonation": 1400
-    }
+    },
+    "stale": true
   },
   {
-    "id": "es-3",
+    "id": "es-instituto-bernabeu-alicante",
     "name": "Instituto Bernabeu",
     "country": "spain",
+    "countryCode": "ES",
     "city": "Alicante",
+    "website": "https://institutobernabeu.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://institutobernabeu.com",
+    "updatedAt": "2026-07-16T17:46:44.485Z",
     "rating": 4.9,
-    "website": "https://www.institutobernabeu.com",
-    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation", "pgd"],
     "approximateCost": {
       "ivf": 4600,
       "icsi": 5400,
       "eggDonation": 7200,
       "spermDonation": 1300
-    }
+    },
+    "description": "Medicina Reproductiva diseñada a su medida. Referente europeo en fertilidad por desarrollar tratamientos de reproducción asistida personalizados y su tecnología de vanguardia. Especialistas en el tratamiento e investigación de la baja reserva ovárica y fallo de implantación del e",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "stale": false
   },
   {
-    "id": "gr-1",
+    "id": "gr-embryolab-athens-athen",
     "name": "Embryolab Athens",
     "country": "greece",
+    "countryCode": "GR",
     "city": "Athen",
+    "website": "https://embryolab.eu",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://embryolab.eu",
+    "updatedAt": "2026-07-16T17:46:44.686Z",
     "rating": 4.7,
-    "website": "https://www.embryolab.eu",
-    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation", "pgd"],
     "approximateCost": {
       "ivf": 3200,
       "icsi": 4000,
       "eggDonation": 6000,
       "spermDonation": 1000
-    }
+    },
+    "description": "Fertility treatments & IVF options. With unwavering dedication, the scientists and specialists at Embryolab remain up-to-date with the latest developments and advancements",
+    "stale": false
   },
   {
-    "id": "gr-2",
+    "id": "gr-pelargos-ivf-medical-group-thessaloniki",
     "name": "Pelargos IVF Medical Group",
     "country": "greece",
+    "countryCode": "GR",
     "city": "Thessaloniki",
+    "website": "https://pelargos.gr",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.6,
-    "website": "https://www.pelargos.gr",
-    "specialties": ["ivf", "icsi", "egg-donation"],
     "approximateCost": {
       "ivf": 3000,
       "icsi": 3800,
       "eggDonation": 5800
-    }
+    },
+    "stale": true
   },
   {
-    "id": "gr-3",
+    "id": "gr-mediterranean-fertility-centre-kreta",
     "name": "Mediterranean Fertility Centre",
     "country": "greece",
+    "countryCode": "GR",
     "city": "Kreta",
+    "website": "https://medfertility.gr",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
     "rating": 4.8,
-    "website": "https://www.medfertility.gr",
-    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
     "approximateCost": {
       "ivf": 3300,
       "icsi": 4100,
       "eggDonation": 6200,
       "spermDonation": 1100
-    }
+    },
+    "stale": true
+  },
+  {
+    "id": "pt-ivi-lisboa-lissabon",
+    "name": "IVI Lisboa",
+    "country": "pt",
+    "countryCode": "PT",
+    "city": "Lissabon",
+    "website": "https://ivifertility.com/pt",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
+    "stale": true
+  },
+  {
+    "id": "nl-ivf-centrum-rotterdam-rotterdam",
+    "name": "IVF Centrum Rotterdam",
+    "country": "nl",
+    "countryCode": "NL",
+    "city": "Rotterdam",
+    "website": "https://ivfcentrum.nl",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://ivfcentrum.nl",
+    "updatedAt": "2026-07-16T17:46:45.544Z",
+    "description": "Deze mooie domeinnaam kan over een paar minuten van jou zijn.",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "stale": false
+  },
+  {
+    "id": "dk-trianglen-fertility-clinic-kopenhagen",
+    "name": "Trianglen Fertility Clinic",
+    "country": "dk",
+    "countryCode": "DK",
+    "city": "Kopenhagen",
+    "website": "https://trianglen.dk",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://trianglen.dk",
+    "updatedAt": "2026-07-16T17:46:46.402Z",
+    "description": "Trianglen offers a complete range of fertility tests and treatments to help you have a baby.",
+    "languages": [
+      "en"
+    ],
+    "stale": false
+  },
+  {
+    "id": "at-kinderwunschzentrum-wien-wien",
+    "name": "Kinderwunschzentrum Wien",
+    "country": "at",
+    "countryCode": "AT",
+    "city": "Wien",
+    "website": "https://kinderwunsch.at",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation",
+      "pgd"
+    ],
+    "source": "clinic_site",
+    "sourceUrl": "https://kinderwunsch.at",
+    "updatedAt": "2026-07-16T17:46:48.772Z",
+    "description": "Wir helfen Ihnen mit über 36 Jahren Erfahrung Ihren Kinderwunsch zu erfüllen! Jetzt Kontakt aufnehmen!",
+    "stale": false
+  },
+  {
+    "id": "it-ivi-milano-mailand",
+    "name": "IVI Milano",
+    "country": "it",
+    "countryCode": "IT",
+    "city": "Mailand",
+    "website": "https://ivimilano.it",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
+    "stale": true
+  },
+  {
+    "id": "fr-ivi-paris-paris",
+    "name": "IVI Paris",
+    "country": "fr",
+    "countryCode": "FR",
+    "city": "Paris",
+    "website": "https://ivifertility.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T17:46:37.407Z",
+    "stale": true
   }
 ]

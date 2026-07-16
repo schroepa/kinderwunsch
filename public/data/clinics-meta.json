@@ -1,0 +1,12 @@
+{
+  "lastCrawledAt": "2026-07-16T17:46:48.956Z",
+  "lastPartialAt": "2026-07-16T17:46:48.956Z",
+  "clinicCount": 20,
+  "stats": {
+    "directory": 20,
+    "association": 0,
+    "clinic_site": 9,
+    "errors": 11
+  },
+  "cursor": 0
+}

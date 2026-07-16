@@ -55,6 +55,14 @@ pnpm dev
 
 Die App ist nun unter `http://localhost:4321` erreichbar.
 
+## Klinik-Daten aktualisieren
+
+```bash
+npm run crawl:clinics
+```
+
+Schreibt `public/data/clinics.json` und `public/data/clinics-meta.json` aus der Allowlist in `src/crawler/sources.json`.
+
 ## 🚀 Deployment
 
 ### Produktions-Build erstellen:
