@@ -29,18 +29,47 @@ export interface CountryRecommendation extends Country {
   legalStatus: 'allowed' | 'restricted' | 'forbidden';
 }
 
+export type ClinicSourceKind = 'directory' | 'association' | 'clinic_site';
+
 export interface Clinic {
   id: string;
   name: string;
   country: string;
   city: string;
-  rating: number;
   website: string;
   specialties: TreatmentType[];
-  approximateCost: {
+  countryCode: string;
+  source: ClinicSourceKind;
+  sourceUrl: string;
+  updatedAt: string;
+  rating?: number;
+  approximateCost?: {
     ivf: number;
     icsi: number;
     eggDonation?: number;
     spermDonation?: number;
   };
+  description?: string;
+  languages?: string[];
+  stale?: boolean;
+}
+
+export interface CrawlStats {
+  directory: number;
+  association: number;
+  clinic_site: number;
+  errors: number;
+}
+
+export interface CrawlMeta {
+  lastCrawledAt: string | null;
+  lastPartialAt: string | null;
+  clinicCount: number;
+  stats: CrawlStats;
+  cursor: number;
+}
+
+export interface ClinicsApiResponse {
+  clinics: Clinic[];
+  meta: CrawlMeta & { refreshing: boolean };
 }
