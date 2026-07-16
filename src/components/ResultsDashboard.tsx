@@ -142,17 +142,21 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
                           <div className="font-medium">{clinic.name}</div>
                           <div className="text-sm text-muted-foreground">{clinic.city}</div>
                         </div>
-                        <div className="text-sm font-semibold text-primary">
-                          ⭐ {clinic.rating}
-                        </div>
-                      </div>
-                      <div className="text-xs text-muted-foreground mb-2">
-                        IVF: ~{clinic.approximateCost.ivf.toLocaleString('de-DE')} € | 
-                        ICSI: ~{clinic.approximateCost.icsi.toLocaleString('de-DE')} €
-                        {clinic.approximateCost.eggDonation && (
-                          <> | Eizellspende: ~{clinic.approximateCost.eggDonation.toLocaleString('de-DE')} €</>
+                        {clinic.rating != null && (
+                          <div className="text-sm font-semibold text-primary">
+                            ⭐ {clinic.rating}
+                          </div>
                         )}
                       </div>
+                      {clinic.approximateCost && (
+                        <div className="text-xs text-muted-foreground mb-2">
+                          IVF: ~{clinic.approximateCost.ivf.toLocaleString('de-DE')} € | 
+                          ICSI: ~{clinic.approximateCost.icsi.toLocaleString('de-DE')} €
+                          {clinic.approximateCost.eggDonation && (
+                            <> | Eizellspende: ~{clinic.approximateCost.eggDonation.toLocaleString('de-DE')} €</>
+                          )}
+                        </div>
+                      )}
                       <a 
                         href={clinic.website} 
                         target="_blank" 
