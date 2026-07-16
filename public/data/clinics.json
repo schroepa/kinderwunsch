@@ -1,0 +1,204 @@
+[
+  {
+    "id": "de-1",
+    "name": "Kinderwunschzentrum Berlin",
+    "country": "germany",
+    "city": "Berlin",
+    "rating": 4.7,
+    "website": "https://www.kinderwunsch-berlin.de",
+    "specialties": ["ivf", "icsi", "sperm-donation", "pgd"],
+    "approximateCost": {
+      "ivf": 3500,
+      "icsi": 4500,
+      "spermDonation": 1000
+    }
+  },
+  {
+    "id": "de-2",
+    "name": "Fertility Center Hamburg",
+    "country": "germany",
+    "city": "Hamburg",
+    "rating": 4.8,
+    "website": "https://www.fertility-hamburg.de",
+    "specialties": ["ivf", "icsi", "sperm-donation"],
+    "approximateCost": {
+      "ivf": 3800,
+      "icsi": 4800,
+      "spermDonation": 1200
+    }
+  },
+  {
+    "id": "cz-1",
+    "name": "IVF Clinic Prague",
+    "country": "czech",
+    "city": "Prag",
+    "rating": 4.9,
+    "website": "https://www.ivf-prague.cz",
+    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
+    "approximateCost": {
+      "ivf": 2500,
+      "icsi": 3000,
+      "eggDonation": 5000,
+      "spermDonation": 800
+    }
+  },
+  {
+    "id": "cz-2",
+    "name": "Reprofit International",
+    "country": "czech",
+    "city": "Brünn",
+    "rating": 4.8,
+    "website": "https://www.reprofit.com",
+    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
+    "approximateCost": {
+      "ivf": 2800,
+      "icsi": 3200,
+      "eggDonation": 5200,
+      "spermDonation": 900
+    }
+  },
+  {
+    "id": "cz-3",
+    "name": "Gennet Klinik",
+    "country": "czech",
+    "city": "Prag",
+    "rating": 4.7,
+    "website": "https://www.gennet.cz",
+    "specialties": ["ivf", "icsi", "egg-donation", "pgd"],
+    "approximateCost": {
+      "ivf": 2600,
+      "icsi": 3100,
+      "eggDonation": 4800
+    }
+  },
+  {
+    "id": "pl-1",
+    "name": "Invicta Fertility Clinic",
+    "country": "poland",
+    "city": "Warschau",
+    "rating": 4.6,
+    "website": "https://www.invictafertility.pl",
+    "specialties": ["ivf", "icsi", "sperm-donation"],
+    "approximateCost": {
+      "ivf": 1800,
+      "icsi": 2300,
+      "spermDonation": 600
+    }
+  },
+  {
+    "id": "pl-2",
+    "name": "Bocian Clinic",
+    "country": "poland",
+    "city": "Stettin",
+    "rating": 4.5,
+    "website": "https://www.bocian.pl",
+    "specialties": ["ivf", "icsi"],
+    "approximateCost": {
+      "ivf": 1500,
+      "icsi": 2000
+    }
+  },
+  {
+    "id": "pl-3",
+    "name": "Nowe Życie Clinic",
+    "country": "poland",
+    "city": "Posen",
+    "rating": 4.7,
+    "website": "https://www.nowezycie.pl",
+    "specialties": ["ivf", "icsi", "sperm-donation"],
+    "approximateCost": {
+      "ivf": 1700,
+      "icsi": 2200,
+      "spermDonation": 700
+    }
+  },
+  {
+    "id": "es-1",
+    "name": "IVI Barcelona",
+    "country": "spain",
+    "city": "Barcelona",
+    "rating": 4.9,
+    "website": "https://www.ivi.es",
+    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation", "pgd"],
+    "approximateCost": {
+      "ivf": 4500,
+      "icsi": 5500,
+      "eggDonation": 7500,
+      "spermDonation": 1500
+    }
+  },
+  {
+    "id": "es-2",
+    "name": "Eugin Barcelona",
+    "country": "spain",
+    "city": "Barcelona",
+    "rating": 4.8,
+    "website": "https://www.eugin.com",
+    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
+    "approximateCost": {
+      "ivf": 4800,
+      "icsi": 5800,
+      "eggDonation": 7800,
+      "spermDonation": 1400
+    }
+  },
+  {
+    "id": "es-3",
+    "name": "Instituto Bernabeu",
+    "country": "spain",
+    "city": "Alicante",
+    "rating": 4.9,
+    "website": "https://www.institutobernabeu.com",
+    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation", "pgd"],
+    "approximateCost": {
+      "ivf": 4600,
+      "icsi": 5400,
+      "eggDonation": 7200,
+      "spermDonation": 1300
+    }
+  },
+  {
+    "id": "gr-1",
+    "name": "Embryolab Athens",
+    "country": "greece",
+    "city": "Athen",
+    "rating": 4.7,
+    "website": "https://www.embryolab.eu",
+    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation", "pgd"],
+    "approximateCost": {
+      "ivf": 3200,
+      "icsi": 4000,
+      "eggDonation": 6000,
+      "spermDonation": 1000
+    }
+  },
+  {
+    "id": "gr-2",
+    "name": "Pelargos IVF Medical Group",
+    "country": "greece",
+    "city": "Thessaloniki",
+    "rating": 4.6,
+    "website": "https://www.pelargos.gr",
+    "specialties": ["ivf", "icsi", "egg-donation"],
+    "approximateCost": {
+      "ivf": 3000,
+      "icsi": 3800,
+      "eggDonation": 5800
+    }
+  },
+  {
+    "id": "gr-3",
+    "name": "Mediterranean Fertility Centre",
+    "country": "greece",
+    "city": "Kreta",
+    "rating": 4.8,
+    "website": "https://www.medfertility.gr",
+    "specialties": ["ivf", "icsi", "egg-donation", "sperm-donation"],
+    "approximateCost": {
+      "ivf": 3300,
+      "icsi": 4100,
+      "eggDonation": 6200,
+      "spermDonation": 1100
+    }
+  }
+]
