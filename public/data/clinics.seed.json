@@ -1,0 +1,467 @@
+[
+  {
+    "id": "de-1",
+    "name": "Kinderwunschzentrum Berlin",
+    "country": "germany",
+    "city": "Berlin",
+    "rating": 4.7,
+    "website": "https://www.kinderwunsch-berlin.de",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation",
+      "pgd"
+    ],
+    "approximateCost": {
+      "ivf": 3500,
+      "icsi": 4500,
+      "spermDonation": 1000
+    },
+    "countryCode": "DE",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "de-2",
+    "name": "Fertility Center Hamburg",
+    "country": "germany",
+    "city": "Hamburg",
+    "rating": 4.8,
+    "website": "https://www.fertility-hamburg.de",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 3800,
+      "icsi": 4800,
+      "spermDonation": 1200
+    },
+    "countryCode": "DE",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "cz-1",
+    "name": "IVF Clinic Prague",
+    "country": "czech",
+    "city": "Prag",
+    "rating": 4.9,
+    "website": "https://www.ivf-prague.cz",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 2500,
+      "icsi": 3000,
+      "eggDonation": 5000,
+      "spermDonation": 800
+    },
+    "countryCode": "CZ",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "cz-2",
+    "name": "Reprofit International",
+    "country": "czech",
+    "city": "Brünn",
+    "rating": 4.8,
+    "website": "https://www.reprofit.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 2800,
+      "icsi": 3200,
+      "eggDonation": 5200,
+      "spermDonation": 900
+    },
+    "countryCode": "CZ",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "cz-3",
+    "name": "Gennet Klinik",
+    "country": "czech",
+    "city": "Prag",
+    "rating": 4.7,
+    "website": "https://www.gennet.cz",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "pgd"
+    ],
+    "approximateCost": {
+      "ivf": 2600,
+      "icsi": 3100,
+      "eggDonation": 4800
+    },
+    "countryCode": "CZ",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "pl-1",
+    "name": "Invicta Fertility Clinic",
+    "country": "poland",
+    "city": "Warschau",
+    "rating": 4.6,
+    "website": "https://www.invictafertility.pl",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 1800,
+      "icsi": 2300,
+      "spermDonation": 600
+    },
+    "countryCode": "PL",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "pl-2",
+    "name": "Bocian Clinic",
+    "country": "poland",
+    "city": "Stettin",
+    "rating": 4.5,
+    "website": "https://www.bocian.pl",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "approximateCost": {
+      "ivf": 1500,
+      "icsi": 2000
+    },
+    "countryCode": "PL",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "pl-3",
+    "name": "Nowe Życie Clinic",
+    "country": "poland",
+    "city": "Posen",
+    "rating": 4.7,
+    "website": "https://www.nowezycie.pl",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 1700,
+      "icsi": 2200,
+      "spermDonation": 700
+    },
+    "countryCode": "PL",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "es-1",
+    "name": "IVI Barcelona",
+    "country": "spain",
+    "city": "Barcelona",
+    "rating": 4.9,
+    "website": "https://www.ivi.es",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "approximateCost": {
+      "ivf": 4500,
+      "icsi": 5500,
+      "eggDonation": 7500,
+      "spermDonation": 1500
+    },
+    "countryCode": "ES",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "es-2",
+    "name": "Eugin Barcelona",
+    "country": "spain",
+    "city": "Barcelona",
+    "rating": 4.8,
+    "website": "https://www.eugin.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 4800,
+      "icsi": 5800,
+      "eggDonation": 7800,
+      "spermDonation": 1400
+    },
+    "countryCode": "ES",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "es-3",
+    "name": "Instituto Bernabeu",
+    "country": "spain",
+    "city": "Alicante",
+    "rating": 4.9,
+    "website": "https://www.institutobernabeu.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "approximateCost": {
+      "ivf": 4600,
+      "icsi": 5400,
+      "eggDonation": 7200,
+      "spermDonation": 1300
+    },
+    "countryCode": "ES",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "gr-1",
+    "name": "Embryolab Athens",
+    "country": "greece",
+    "city": "Athen",
+    "rating": 4.7,
+    "website": "https://www.embryolab.eu",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "approximateCost": {
+      "ivf": 3200,
+      "icsi": 4000,
+      "eggDonation": 6000,
+      "spermDonation": 1000
+    },
+    "countryCode": "GR",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "gr-2",
+    "name": "Pelargos IVF Medical Group",
+    "country": "greece",
+    "city": "Thessaloniki",
+    "rating": 4.6,
+    "website": "https://www.pelargos.gr",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "approximateCost": {
+      "ivf": 3000,
+      "icsi": 3800,
+      "eggDonation": 5800
+    },
+    "countryCode": "GR",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "gr-3",
+    "name": "Mediterranean Fertility Centre",
+    "country": "greece",
+    "city": "Kreta",
+    "rating": 4.8,
+    "website": "https://www.medfertility.gr",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 3300,
+      "icsi": 4100,
+      "eggDonation": 6200,
+      "spermDonation": 1100
+    },
+    "countryCode": "GR",
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "pt-1",
+    "name": "IVI Lisboa",
+    "country": "portugal",
+    "countryCode": "PT",
+    "city": "Lissabon",
+    "rating": 4.8,
+    "website": "https://www.ivifertility.com/pt",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 4200,
+      "icsi": 5200,
+      "eggDonation": 7000,
+      "spermDonation": 1400
+    },
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "nl-1",
+    "name": "IVF Centrum Rotterdam",
+    "country": "netherlands",
+    "countryCode": "NL",
+    "city": "Rotterdam",
+    "rating": 4.7,
+    "website": "https://www.ivfcentrum.nl",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 5000,
+      "icsi": 6000,
+      "spermDonation": 1800
+    },
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "dk-1",
+    "name": "Trianglen Fertility Clinic",
+    "country": "denmark",
+    "countryCode": "DK",
+    "city": "Kopenhagen",
+    "rating": 4.8,
+    "website": "https://www.trianglen.dk",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "approximateCost": {
+      "ivf": 5500,
+      "icsi": 6500,
+      "eggDonation": 8000
+    },
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "at-1",
+    "name": "Kinderwunschzentrum Wien",
+    "country": "austria",
+    "countryCode": "AT",
+    "city": "Wien",
+    "rating": 4.7,
+    "website": "https://www.kinderwunsch.at",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "sperm-donation",
+      "pgd"
+    ],
+    "approximateCost": {
+      "ivf": 4800,
+      "icsi": 5800,
+      "spermDonation": 1600
+    },
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "it-1",
+    "name": "IVI Milano",
+    "country": "italy",
+    "countryCode": "IT",
+    "city": "Mailand",
+    "rating": 4.9,
+    "website": "https://www.ivimilano.it",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation",
+      "pgd"
+    ],
+    "approximateCost": {
+      "ivf": 4700,
+      "icsi": 5700,
+      "eggDonation": 7600,
+      "spermDonation": 1500
+    },
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "fr-1",
+    "name": "IVI Paris",
+    "country": "france",
+    "countryCode": "FR",
+    "city": "Paris",
+    "rating": 4.8,
+    "website": "https://www.ivifertility.com",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "sperm-donation"
+    ],
+    "approximateCost": {
+      "ivf": 4900,
+      "icsi": 5900,
+      "eggDonation": 7700,
+      "spermDonation": 1600
+    },
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  }
+]

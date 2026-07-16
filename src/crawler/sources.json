@@ -1,0 +1,25 @@
+[
+  {
+    "id": "eu-seed",
+    "type": "seed",
+    "path": "public/data/clinics.seed.json",
+    "enabled": true
+  },
+  {
+    "id": "enrich-from-seed-websites",
+    "type": "clinic_site",
+    "enabled": true
+  },
+  {
+    "id": "example-directory-disabled",
+    "type": "directory",
+    "url": "https://example.com/fertility-clinics",
+    "countryCode": "EU",
+    "itemSelector": ".clinic",
+    "nameSelector": ".name",
+    "citySelector": ".city",
+    "websiteSelector": "a",
+    "websiteAttr": "href",
+    "enabled": false
+  }
+]
