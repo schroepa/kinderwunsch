@@ -35,7 +35,7 @@ describe('isFresh', () => {
 });
 
 describe('normalize + dedupe', () => {
-  it('normalizes and dedupes by website host', () => {
+  it('normalizes and dedupes by canonical website host+path', () => {
     const raw: RawClinic = {
       name: ' IVI Barcelona ',
       countryCode: 'es',
@@ -57,5 +57,25 @@ describe('normalize + dedupe', () => {
     expect(merged[0].description).toBe('Leading clinic');
     expect(merged[0].country).toBe('spain');
     expect(merged[0].countryCode).toBe('ES');
+  });
+
+  it('does not dedupe different paths on the same host', () => {
+    const berlin = normalizeRawClinic({
+      name: 'IVI Berlin',
+      countryCode: 'DE',
+      city: 'Berlin',
+      website: 'https://ivi.es/berlin',
+      source: 'directory',
+      sourceUrl: 'https://example.com/dir',
+    });
+    const munich = normalizeRawClinic({
+      name: 'IVI Munich',
+      countryCode: 'DE',
+      city: 'Munich',
+      website: 'https://ivi.es/munich',
+      source: 'directory',
+      sourceUrl: 'https://example.com/dir',
+    });
+    expect(dedupeClinics([berlin, munich])).toHaveLength(2);
   });
 });

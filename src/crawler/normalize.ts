@@ -16,7 +16,8 @@ export function normalizeWebsite(url?: string): string | undefined {
     u.hash = '';
     let path = u.pathname.replace(/\/+$/, '');
     if (path === '/') path = '';
-    return `${u.protocol}//${u.host.toLowerCase()}${path}`;
+    const hostname = u.hostname.toLowerCase().replace(/^www\./, '');
+    return `https://${hostname}${path}`;
   } catch {
     return undefined;
   }
