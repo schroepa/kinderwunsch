@@ -36,8 +36,10 @@ describe('runIncrementalBatch', () => {
       },
     };
     const next = await runIncrementalBatch(payload, process.cwd());
-    expect(next.meta.cursor).toBeGreaterThanOrEqual(0);
-    expect(next.meta.lastPartialAt).toBeTruthy();
-    expect(next.clinics[0].description || next.clinics[0].specialties.length).toBeTruthy();
+    expect(next.meta.lastPartialAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+    expect(next.meta.stats.clinic_site).toBeGreaterThanOrEqual(1);
+    expect(next.clinics[0].description).toBe('IVF clinic');
+    expect(next.clinics[0].source).toBe('clinic_site');
+    expect(next.clinics[0].specialties).toContain('ivf');
   });
 });
