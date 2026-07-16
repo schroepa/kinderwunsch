@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { loadClinics, shouldPrefetchOnMount } from '../lib/loadClinics';
 import type { UserData } from '../lib/types';
 import UserInputForm from './UserInputForm';
 import ResultsDashboard from './ResultsDashboard';
@@ -6,6 +7,12 @@ import ResultsDashboard from './ResultsDashboard';
 export default function FertilityApp() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [showResults, setShowResults] = useState(false);
+
+  useEffect(() => {
+    if (shouldPrefetchOnMount()) {
+      void loadClinics({ force: false });
+    }
+  }, []);
 
   const handleFormSubmit = (data: UserData) => {
     setUserData(data);
