@@ -96,7 +96,8 @@ const countries: Country[] = [
     ],
     cons: [
       'Eizellspende verboten',
-      'Eingeschränkter Zugang für Alleinstehende und gleichgeschlechtliche Paare'
+      'Eingeschränkter Zugang für Alleinstehende und gleichgeschlechtliche Paare',
+      'Mehrere Kliniktermine vor Ort nötig'
     ]
   },
   {
