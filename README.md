@@ -18,7 +18,8 @@ Eine interaktive Web-App zur Unterstützung bei der Suche nach geeigneten Kinder
 - **Styling:** Tailwind CSS
 - **Komponenten:** shadcn/ui
 - **TypeScript:** Strict Mode
-- **Datenspeicher:** JSON-Dateien
+- **Datenspeicher:** JSON + Vercel Blob (Runtime-Cache)
+- **Hosting:** Vercel (Hybrid, Serverless API)
 
 ## 📦 Installation
 
@@ -63,7 +64,14 @@ npm run crawl:clinics
 
 Schreibt `public/data/clinics.json` und `public/data/clinics-meta.json` aus der Allowlist in `src/crawler/sources.json`.
 
-## 🚀 Deployment
+## 🚀 Deployment (Vercel)
+
+1. Framework: **Astro (hybrid)**
+2. Umgebungsvariable: `BLOB_READ_WRITE_TOKEN` aus einem Vercel-Blob-Store
+3. Optional vor dem Build: `npm run crawl:clinics`
+4. Ohne Blob-Token nutzt `/api/clinics` den Fallback `public/data/clinics.json`
+
+Kopiere `.env.example` nach `.env` für lokale API-Tests mit Blob.
 
 ### Produktions-Build erstellen:
 
@@ -77,13 +85,17 @@ npm run build
 npm run preview
 ```
 
+Die Klinik-API ist unter `/api/clinics` erreichbar (stale-while-revalidate, max. 1 Crawl-Zyklus pro 24h).
+
 ## 📁 Projektstruktur
 
 ```
 /
 ├── public/
 │   ├── data/
-│   │   └── clinics.json          # Klinik-Datenbank
+│   │   ├── clinics.json          # Build-Fallback Klinik-Daten
+│   │   ├── clinics-meta.json     # Crawl-Metadaten
+│   │   └── clinics.seed.json     # Allowlist-Seed
 │   └── favicon.svg
 ├── src/
 │   ├── components/
@@ -95,14 +107,19 @@ npm run preview
 │   │   │   ├── alert.tsx
 │   │   │   └── button.tsx
 │   │   ├── UserInputForm.tsx     # Eingabeformular
-│   │   ├── ResultsDashboard.tsx  # Ergebnis-Anzeige
+│   │   ├── ResultsDashboard.tsx  # Ergebnis-Anzeige + EU-Klinik-Browser
+│   │   ├── ClinicCard.tsx        # Klinik-Karte
+│   │   ├── EuClinicBrowser.tsx   # Filterbare EU-Liste
 │   │   └── FertilityApp.tsx      # Haupt-App-Komponente
+│   ├── crawler/                  # Allowlist-Crawler (Build + API)
 │   ├── lib/
 │   │   ├── types.ts              # TypeScript-Typen
 │   │   ├── countryLogic.ts       # Geschäftslogik
+│   │   ├── loadClinics.ts        # Client-Loader für /api/clinics
 │   │   └── utils.ts              # Hilfsfunktionen
 │   ├── pages/
-│   │   └── index.astro           # Hauptseite
+│   │   ├── index.astro           # Hauptseite
+│   │   └── api/clinics.ts        # Klinik-API (SWR)
 │   └── styles/
 │       └── globals.css           # Globale Styles
 ├── astro.config.mjs
