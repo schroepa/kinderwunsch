@@ -1,165 +1,177 @@
-# Kinderwunsch-Finder 👶
+# Kinderwunsch-Finder
 
-Eine interaktive Web-App zur Unterstützung bei der Suche nach geeigneten Kinderwunschkliniken in Europa.
+Interaktive Web-App zur Suche nach geeigneten Kinderwunschbehandlungen und Kliniken in Europa. Nutzer geben Alter, Beziehungsstatus, Wohnort, Budget und gewünschte Behandlungen ein und erhalten priorisierte Länderempfehlungen sowie Klinikdaten.
 
-## 🎯 Funktionen
+## Funktionen
 
-- **Interaktives Eingabeformular** mit shadcn/ui Komponenten
-- **Dynamische Länderempfehlungen** basierend auf individuellen Parametern
-- **Intelligente Geschäftslogik** für länderspezifische Regelungen
-- **Klinik-Datenbank** mit realen Beispieldaten
-- **Responsive Design** für alle Geräte
-- **Deutsche Benutzeroberfläche**
+- Interaktives Eingabeformular (Alter, Status, Ort, Budget, Behandlungen)
+- Dynamische Länderempfehlungen anhand rechtlicher und praktischer Regeln
+- Hybrid-Klinikdaten: Build-Fallback plus Runtime-API mit optionalem Vercel-Blob-Cache
+- EU-Klinikbrowser mit Suche und Länderfilter
+- Dark Mode (Systempräferenz, manuell umschaltbar, ohne Flash beim Laden)
+- Design-System angelehnt an Vercel Geist (neutrale Surfaces, Teal-Akzent, Geist Sans/Mono)
+- Lucide-Icons statt Emojis; dezente Motion
+- Agent Skills unter `.cursor/skills/` (UX, SEO/GEO, UI, Accessibility, Dev, Product Owner)
 
-## 🛠 Tech-Stack
+## Tech-Stack
 
-- **Framework:** Astro 4.x
-- **UI-Bibliothek:** React 18
-- **Styling:** Tailwind CSS
-- **Komponenten:** shadcn/ui
-- **TypeScript:** Strict Mode
-- **Datenspeicher:** JSON + Vercel Blob (Runtime-Cache)
-- **Hosting:** Vercel (Hybrid, Serverless API)
+| Bereich | Technologie |
+|--------|-------------|
+| Framework | Astro 4 (Hybrid Output) |
+| UI | React 18, shadcn/ui-Patterns |
+| Styling | Tailwind CSS, CSS-Variablen, Geist-Fonts |
+| Icons / Motion | lucide-react, motion |
+| Daten | JSON (Build), Vercel Blob (optional Runtime) |
+| Crawler | Cheerio, Allowlist-Quellen |
+| Tests | Vitest |
+| Hosting | Vercel Serverless (`@astrojs/vercel`) |
 
-## 📦 Installation
+## Voraussetzungen
 
-### Voraussetzungen
-
-- Node.js 18+ oder 20+
+- Node.js 18+ (20+ empfohlen)
 - npm oder pnpm
 
-### Setup
-
-1. **Abhängigkeiten installieren:**
+## Setup
 
 ```bash
 npm install
-```
-
-oder mit pnpm:
-
-```bash
-pnpm install
-```
-
-2. **Entwicklungsserver starten:**
-
-```bash
 npm run dev
 ```
 
-oder:
+App lokal: `http://localhost:4321` (alternativ nächster freier Port).
+
+Optional für Blob-API lokal:
 
 ```bash
-pnpm dev
+cp .env.example .env
+# BLOB_READ_WRITE_TOKEN setzen
 ```
 
-Die App ist nun unter `http://localhost:4321` erreichbar.
+## Scripts
 
-## Klinik-Daten aktualisieren
+| Befehl | Beschreibung |
+|--------|----------------|
+| `npm run dev` | Entwicklungsserver |
+| `npm run build` | Typecheck + Produktionsbuild |
+| `npm run preview` | Build lokal previewen |
+| `npm test` | Vitest (Crawler-Unit-Tests) |
+| `npm run crawl:clinics` | Klinikdaten aus Allowlist crawlen |
 
-```bash
-npm run crawl:clinics
-```
+`crawl:clinics` schreibt `public/data/clinics.json` und `public/data/clinics-meta.json` anhand von `src/crawler/sources.json`.
 
-Schreibt `public/data/clinics.json` und `public/data/clinics-meta.json` aus der Allowlist in `src/crawler/sources.json`.
+## Deployment (Vercel)
 
-## 🚀 Deployment (Vercel)
-
-1. Framework: **Astro (hybrid)**
-2. Umgebungsvariable: `BLOB_READ_WRITE_TOKEN` aus einem Vercel-Blob-Store
+1. Framework Preset: Astro (Hybrid)
+2. Umgebungsvariable: `BLOB_READ_WRITE_TOKEN` (Vercel Blob Store)
 3. Optional vor dem Build: `npm run crawl:clinics`
-4. Ohne Blob-Token nutzt `/api/clinics` den Fallback `public/data/clinics.json`
+4. Ohne Blob-Token nutzt `GET /api/clinics` den statischen Fallback unter `public/data/`
 
-Kopiere `.env.example` nach `.env` für lokale API-Tests mit Blob.
+Die Klinik-API nutzt stale-while-revalidate und begrenzt Crawl-Zyklen (u. a. max. ein voller Refresh-Pfad pro Tag clientseitig).
 
-### Produktions-Build erstellen:
+## Design und Themes
 
-```bash
-npm run build
-```
+- Fonts: Geist Sans und Geist Mono unter `public/fonts/`
+- Light: weiße/neutrale Surfaces; Dark: nahe Schwarz (`#000` / dunkle Cards)
+- Primärfarbe: Teal nur für CTAs, Fokus und aktive Zustände
+- Theme-Persistenz: `localStorage` (`kinderwunsch-theme`), Inline-Script in `index.astro` verhindert Flash
+- Utility-Klassen: `.label-geist`, `.data-geist` (Mono / Tabular Numbers)
 
-### Build-Vorschau lokal testen:
-
-```bash
-npm run preview
-```
-
-Die Klinik-API ist unter `/api/clinics` erreichbar (stale-while-revalidate, max. 1 Crawl-Zyklus pro 24h).
-
-## 📁 Projektstruktur
+## Projektstruktur
 
 ```
 /
+├── .cursor/skills/              # Agent Skills (DE)
 ├── public/
 │   ├── data/
-│   │   ├── clinics.json          # Build-Fallback Klinik-Daten
-│   │   ├── clinics-meta.json     # Crawl-Metadaten
-│   │   └── clinics.seed.json     # Allowlist-Seed
+│   │   ├── clinics.json         # Build-Fallback
+│   │   ├── clinics-meta.json
+│   │   └── clinics.seed.json
+│   ├── fonts/                   # Geist Sans / Mono
 │   └── favicon.svg
+├── scripts/
+│   └── crawl-clinics.ts
 ├── src/
 │   ├── components/
-│   │   ├── ui/                   # shadcn/ui Komponenten
-│   │   │   ├── card.tsx
-│   │   │   ├── label.tsx
-│   │   │   ├── select.tsx
-│   │   │   ├── slider.tsx
-│   │   │   ├── alert.tsx
-│   │   │   └── button.tsx
-│   │   ├── UserInputForm.tsx     # Eingabeformular
-│   │   ├── ResultsDashboard.tsx  # Ergebnis-Anzeige + EU-Klinik-Browser
-│   │   ├── ClinicCard.tsx        # Klinik-Karte
-│   │   ├── EuClinicBrowser.tsx   # Filterbare EU-Liste
-│   │   └── FertilityApp.tsx      # Haupt-App-Komponente
-│   ├── crawler/                  # Allowlist-Crawler (Build + API)
+│   │   ├── ui/                  # Button, Card, Select, Slider, …
+│   │   ├── icons/               # AnimatedIcon-Helfer
+│   │   ├── FertilityApp.tsx
+│   │   ├── UserInputForm.tsx
+│   │   ├── ResultsDashboard.tsx
+│   │   ├── ClinicCard.tsx
+│   │   ├── EuClinicBrowser.tsx
+│   │   ├── ThemeToggle.tsx
+│   │   └── TreatmentToggle.tsx
+│   ├── crawler/                 # Allowlist-Crawler
 │   ├── lib/
-│   │   ├── types.ts              # TypeScript-Typen
-│   │   ├── countryLogic.ts       # Geschäftslogik
-│   │   ├── loadClinics.ts        # Client-Loader für /api/clinics
-│   │   └── utils.ts              # Hilfsfunktionen
+│   │   ├── types.ts
+│   │   ├── countryLogic.ts
+│   │   ├── loadClinics.ts
+│   │   ├── theme.ts
+│   │   ├── countryCodes.ts
+│   │   └── utils.ts
 │   ├── pages/
-│   │   ├── index.astro           # Hauptseite
-│   │   └── api/clinics.ts        # Klinik-API (SWR)
+│   │   ├── index.astro
+│   │   └── api/clinics.ts
 │   └── styles/
-│       └── globals.css           # Globale Styles
+│       └── globals.css
+├── tests/crawler/
 ├── astro.config.mjs
 ├── tailwind.config.mjs
-├── tsconfig.json
 └── package.json
 ```
 
-## 🌍 Unterstützte Länder
+## Agent Skills
 
-Die App enthält Informationen und Regelungen für:
+Unter `.cursor/skills/` (und spiegelbildlich in `~/.cursor/skills/`):
 
-- 🇩🇪 **Deutschland** - Höchste Standards, Kassenunterstützung für verheiratete Paare
-- 🇨🇿 **Tschechien** - Hervorragendes Preis-Leistungs-Verhältnis, Eizellspende legal
-- 🇵🇱 **Polen** - Günstigste Option, sehr nah an Deutschland
-- 🇪🇸 **Spanien** - Liberalste Gesetze, alle Familienmodelle
-- 🇬🇷 **Griechenland** - Liberal und günstiger als Spanien
+| Skill | Zweck |
+|-------|--------|
+| `ux-review` | Heuristik-Reviews nach Nielsen Norman |
+| `seo-geo` | SEO und Generative Engine Optimization |
+| `ui-design` | Layout, Spacing, Typo, Komponenten |
+| `accessibility-wcag` | WCAG 2.2 AA |
+| `dev-best-practices` | Code, Tests, CI, PRs |
+| `product-owner` | Backlog, JTBD, Priorisierung |
 
-## 📊 Geschäftslogik
+## Unterstützte Länder (Logik)
 
-Die App berücksichtigt automatisch:
+Die Empfehlungslogik deckt unter anderem ab:
 
-- **Altersanforderungen** der verschiedenen Länder
-- **Beziehungsstatus** und rechtliche Zulässigkeit
-- **Behandlungsarten** und ihre Verfügbarkeit
-- **Budget-Einschränkungen** mit Warnungen
-- **Entfernungen** von Berlin (konfigurierbar)
-- **Kostenübernahme** durch Krankenkassen (Deutschland)
+- Deutschland — hohe Standards, Kassenaspekte für verheiratete Paare
+- Tschechien — Preis-Leistung, Eizellspende legal
+- Polen — günstig, kurze Anreise
+- Spanien — liberale Regelungen für viele Familienmodelle
+- Griechenland — liberal, oft günstiger als Spanien
 
-## 🔧 Konfiguration
+Zusätzliche Kliniken können über Crawler-Allowlist und Seed-JSON in weiteren EU-Ländern liegen.
 
-### Klinik-Daten erweitern
+## Geschäftslogik
 
-Bearbeiten Sie `public/data/clinics.json`, um weitere Kliniken hinzuzufügen:
+Berücksichtigt werden u. a.:
+
+- Altersgrenzen und Beziehungsstatus je Land
+- Verfügbarkeit von IVF, ICSI, Spende, PID
+- Budgetwarnungen
+- Entfernung (Referenz Berlin / gewählter Wohnort)
+- Hinweise zur Kostenübernahme (Deutschland)
+
+Anpassungen: `src/lib/countryLogic.ts`.
+
+## Klinikdaten erweitern
+
+Bevorzugt über Allowlist und Crawl:
+
+1. Quelle in `src/crawler/sources.json` ergänzen
+2. `npm run crawl:clinics` ausführen
+
+Oder Seed/Fallback manuell in `public/data/` pflegen. Beispielstruktur einer Klinik:
 
 ```json
 {
   "id": "unique-id",
   "name": "Klinikname",
   "country": "germany",
+  "countryCode": "DE",
   "city": "Stadt",
   "rating": 4.8,
   "website": "https://example.com",
@@ -171,15 +183,15 @@ Bearbeiten Sie `public/data/clinics.json`, um weitere Kliniken hinzuzufügen:
 }
 ```
 
-### Länder-Logik anpassen
+## Dokumentation (Crawler)
 
-Die Geschäftslogik befindet sich in `src/lib/countryLogic.ts`.
+- Spec: `docs/superpowers/specs/2026-07-16-clinic-crawler-design.md`
+- Plan: `docs/superpowers/plans/2026-07-16-clinic-crawler.md`
 
-## 📝 Lizenz
+## Lizenz
 
-Dieses Projekt wurde für Bildungszwecke erstellt.
+Zu Bildungs- und Demonstrationszwecken erstellt.
 
-## ⚠️ Disclaimer
+## Hinweis
 
-Diese App bietet allgemeine Informationen und ersetzt keine medizinische Beratung. 
-Bitte konsultieren Sie Fachärzte und informieren Sie sich über aktuelle rechtliche Bestimmungen.
+Die Empfehlungen basieren auf allgemeinen Informationen und ersetzen keine individuelle medizinische oder rechtliche Beratung. Bitte Fachärzte konsultieren und aktuelle Bestimmungen in den jeweiligen Ländern prüfen.

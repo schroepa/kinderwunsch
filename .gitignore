@@ -22,9 +22,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# IDEs
+# IDEs / tooling
 .vscode/
 .idea/
+.astro/
 *.swp
 *.swo
 *~

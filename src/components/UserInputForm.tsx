@@ -1,14 +1,19 @@
 import { useState } from 'react';
+import { Compass } from 'lucide-react';
 import type { UserData, RelationshipStatus, TreatmentType } from '../lib/types';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Slider } from './ui/slider';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { TreatmentToggle } from './TreatmentToggle';
+import { AnimatedIcon } from './icons/AnimatedIcon';
 
 interface UserInputFormProps {
   onSubmit: (data: UserData) => void;
 }
+
+const TREATMENTS: TreatmentType[] = ['ivf', 'icsi', 'egg-donation', 'sperm-donation', 'pgd'];
 
 export default function UserInputForm({ onSubmit }: UserInputFormProps) {
   const [femaleAge, setFemaleAge] = useState<number>(32);
@@ -26,33 +31,33 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
       relationshipStatus,
       location,
       budget,
-      treatments
+      treatments,
     });
   };
 
   const toggleTreatment = (treatment: TreatmentType) => {
-    setTreatments(prev => 
-      prev.includes(treatment) 
-        ? prev.filter(t => t !== treatment)
-        : [...prev, treatment]
+    setTreatments((prev) =>
+      prev.includes(treatment) ? prev.filter((t) => t !== treatment) : [...prev, treatment],
     );
   };
 
   return (
-    <Card className="w-full">
+    <Card>
       <CardHeader>
-        <CardTitle className="text-3xl">Ihre persönlichen Daten</CardTitle>
+        <CardTitle className="text-fluid-2xl sm:text-fluid-3xl">Ihre persönlichen Daten</CardTitle>
         <CardDescription>
-          Geben Sie Ihre Informationen ein, um passende Länder und Kliniken zu finden
+          Geben Sie Ihre Informationen ein, um passende Länder und Kliniken zu finden.
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Alter der Frau */}
-            <div className="space-y-3">
-              <Label htmlFor="female-age" className="text-base">
-                Alter der Frau: <span className="font-bold text-primary">{femaleAge} Jahre</span>
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className="space-y-4">
+              <Label htmlFor="female-age">
+                Alter der Frau{' '}
+                <span className="data-geist font-medium text-foreground normal-case tracking-normal">
+                  {femaleAge} Jahre
+                </span>
               </Label>
               <Slider
                 id="female-age"
@@ -61,14 +66,15 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
                 step={1}
                 value={[femaleAge]}
                 onValueChange={(value) => setFemaleAge(value[0])}
-                className="w-full"
               />
             </div>
 
-            {/* Alter des Mannes */}
-            <div className="space-y-3">
-              <Label htmlFor="male-age" className="text-base">
-                Alter des Mannes: <span className="font-bold text-primary">{maleAge} Jahre</span>
+            <div className="space-y-4">
+              <Label htmlFor="male-age">
+                Alter des Mannes{' '}
+                <span className="data-geist font-medium text-foreground normal-case tracking-normal">
+                  {maleAge} Jahre
+                </span>
               </Label>
               <Slider
                 id="male-age"
@@ -77,16 +83,17 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
                 step={1}
                 value={[maleAge]}
                 onValueChange={(value) => setMaleAge(value[0])}
-                className="w-full"
               />
             </div>
           </div>
 
-          {/* Beziehungsstatus */}
           <div className="space-y-3">
-            <Label htmlFor="relationship" className="text-base">Beziehungsstatus</Label>
-            <Select value={relationshipStatus} onValueChange={(value) => setRelationshipStatus(value as RelationshipStatus)}>
-              <SelectTrigger id="relationship" className="w-full">
+            <Label htmlFor="relationship">Beziehungsstatus</Label>
+            <Select
+              value={relationshipStatus}
+              onValueChange={(value) => setRelationshipStatus(value as RelationshipStatus)}
+            >
+              <SelectTrigger id="relationship">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -98,11 +105,10 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
             </Select>
           </div>
 
-          {/* Wohnort */}
           <div className="space-y-3">
-            <Label htmlFor="location" className="text-base">Wohnort (für Entfernungsberechnung)</Label>
+            <Label htmlFor="location">Wohnort (für Entfernungsberechnung)</Label>
             <Select value={location} onValueChange={setLocation}>
-              <SelectTrigger id="location" className="w-full">
+              <SelectTrigger id="location">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -115,10 +121,12 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
             </Select>
           </div>
 
-          {/* Budget */}
-          <div className="space-y-3">
-            <Label htmlFor="budget" className="text-base">
-              Budget: <span className="font-bold text-primary">{budget.toLocaleString('de-DE')} €</span>
+          <div className="space-y-4">
+            <Label htmlFor="budget">
+              Budget{' '}
+              <span className="data-geist font-medium text-foreground normal-case tracking-normal">
+                {budget.toLocaleString('de-DE')} €
+              </span>
             </Label>
             <Slider
               id="budget"
@@ -127,63 +135,25 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
               step={500}
               value={[budget]}
               onValueChange={(value) => setBudget(value[0])}
-              className="w-full"
             />
           </div>
 
-          {/* Behandlungen */}
           <div className="space-y-3">
-            <Label className="text-base">Gewünschte Behandlungen</Label>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={treatments.includes('ivf')}
-                  onChange={() => toggleTreatment('ivf')}
-                  className="w-4 h-4 rounded border-gray-300"
+            <Label>Gewünschte Behandlungen</Label>
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              {TREATMENTS.map((treatment) => (
+                <TreatmentToggle
+                  key={treatment}
+                  treatment={treatment}
+                  checked={treatments.includes(treatment)}
+                  onChange={() => toggleTreatment(treatment)}
                 />
-                <span className="text-sm">IVF (Standard)</span>
-              </label>
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={treatments.includes('icsi')}
-                  onChange={() => toggleTreatment('icsi')}
-                  className="w-4 h-4 rounded border-gray-300"
-                />
-                <span className="text-sm">ICSI (Intrazytoplasmatische Spermieninjektion)</span>
-              </label>
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={treatments.includes('egg-donation')}
-                  onChange={() => toggleTreatment('egg-donation')}
-                  className="w-4 h-4 rounded border-gray-300"
-                />
-                <span className="text-sm">Eizellspende</span>
-              </label>
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={treatments.includes('sperm-donation')}
-                  onChange={() => toggleTreatment('sperm-donation')}
-                  className="w-4 h-4 rounded border-gray-300"
-                />
-                <span className="text-sm">Samenspende</span>
-              </label>
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={treatments.includes('pgd')}
-                  onChange={() => toggleTreatment('pgd')}
-                  className="w-4 h-4 rounded border-gray-300"
-                />
-                <span className="text-sm">PID (Präimplantationsdiagnostik)</span>
-              </label>
+              ))}
             </div>
           </div>
 
           <Button type="submit" className="w-full" size="lg">
+            <AnimatedIcon icon={Compass} size={18} />
             Empfehlungen anzeigen
           </Button>
         </form>

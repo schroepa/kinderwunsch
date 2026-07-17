@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
+import { ArrowLeft, Sparkles } from 'lucide-react';
 import { loadClinics, shouldPrefetchOnMount } from '../lib/loadClinics';
 import type { UserData } from '../lib/types';
+import { AnimatedDrawIcon, AnimatedPulseIcon } from './icons/AnimatedIcon';
 import UserInputForm from './UserInputForm';
 import ResultsDashboard from './ResultsDashboard';
+import { ThemeToggle } from './ThemeToggle';
+import { Button } from './ui/button';
 
 export default function FertilityApp() {
   const [userData, setUserData] = useState<UserData | null>(null);
@@ -27,52 +31,48 @@ export default function FertilityApp() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4">
+    <div className="min-h-screen px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
+      <ThemeToggle />
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <header className="mb-10 sm:mb-14 text-center animate-fade-up">
+          <p className="label-geist mb-4 inline-flex items-center justify-center gap-2">
+            <AnimatedPulseIcon icon={Sparkles} size={12} className="text-primary" />
+            IVF & ICSI in Europa
+          </p>
+          <h1 className="text-fluid-display font-semibold text-foreground">
             Kinderwunsch-Finder
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Finden Sie die beste Lösung für Ihre Kinderwunschbehandlung in Europa – 
-            individuell auf Ihre Situation zugeschnitten
+          <p className="mx-auto mt-4 max-w-2xl text-fluid-lg text-muted-foreground leading-relaxed">
+            Finden Sie die passende Behandlung und Klinik — individuell auf Ihre Situation zugeschnitten.
           </p>
         </header>
 
-        {/* Main Content */}
         {!showResults ? (
-          <div className="max-w-3xl mx-auto">
+          <div className="mx-auto max-w-3xl animate-fade-up" style={{ animationDelay: '80ms' }}>
             <UserInputForm onSubmit={handleFormSubmit} />
           </div>
         ) : (
-          <>
-            {/* Back Button */}
-            <div className="mb-6">
-              <button
-                onClick={handleReset}
-                className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
-              >
-                <span className="text-xl">←</span>
+          <div className="animate-fade-up">
+            <div className="mb-6 sm:mb-8">
+              <Button variant="ghost" size="sm" onClick={handleReset} className="-ml-2">
+                <AnimatedDrawIcon icon={ArrowLeft} size={18} />
                 Zurück zur Eingabe
-              </button>
+              </Button>
             </div>
-
-            {/* Results */}
             {userData && <ResultsDashboard userData={userData} />}
-          </>
+          </div>
         )}
 
-        {/* Footer Info */}
-        <footer className="mt-16 pt-8 border-t border-gray-200">
-          <div className="text-center text-sm text-gray-600 space-y-2">
+        <footer className="mt-16 sm:mt-20">
+          <div className="divider-soft mb-6" />
+          <div className="space-y-2 text-center text-fluid-sm text-muted-foreground">
             <p>
-              <strong>Hinweis:</strong> Diese Empfehlungen basieren auf allgemeinen Informationen und 
-              ersetzen keine individuelle medizinische Beratung.
+              <span className="font-medium text-foreground/80">Hinweis:</span> Diese Empfehlungen basieren
+              auf allgemeinen Informationen und ersetzen keine individuelle medizinische Beratung.
             </p>
             <p>
-              Bitte konsultieren Sie einen Facharzt und informieren Sie sich über die aktuellen 
-              rechtlichen Bestimmungen in den jeweiligen Ländern.
+              Bitte konsultieren Sie einen Facharzt und informieren Sie sich über die aktuellen rechtlichen
+              Bestimmungen in den jeweiligen Ländern.
             </p>
           </div>
         </footer>
