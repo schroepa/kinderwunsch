@@ -25,6 +25,9 @@ export function TreatmentToggle({
   const hint = description ?? info.description;
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
     if (event.key === ' ' || event.key === 'Enter') {
       event.preventDefault();
       onChange();
@@ -39,6 +42,7 @@ export function TreatmentToggle({
     <div
       role="checkbox"
       aria-checked={checked}
+      aria-label={title}
       aria-describedby={descId}
       tabIndex={0}
       onClick={onChange}
