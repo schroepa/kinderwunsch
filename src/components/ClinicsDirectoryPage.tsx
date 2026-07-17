@@ -14,6 +14,12 @@ const COUNTRY_NAMES: Record<string, string> = {
   PL: 'Polen',
   ES: 'Spanien',
   GR: 'Griechenland',
+  AT: 'Österreich',
+  DK: 'Dänemark',
+  NL: 'Niederlande',
+  PT: 'Portugal',
+  IT: 'Italien',
+  FR: 'Frankreich',
 };
 
 export default function ClinicsDirectoryPage() {
@@ -23,6 +29,13 @@ export default function ClinicsDirectoryPage() {
   const [refreshing, setRefreshing] = useState(false);
   const [q, setQ] = useState('');
   const [country, setCountry] = useState('all');
+
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search).get('country');
+    if (param && /^[A-Za-z]{2}$/.test(param)) {
+      setCountry(param.toUpperCase());
+    }
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
