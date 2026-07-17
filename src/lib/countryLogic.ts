@@ -113,7 +113,8 @@ const countries: Country[] = [
     ],
     cons: [
       'Höhere Kosten',
-      'Sprachbarriere möglich'
+      'Sprachbarriere möglich',
+      'Mehrere Reisen möglich'
     ]
   },
   {
@@ -130,7 +131,8 @@ const countries: Country[] = [
     ],
     cons: [
       'Höhere Kosten',
-      'Wartezeiten möglich'
+      'Wartezeiten möglich',
+      'Sprachbarriere möglich'
     ]
   },
   {
@@ -147,7 +149,8 @@ const countries: Country[] = [
     ],
     cons: [
       'Weite Anreise (Flug erforderlich)',
-      'Sprachbarriere möglich'
+      'Sprachbarriere möglich',
+      'Mehrere Reisen notwendig'
     ]
   },
   {
@@ -463,6 +466,9 @@ function calculateCostEstimate(country: Country, userData: UserData): number {
         break;
       case 'italy':
         cost += 2200;
+        break;
+      case 'france':
+        cost += 2600;
         break;
     }
   }
