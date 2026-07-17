@@ -15,8 +15,8 @@ describe('countryMap', () => {
     expect(toCountrySlug('GR')).toBe('greece');
   });
 
-  it('falls back to lowercase ISO for other EU countries', () => {
-    expect(toCountrySlug('PT')).toBe('pt');
+  it('falls back to lowercase ISO for unmapped countries', () => {
+    expect(toCountrySlug('BE')).toBe('be');
     expect(toCountryCode('germany')).toBe('DE');
   });
 });
