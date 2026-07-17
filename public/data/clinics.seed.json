@@ -464,5 +464,560 @@
     "updatedAt": "2026-07-16T00:00:00.000Z",
     "lat": 48.8566,
     "lng": 2.3522
+  },
+  {
+    "id": "de-3",
+    "name": "Kinderwunschzentrum München",
+    "country": "germany",
+    "countryCode": "DE",
+    "city": "München",
+    "website": "https://ivf-muenchen.de/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 48.1351,
+    "lng": 11.582
+  },
+  {
+    "id": "de-4",
+    "name": "repromedicum Frankfurt",
+    "country": "germany",
+    "countryCode": "DE",
+    "city": "Frankfurt",
+    "website": "https://repromedicum.de/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 50.1109,
+    "lng": 8.6821
+  },
+  {
+    "id": "de-5",
+    "name": "Kinderwunschzentrum Köln (amedes)",
+    "country": "germany",
+    "countryCode": "DE",
+    "city": "Köln",
+    "website": "https://www.fertilityamedes.com/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "pgd"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 50.9375,
+    "lng": 6.9603
+  },
+  {
+    "id": "de-6",
+    "name": "MVZ Kinderwunsch Düsseldorf",
+    "country": "germany",
+    "countryCode": "DE",
+    "city": "Düsseldorf",
+    "website": "https://mvz-kinderwunsch.com/kinderwunschzentren/duesseldorf/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 51.2277,
+    "lng": 6.7735
+  },
+  {
+    "id": "de-7",
+    "name": "Team Kinderwunsch Hannover",
+    "country": "germany",
+    "countryCode": "DE",
+    "city": "Hannover",
+    "website": "https://kinderwunschhannover.de/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 52.3759,
+    "lng": 9.732
+  },
+  {
+    "id": "de-8",
+    "name": "Kinderwunschpraxis Stuttgart",
+    "country": "germany",
+    "countryCode": "DE",
+    "city": "Stuttgart",
+    "website": "https://www.kinderwunschpraxis.de/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 48.7758,
+    "lng": 9.1829
+  },
+  {
+    "id": "at-2",
+    "name": "Kinderwunschzentrum an der Wien",
+    "country": "austria",
+    "countryCode": "AT",
+    "city": "Wien",
+    "website": "https://www.kinderwunschzentrum.at/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 48.2082,
+    "lng": 16.3738
+  },
+  {
+    "id": "at-3",
+    "name": "Kinderwunschzentrum Graz (LKH-Univ. Klinikum)",
+    "country": "austria",
+    "countryCode": "AT",
+    "city": "Graz",
+    "website": "https://www.uniklinikumgraz.at/kinderwunsch",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 47.0707,
+    "lng": 15.4395
+  },
+  {
+    "id": "at-4",
+    "name": "Kinderwunsch-Zentrum Linz (Kepler Universitätsklinikum)",
+    "country": "austria",
+    "countryCode": "AT",
+    "city": "Linz",
+    "website": "https://lebenswunsch.at/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 48.3069,
+    "lng": 14.2858
+  },
+  {
+    "id": "nl-2",
+    "name": "IVF-centrum Amsterdam UMC",
+    "country": "netherlands",
+    "countryCode": "NL",
+    "city": "Amsterdam",
+    "website": "https://www.amsterdamumc.nl/nl/ivf-centrum/home",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 52.3676,
+    "lng": 4.9041
+  },
+  {
+    "id": "nl-3",
+    "name": "UMC Utrecht Voortplantingsgeneeskunde",
+    "country": "netherlands",
+    "countryCode": "NL",
+    "city": "Utrecht",
+    "website": "https://www.umcutrecht.nl/nl/behandeling/ivf",
+    "specialties": [
+      "ivf"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 52.0907,
+    "lng": 5.1214
+  },
+  {
+    "id": "nl-4",
+    "name": "Maastricht UMC+ Fertiliteitscentrum",
+    "country": "netherlands",
+    "countryCode": "NL",
+    "city": "Maastricht",
+    "website": "https://www.mumc.nl/",
+    "specialties": [
+      "ivf"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 50.8514,
+    "lng": 5.691
+  },
+  {
+    "id": "dk-2",
+    "name": "Maigaard Fertility Clinic Aarhus",
+    "country": "denmark",
+    "countryCode": "DK",
+    "city": "Aarhus",
+    "website": "https://maigaard.dk/en/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 56.1629,
+    "lng": 10.2039
+  },
+  {
+    "id": "dk-3",
+    "name": "Aagaard Fertility Clinic Odense",
+    "country": "denmark",
+    "countryCode": "DK",
+    "city": "Odense",
+    "website": "https://aagaardklinik.dk/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "pgd"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 55.4038,
+    "lng": 10.4024
+  },
+  {
+    "id": "fr-2",
+    "name": "Clinique Natecia Lyon",
+    "country": "france",
+    "countryCode": "FR",
+    "city": "Lyon",
+    "website": "https://natecia.fr/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 45.764,
+    "lng": 4.8357
+  },
+  {
+    "id": "fr-3",
+    "name": "IMR Marseille",
+    "country": "france",
+    "countryCode": "FR",
+    "city": "Marseille",
+    "website": "https://www.imrmarseille.com/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 43.2965,
+    "lng": 5.3698
+  },
+  {
+    "id": "fr-4",
+    "name": "Centre PMA Clinique Saint George Nice",
+    "country": "france",
+    "countryCode": "FR",
+    "city": "Nizza",
+    "website": "https://www.clinique-saint-george.com/nos-specialites/medecine/centre-pma/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 43.7102,
+    "lng": 7.262
+  },
+  {
+    "id": "fr-5",
+    "name": "Centre AMP Polyclinique Jean Villar Bordeaux",
+    "country": "france",
+    "countryCode": "FR",
+    "city": "Bordeaux",
+    "website": "https://www.fivbordeaux.com/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 44.8378,
+    "lng": -0.5792
+  },
+  {
+    "id": "it-2",
+    "name": "Genera Roma",
+    "country": "italy",
+    "countryCode": "IT",
+    "city": "Rom",
+    "website": "https://www.generapma.it/cliniche/genera-roma/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 41.9028,
+    "lng": 12.4964
+  },
+  {
+    "id": "it-3",
+    "name": "Genera Napoli",
+    "country": "italy",
+    "countryCode": "IT",
+    "city": "Neapel",
+    "website": "https://www.generapma.it/cliniche/genera-napoli/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 40.8518,
+    "lng": 14.2681
+  },
+  {
+    "id": "it-4",
+    "name": "Futura PMA Firenze",
+    "country": "italy",
+    "countryCode": "IT",
+    "city": "Florenz",
+    "website": "https://pmafutura.it/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 43.7696,
+    "lng": 11.2558
+  },
+  {
+    "id": "it-5",
+    "name": "IVI Bologna",
+    "country": "italy",
+    "countryCode": "IT",
+    "city": "Bologna",
+    "website": "https://ivi-fertility.com/clinics/bologna/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 44.4949,
+    "lng": 11.3426
+  },
+  {
+    "id": "pt-2",
+    "name": "CETI Porto",
+    "country": "portugal",
+    "countryCode": "PT",
+    "city": "Porto",
+    "website": "https://ceti.pt/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 41.1579,
+    "lng": -8.6291
+  },
+  {
+    "id": "pt-3",
+    "name": "Eugin Coimbra",
+    "country": "portugal",
+    "countryCode": "PT",
+    "city": "Coimbra",
+    "website": "https://eugin.pt/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 40.2033,
+    "lng": -8.4103
+  },
+  {
+    "id": "cz-4",
+    "name": "Clinic of Reproductive Medicine and Gynecology Zlín",
+    "country": "czech",
+    "countryCode": "CZ",
+    "city": "Zlín",
+    "website": "https://www.ivf-zlin.com/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 49.2262,
+    "lng": 17.6683
+  },
+  {
+    "id": "cz-5",
+    "name": "Eurofertil Clinic Ostrava",
+    "country": "czech",
+    "countryCode": "CZ",
+    "city": "Ostrava",
+    "website": "https://www.eurofertil.cz/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 49.8209,
+    "lng": 18.2625
+  },
+  {
+    "id": "pl-4",
+    "name": "Gyncentrum Kraków",
+    "country": "poland",
+    "countryCode": "PL",
+    "city": "Krakau",
+    "website": "https://gyncentrum.pl/en/gyncentrum-clinics/gyncentrum-cracow/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "pgd"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 50.0647,
+    "lng": 19.945
+  },
+  {
+    "id": "pl-5",
+    "name": "Invimed Wrocław",
+    "country": "poland",
+    "countryCode": "PL",
+    "city": "Breslau",
+    "website": "https://invimed.pl/en/in-vitro/wroclaw/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 51.1079,
+    "lng": 17.0385
+  },
+  {
+    "id": "es-4",
+    "name": "IVI Madrid",
+    "country": "spain",
+    "countryCode": "ES",
+    "city": "Madrid",
+    "website": "https://ivi.es/clinicas/madrid/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "pgd"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 40.4168,
+    "lng": -3.7038
+  },
+  {
+    "id": "es-5",
+    "name": "IVI Valencia",
+    "country": "spain",
+    "countryCode": "ES",
+    "city": "Valencia",
+    "website": "https://ivi.es/clinicas/valencia/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "pgd"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 39.4699,
+    "lng": -0.3763
+  },
+  {
+    "id": "es-6",
+    "name": "Instituto de Fertilidad Viamed Sevilla",
+    "country": "spain",
+    "countryCode": "ES",
+    "city": "Sevilla",
+    "website": "https://www.institutofertilidadviamed.com/hospital-santa-angela-de-la-cruz/",
+    "specialties": [
+      "ivf",
+      "icsi"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 37.3891,
+    "lng": -5.9845
+  },
+  {
+    "id": "gr-4",
+    "name": "Genesis Fertility Center",
+    "country": "greece",
+    "countryCode": "GR",
+    "city": "Patras",
+    "website": "https://www.genesisfertilitycenter.com/",
+    "specialties": [
+      "ivf",
+      "icsi",
+      "egg-donation",
+      "pgd"
+    ],
+    "source": "directory",
+    "sourceUrl": "public/data/clinics.seed.json",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "lat": 38.2466,
+    "lng": 21.7346
   }
 ]

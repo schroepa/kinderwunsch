@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { lookupCityCoords } from '../../src/lib/cityCoordinates';
+import seedClinics from '../../public/data/clinics.seed.json';
 
 describe('lookupCityCoords', () => {
   it('finds Berlin DE', () => {
@@ -27,6 +28,28 @@ describe('lookupCityCoords', () => {
     expect(lookupCityCoords('Lisbon', 'PT')?.lat).toBeCloseTo(38.7223, 2);
   });
 
+  it('matches aliases for Phase 3 volume expansion cities', () => {
+    expect(lookupCityCoords('München', 'DE')?.lat).toBeCloseTo(48.1351, 2);
+    expect(lookupCityCoords('Munich', 'DE')?.lat).toBeCloseTo(48.1351, 2);
+    expect(lookupCityCoords('Köln', 'DE')?.lat).toBeCloseTo(50.9375, 2);
+    expect(lookupCityCoords('Cologne', 'DE')?.lat).toBeCloseTo(50.9375, 2);
+    expect(lookupCityCoords('Düsseldorf', 'DE')?.lat).toBeCloseTo(51.2277, 2);
+    expect(lookupCityCoords('Rom', 'IT')?.lat).toBeCloseTo(41.9028, 2);
+    expect(lookupCityCoords('Rome', 'IT')?.lat).toBeCloseTo(41.9028, 2);
+    expect(lookupCityCoords('Roma', 'IT')?.lat).toBeCloseTo(41.9028, 2);
+    expect(lookupCityCoords('Neapel', 'IT')?.lat).toBeCloseTo(40.8518, 2);
+    expect(lookupCityCoords('Naples', 'IT')?.lat).toBeCloseTo(40.8518, 2);
+    expect(lookupCityCoords('Krakau', 'PL')?.lat).toBeCloseTo(50.0647, 2);
+    expect(lookupCityCoords('Krakow', 'PL')?.lat).toBeCloseTo(50.0647, 2);
+    expect(lookupCityCoords('Breslau', 'PL')?.lat).toBeCloseTo(51.1079, 2);
+    expect(lookupCityCoords('Wroclaw', 'PL')?.lat).toBeCloseTo(51.1079, 2);
+    expect(lookupCityCoords('Sevilla', 'ES')?.lat).toBeCloseTo(37.3891, 2);
+    expect(lookupCityCoords('Seville', 'ES')?.lat).toBeCloseTo(37.3891, 2);
+    expect(lookupCityCoords('Zlín', 'CZ')?.lat).toBeCloseTo(49.2262, 2);
+    expect(lookupCityCoords('Nizza', 'FR')?.lat).toBeCloseTo(43.7102, 2);
+    expect(lookupCityCoords('Nice', 'FR')?.lat).toBeCloseTo(43.7102, 2);
+  });
+
   it('is case-insensitive and trims whitespace', () => {
     expect(lookupCityCoords('  berlin  ', 'DE')).toEqual({ lat: 52.52, lng: 13.405 });
     expect(lookupCityCoords('BERLIN', 'de')).toEqual({ lat: 52.52, lng: 13.405 });
@@ -37,28 +60,16 @@ describe('lookupCityCoords', () => {
   });
 
   it('covers every unique city+countryCode in the clinics seed', () => {
-    const seedCities: Array<[string, string]> = [
-      ['Berlin', 'DE'],
-      ['Hamburg', 'DE'],
-      ['Prag', 'CZ'],
-      ['Brünn', 'CZ'],
-      ['Warschau', 'PL'],
-      ['Stettin', 'PL'],
-      ['Posen', 'PL'],
-      ['Barcelona', 'ES'],
-      ['Alicante', 'ES'],
-      ['Athen', 'GR'],
-      ['Thessaloniki', 'GR'],
-      ['Kreta', 'GR'],
-      ['Lissabon', 'PT'],
-      ['Rotterdam', 'NL'],
-      ['Kopenhagen', 'DK'],
-      ['Wien', 'AT'],
-      ['Mailand', 'IT'],
-      ['Paris', 'FR'],
-    ];
+    type SeedClinic = { city: string; countryCode: string };
+    const seedCities = new Map<string, [string, string]>();
+    for (const clinic of seedClinics as SeedClinic[]) {
+      const key = `${clinic.city}|${clinic.countryCode}`;
+      seedCities.set(key, [clinic.city, clinic.countryCode]);
+    }
 
-    for (const [city, countryCode] of seedCities) {
+    expect(seedCities.size).toBeGreaterThanOrEqual(30);
+
+    for (const [city, countryCode] of seedCities.values()) {
       expect(lookupCityCoords(city, countryCode), `${city}, ${countryCode}`).toBeDefined();
     }
   });
