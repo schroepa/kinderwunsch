@@ -6,6 +6,20 @@
     "enabled": true
   },
   {
+    "id": "ch-swissmom-directory-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/ch-swissmom-2026-07-18.json",
+    "countryCode": "CH",
+    "enabled": true
+  },
+  {
+    "id": "ie-hpra-register-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/ie-hpra-register-2026-07-18.json",
+    "countryCode": "IE",
+    "enabled": true
+  },
+  {
     "id": "enrich-from-seed-websites",
     "type": "clinic_site",
     "enabled": true

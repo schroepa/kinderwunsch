@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { loadSeedSource } from './adapters/seed';
+import { loadDirectoryPackSource } from './adapters/directoryPack';
 import { parseHtmlList } from './adapters/htmlList';
 import { enrichFromClinicHtml } from './adapters/clinicSite';
 import { fetchHtml } from './fetchHtml';
@@ -37,6 +38,12 @@ export async function runFullCrawl(projectRoot: string): Promise<ClinicsPayload>
   for (const source of sources) {
     if (source.type === 'seed') {
       const rawRows = await loadSeedSource(source, projectRoot);
+      clinics.push(...rawRows.map((r) => normalizeRawClinic(r)));
+      meta.stats.directory += rawRows.length;
+      continue;
+    }
+    if (source.type === 'directory_pack') {
+      const rawRows = await loadDirectoryPackSource(source, projectRoot);
       clinics.push(...rawRows.map((r) => normalizeRawClinic(r)));
       meta.stats.directory += rawRows.length;
       continue;

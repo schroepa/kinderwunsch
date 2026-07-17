@@ -86,6 +86,14 @@ const CITY_COORDS: Record<string, Coords> = {
   'sevilla|ES': { lat: 37.3891, lng: -5.9845 },
   'seville|ES': { lat: 37.3891, lng: -5.9845 },
   'patras|GR': { lat: 38.2466, lng: 21.7346 },
+  'basel|CH': { lat: 47.5596, lng: 7.5886 },
+  'bern|CH': { lat: 46.948, lng: 7.4474 },
+  'zurich|CH': { lat: 47.3769, lng: 8.5417 },
+  'luzern|CH': { lat: 47.0502, lng: 8.3093 },
+  'lucerne|CH': { lat: 47.0502, lng: 8.3093 },
+  'lausanne|CH': { lat: 46.5197, lng: 6.6323 },
+  'dublin|IE': { lat: 53.3498, lng: -6.2603 },
+  'cork|IE': { lat: 51.8985, lng: -8.4756 },
 };
 
 export function lookupCityCoords(city: string, countryCode: string): Coords | undefined {

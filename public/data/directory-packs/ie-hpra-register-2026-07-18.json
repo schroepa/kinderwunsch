@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "sourceUrl": "https://www.hpra.ie/regulation/tissues-and-cells/tissue-establishments/tissue-establishement-list",
+    "accessedAt": "2026-07-18",
+    "note": "Static snapshot cross-referencing Ireland's HPRA public register of authorised tissue establishments (fertility clinics) with each clinic's own official website. No costs/ratings present on the register, so none are set here. provenance is always 'directory'."
+  },
+  "clinics": [
+    {
+      "name": "Sims IVF",
+      "city": "Dublin",
+      "countryCode": "IE",
+      "website": "https://www.sims.ie"
+    },
+    {
+      "name": "Beacon CARE Fertility",
+      "city": "Dublin",
+      "countryCode": "IE",
+      "website": "https://beaconcarefertility.ie"
+    },
+    {
+      "name": "Waterstone Clinic",
+      "city": "Cork",
+      "countryCode": "IE",
+      "website": "https://waterstoneclinic.ie"
+    },
+    {
+      "name": "Merrion Fertility Clinic",
+      "city": "Dublin",
+      "countryCode": "IE",
+      "website": "https://merrionfertility.ie"
+    }
+  ]
+}

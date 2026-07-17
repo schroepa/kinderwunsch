@@ -10,6 +10,8 @@ const ISO_TO_SLUG: Record<string, string> = {
   PT: 'portugal',
   IT: 'italy',
   FR: 'france',
+  CH: 'switzerland',
+  IE: 'ireland',
 };
 
 const SLUG_TO_ISO: Record<string, string> = Object.fromEntries(

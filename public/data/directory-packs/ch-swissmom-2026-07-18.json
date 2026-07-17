@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "sourceUrl": "https://www.swissmom.ch/de/kinderwunsch/behandlungsmoeglichkeiten-bei-kinderwunsch/kinderwunschzentren-9646",
+    "accessedAt": "2026-07-18",
+    "note": "Static snapshot of a public regional address list (swissmom.ch 'Kinderwunschzentren' directory) for allowlisted Swiss fertility centres. No costs/ratings present on the source page, so none are set here. provenance is always 'directory'."
+  },
+  "clinics": [
+    {
+      "name": "Fertilitas",
+      "city": "Basel",
+      "countryCode": "CH",
+      "website": "https://www.fertilitas.ch"
+    },
+    {
+      "name": "Universitätsspital Basel Reproduktionsmedizin",
+      "city": "Basel",
+      "countryCode": "CH",
+      "website": "https://www.unispital-basel.ch"
+    },
+    {
+      "name": "Frauenklinik Inselspital Kinderwunschzentrum",
+      "city": "Bern",
+      "countryCode": "CH",
+      "website": "https://www.frauenheilkunde.insel.ch"
+    },
+    {
+      "name": "IVF-Labor Lindenhofspital",
+      "city": "Bern",
+      "countryCode": "CH",
+      "website": "https://www.lindenhofgruppe.ch"
+    },
+    {
+      "name": "OVA IVF Clinic Zürich",
+      "city": "Zürich",
+      "countryCode": "CH",
+      "website": "https://www.ova-ivf.ch"
+    },
+    {
+      "name": "Universitäres Kinderwunschzentrum USZ",
+      "city": "Zürich",
+      "countryCode": "CH",
+      "website": "https://www.usz.ch"
+    },
+    {
+      "name": "Luzerner Kantonsspital Kinderwunschzentrum",
+      "city": "Luzern",
+      "countryCode": "CH",
+      "website": "https://www.luks.ch"
+    },
+    {
+      "name": "CPMA Centre médical de fertilité",
+      "city": "Lausanne",
+      "countryCode": "CH",
+      "website": "https://www.cpma.ch"
+    }
+  ]
+}

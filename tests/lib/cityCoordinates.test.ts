@@ -50,6 +50,16 @@ describe('lookupCityCoords', () => {
     expect(lookupCityCoords('Nice', 'FR')?.lat).toBeCloseTo(43.7102, 2);
   });
 
+  it('matches cities from the Task 3 directory packs (CH, IE)', () => {
+    expect(lookupCityCoords('Basel', 'CH')?.lat).toBeCloseTo(47.5596, 2);
+    expect(lookupCityCoords('Bern', 'CH')?.lat).toBeCloseTo(46.948, 2);
+    expect(lookupCityCoords('Zürich', 'CH')?.lat).toBeCloseTo(47.3769, 2);
+    expect(lookupCityCoords('Luzern', 'CH')?.lat).toBeCloseTo(47.0502, 2);
+    expect(lookupCityCoords('Lausanne', 'CH')?.lat).toBeCloseTo(46.5197, 2);
+    expect(lookupCityCoords('Dublin', 'IE')?.lat).toBeCloseTo(53.3498, 2);
+    expect(lookupCityCoords('Cork', 'IE')?.lat).toBeCloseTo(51.8985, 2);
+  });
+
   it('is case-insensitive and trims whitespace', () => {
     expect(lookupCityCoords('  berlin  ', 'DE')).toEqual({ lat: 52.52, lng: 13.405 });
     expect(lookupCityCoords('BERLIN', 'de')).toEqual({ lat: 52.52, lng: 13.405 });

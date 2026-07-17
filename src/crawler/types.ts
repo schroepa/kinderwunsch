@@ -25,7 +25,7 @@ export interface RawClinic {
   provenance?: ClinicProvenance;
 }
 
-export type SourceType = 'seed' | 'directory' | 'association' | 'clinic_site';
+export type SourceType = 'seed' | 'directory' | 'directory_pack' | 'association' | 'clinic_site';
 
 export interface SourceEntry {
   id: string;
