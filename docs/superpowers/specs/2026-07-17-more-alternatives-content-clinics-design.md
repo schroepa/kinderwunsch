@@ -143,11 +143,11 @@ Nutzer:innen können sich **in der App** zu Treatments, Kostenrahmen und Länder
 
 ### Acceptance criteria (Phase 2)
 
-- [ ] `/wissen` und mindestens 8 MDX-Seiten live.
-- [ ] Sitemap enthält Wissens-URLs; Meta/OG gesetzt.
-- [ ] Mindestens 3 Context-Links aus Tool → Wissen.
-- [ ] Medizinischer Disclaimer auf Wissensseiten.
-- [ ] Canonical/Site-URL auf die echte Vercel-Domain korrigiert.
+- [x] `/wissen` und mindestens 8 MDX-Seiten live.
+- [x] Sitemap enthält Wissens-URLs; Meta/OG gesetzt.
+- [x] Mindestens 3 Context-Links aus Tool → Wissen.
+- [x] Medizinischer Disclaimer auf Wissensseiten.
+- [x] Canonical/Site-URL auf die echte Vercel-Domain korrigiert.
 
 ### Messung (Phase 2)
 
@@ -215,5 +215,6 @@ Deutlich mehr Kliniken in EU; Nutzer:innen erkennen **kuratierte** vs. **Verzeic
 1. Exakte Legal-Regeln für AT/DK/NL/PT/IT/FR — erste Iteration konservativ (`restricted` bei Unsicherheit) vs. Recherche-Spike vor Coding?
 2. Production Custom Domain — festlegen bevor Phase-2-SEO hardcodiert wird.
 3. Wann Headless-CMS: nach Content-Product-Market-Fit (Traffic auf `/wissen`), nicht vorher.
+4. Map/mapcn (Geo-Marker, Routen): bewusst deferred — erst nach Phase-2-Wissen-Lieferung (Geo-Spike).
 
 **Default für Planung Phase 1:** konservative Legal-Defaults + kurze Rule-Kommentare; Feinschliff der Landesregeln als Follow-up-Tickets.
