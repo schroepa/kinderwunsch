@@ -3,12 +3,12 @@ import { Compass } from 'lucide-react';
 import type { UserData, RelationshipStatus, TreatmentType } from '../lib/types';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { Slider } from './ui/slider';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { TREATMENT_ORDER } from '../lib/treatments';
 import { TreatmentToggle } from './TreatmentToggle';
 import { AnimatedIcon } from './icons/AnimatedIcon';
+import { SliderField } from './SliderField';
 
 interface UserInputFormProps {
   onSubmit: (data: UserData) => void;
@@ -66,42 +66,34 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
         <form onSubmit={handleSubmit} className="space-y-10" noValidate>
           <fieldset className="space-y-6">
             <legend className="form-section-title mb-4 text-muted-foreground">Person & Rahmen</legend>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-6">
-              <div className="space-y-2">
-                <Label htmlFor={`${formId}-female-age`}>Alter der Frau</Label>
-                <Slider
-                  id={`${formId}-female-age`}
-                  min={20}
-                  max={55}
-                  step={1}
-                  value={[femaleAge]}
-                  onValueChange={(value) => setFemaleAge(value[0])}
-                  aria-valuetext={`${femaleAge} Jahre`}
-                  formatValue={(v) => `${v} J.`}
-                />
-                <div className="flex justify-between text-fluid-xs text-muted-foreground">
-                  <span className="data-geist">20</span>
-                  <span className="data-geist">55</span>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8">
+              <SliderField
+                id={`${formId}-female-age`}
+                label="Alter der Frau"
+                value={femaleAge}
+                onChange={setFemaleAge}
+                min={20}
+                max={55}
+                step={1}
+                formatValue={(v) => `${v} J.`}
+                ariaValueText={`${femaleAge} Jahre`}
+                minLabel="20"
+                maxLabel="55"
+              />
 
-              <div className="space-y-2">
-                <Label htmlFor={`${formId}-male-age`}>Alter des Mannes</Label>
-                <Slider
-                  id={`${formId}-male-age`}
-                  min={20}
-                  max={65}
-                  step={1}
-                  value={[maleAge]}
-                  onValueChange={(value) => setMaleAge(value[0])}
-                  aria-valuetext={`${maleAge} Jahre`}
-                  formatValue={(v) => `${v} J.`}
-                />
-                <div className="flex justify-between text-fluid-xs text-muted-foreground">
-                  <span className="data-geist">20</span>
-                  <span className="data-geist">65</span>
-                </div>
-              </div>
+              <SliderField
+                id={`${formId}-male-age`}
+                label="Alter des Mannes"
+                value={maleAge}
+                onChange={setMaleAge}
+                min={20}
+                max={65}
+                step={1}
+                formatValue={(v) => `${v} J.`}
+                ariaValueText={`${maleAge} Jahre`}
+                minLabel="20"
+                maxLabel="65"
+              />
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
@@ -141,23 +133,19 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor={`${formId}-budget`}>Budget</Label>
-              <Slider
-                id={`${formId}-budget`}
-                min={1000}
-                max={15000}
-                step={500}
-                value={[budget]}
-                onValueChange={(value) => setBudget(value[0])}
-                aria-valuetext={`${budget.toLocaleString('de-DE')} Euro`}
-                formatValue={(v) => `${v.toLocaleString('de-DE')} €`}
-              />
-              <div className="flex justify-between text-fluid-xs text-muted-foreground">
-                <span className="data-geist">1.000 €</span>
-                <span className="data-geist">15.000 €</span>
-              </div>
-            </div>
+            <SliderField
+              id={`${formId}-budget`}
+              label="Budget"
+              value={budget}
+              onChange={setBudget}
+              min={1000}
+              max={15000}
+              step={500}
+              formatValue={(v) => `${v.toLocaleString('de-DE')} €`}
+              ariaValueText={`${budget.toLocaleString('de-DE')} Euro`}
+              minLabel="1.000 €"
+              maxLabel="15.000 €"
+            />
           </fieldset>
 
           <fieldset className="space-y-3">
