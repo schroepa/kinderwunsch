@@ -28,7 +28,7 @@ Interaktive Web-App zur Suche nach geeigneten Kinderwunschbehandlungen und Klini
 
 ## Voraussetzungen
 
-- Node.js 18+ (20+ empfohlen)
+- Node.js **20.x** (von Vercel für Serverless Functions verlangt; in `package.json` → `engines` gesetzt)
 - npm oder pnpm
 
 ## Setup
