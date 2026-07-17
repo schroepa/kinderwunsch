@@ -110,6 +110,10 @@ export default function FertilityApp() {
               <p>
                 <a href="/kliniken" className="font-medium text-primary hover:underline">
                   Alle EU-Kliniken durchsuchen
+                </a>{' '}
+                ·{' '}
+                <a href="/wissen" className="font-medium text-primary hover:underline">
+                  Wissen: Behandlungen, Länder & Kosten
                 </a>
               </p>
             </div>

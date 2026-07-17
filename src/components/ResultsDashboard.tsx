@@ -16,6 +16,7 @@ import { getCountryRecommendations } from '../lib/countryLogic';
 import { countryIso } from '../lib/countryCodes';
 import { filterAndSortClinics } from '../lib/clinicRanking';
 import { loadClinics } from '../lib/loadClinics';
+import { countryGuidePath } from '../lib/wissen';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import { Button } from './ui/button';
@@ -84,6 +85,14 @@ function CountryCard({
                   </>
                 )}
               </CardDescription>
+              {countryGuidePath(country.id) && (
+                <a
+                  href={countryGuidePath(country.id)!}
+                  className="mt-1.5 inline-block text-fluid-xs font-medium text-primary hover:underline"
+                >
+                  Länder-Guide: Mehr zu {country.name}
+                </a>
+              )}
             </div>
           </div>
           <div className="sm:text-right">
@@ -254,7 +263,10 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
             <AlertDescription>
               Einige der empfohlenen Optionen überschreiten Ihr Budget von{' '}
               {userData.budget.toLocaleString('de-DE')} €. Bitte prüfen Sie die Kostenaufstellungen
-              sorgfältig.
+              sorgfältig.{' '}
+              <a href="/wissen/kosten" className="font-medium text-primary hover:underline">
+                Kosten-Guide lesen
+              </a>
             </AlertDescription>
           </div>
         </Alert>

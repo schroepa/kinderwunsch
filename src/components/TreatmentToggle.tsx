@@ -1,8 +1,9 @@
-import { useId } from 'react';
+import { useId, type KeyboardEvent, type MouseEvent } from 'react';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { TreatmentType } from '@/lib/types';
 import { TREATMENT_INFO } from '@/lib/treatments';
+import { treatmentGuidePath } from '@/lib/wissen';
 
 export function TreatmentToggle({
   treatment,
@@ -23,15 +24,27 @@ export function TreatmentToggle({
   const title = label ?? info.label;
   const hint = description ?? info.description;
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === ' ' || event.key === 'Enter') {
+      event.preventDefault();
+      onChange();
+    }
+  };
+
+  const stopToggle = (event: MouseEvent) => {
+    event.stopPropagation();
+  };
+
   return (
-    <button
-      type="button"
+    <div
       role="checkbox"
       aria-checked={checked}
       aria-describedby={descId}
+      tabIndex={0}
       onClick={onChange}
+      onKeyDown={handleKeyDown}
       className={cn(
-        'flex min-h-11 w-full items-start gap-3 rounded-xl border px-3.5 py-3 text-left transition-geist',
+        'flex min-h-11 w-full cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-3 text-left transition-geist',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
         checked
           ? 'border-primary/30 bg-primary/8 text-foreground shadow-soft'
@@ -52,9 +65,16 @@ export function TreatmentToggle({
       <span className="min-w-0 flex-1 space-y-1">
         <span className="block text-fluid-sm font-medium leading-snug">{title}</span>
         <span id={descId} className="block text-fluid-xs leading-relaxed text-muted-foreground">
-          {hint}
+          {hint}{' '}
+          <a
+            href={treatmentGuidePath(treatment)}
+            onClick={stopToggle}
+            className="font-medium text-primary hover:underline"
+          >
+            Mehr erfahren
+          </a>
         </span>
       </span>
-    </button>
+    </div>
   );
 }

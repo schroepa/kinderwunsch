@@ -73,12 +73,17 @@ export default function ClinicsDirectoryPage() {
       <ThemeToggle />
       <div className="relative mx-auto w-full min-w-0 max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pb-24 sm:pt-8 lg:px-8">
         <header className="mb-8 max-w-3xl animate-fade-up sm:mb-10">
-          <Button asChild variant="ghost" size="sm" className="-ml-2 mb-4 min-h-10">
-            <a href="/">
-              <ArrowLeft className="h-4 w-4" aria-hidden />
-              Zurück zum Finder
-            </a>
-          </Button>
+          <div className="-ml-2 mb-4 flex flex-wrap items-center gap-2">
+            <Button asChild variant="ghost" size="sm" className="min-h-10">
+              <a href="/">
+                <ArrowLeft className="h-4 w-4" aria-hidden />
+                Zurück zum Finder
+              </a>
+            </Button>
+            <Button asChild variant="ghost" size="sm" className="min-h-10">
+              <a href="/wissen">Wissen: Guides zu Behandlungen & Ländern</a>
+            </Button>
+          </div>
           <p className="label-geist mb-3 text-primary">EU-Übersicht</p>
           <h1 className="text-fluid-3xl font-semibold tracking-tight text-foreground sm:text-fluid-display">
             Kliniken in Europa
