@@ -92,13 +92,13 @@ Nach „Empfehlungen anzeigen“ sieht die Nutzer:in klar priorisierte Optionen 
 
 ### Acceptance criteria (Phase 1)
 
-- [ ] Mindestens die heutigen 5 plus AT/DK/NL/PT/IT/FR sind im Scoring modelliert (Legal + Score + Kostenheuristik).
-- [ ] Bei typischer Eingabe erscheinen Top 3; „Weitere Alternativen“ zeigt ≥1 weiteren legalen Treffer, wenn vorhanden.
-- [ ] Forbidden-Länder erscheinen nicht; Restricted sind gekennzeichnet.
-- [ ] Aufgeklapptes Land filtert Kliniken nach Treatments (mit dokumentiertem Fallback).
-- [ ] Kliniken sind sortiert; UI zeigt Top 3 + „Weitere Kliniken“.
-- [ ] `/kliniken?country=…` filtert auf das Land.
-- [ ] Unit-Tests für Scoring-Erweiterung und Klinik-Sort/Filter.
+- [x] Mindestens die heutigen 5 plus AT/DK/NL/PT/IT/FR sind im Scoring modelliert (Legal + Score + Kostenheuristik).
+- [x] Bei typischer Eingabe erscheinen Top 3; „Weitere Alternativen“ zeigt ≥1 weiteren legalen Treffer, wenn vorhanden.
+- [x] Forbidden-Länder erscheinen nicht; Restricted sind gekennzeichnet.
+- [x] Aufgeklapptes Land filtert Kliniken nach Treatments (mit dokumentiertem Fallback).
+- [x] Kliniken sind sortiert; UI zeigt Top 3 + „Weitere Kliniken“.
+- [x] `/kliniken?country=…` filtert auf das Land.
+- [x] Unit-Tests für Scoring-Erweiterung und Klinik-Sort/Filter.
 
 ### Messung (Phase 1)
 
