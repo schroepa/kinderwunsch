@@ -19,7 +19,7 @@ const { Content } = await entry.render();
 const canonicalPath = `/wissen/${entry.slug}`;
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': entry.data.category === 'faq' ? 'FAQPage' : 'MedicalWebPage',
+  '@type': 'MedicalWebPage',
   name: entry.data.title,
   description: entry.data.description,
   dateModified: entry.data.updatedAt.toISOString(),

@@ -5,7 +5,6 @@ import type { UserData } from '../lib/types';
 import { AnimatedDrawIcon } from './icons/AnimatedIcon';
 import UserInputForm from './UserInputForm';
 import ResultsDashboard from './ResultsDashboard';
-import { ThemeToggle } from './ThemeToggle';
 import { Button } from './ui/button';
 
 export default function FertilityApp() {
@@ -32,8 +31,6 @@ export default function FertilityApp() {
 
   return (
     <div className="app-atmosphere min-h-dvh">
-      <ThemeToggle />
-
       <div className="relative mx-auto w-full min-w-0 max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pb-24 sm:pt-8 lg:px-8">
         {!showResults ? (
           <>

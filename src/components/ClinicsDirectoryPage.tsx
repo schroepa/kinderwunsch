@@ -3,7 +3,6 @@ import { ArrowLeft, Globe, Loader2, Search } from 'lucide-react';
 import type { Clinic } from '../lib/types';
 import { loadClinics } from '../lib/loadClinics';
 import { ClinicCard } from './ClinicCard';
-import { ThemeToggle } from './ThemeToggle';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
@@ -70,7 +69,6 @@ export default function ClinicsDirectoryPage() {
 
   return (
     <div className="app-atmosphere min-h-dvh">
-      <ThemeToggle />
       <div className="relative mx-auto w-full min-w-0 max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pb-24 sm:pt-8 lg:px-8">
         <header className="mb-8 max-w-3xl animate-fade-up sm:mb-10">
           <div className="-ml-2 mb-4 flex flex-wrap items-center gap-2">
