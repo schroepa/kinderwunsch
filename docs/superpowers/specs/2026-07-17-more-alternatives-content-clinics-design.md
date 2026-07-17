@@ -158,17 +158,20 @@ Nutzer:innen können sich **in der App** zu Treatments, Kostenrahmen und Länder
 
 ## Phase 3 — Klinikvolumen (Hybrid)
 
+**Detailed design:** `docs/superpowers/specs/2026-07-18-phase3-clinic-volume-hybrid-design.md`  
+**Implementation plan:** `docs/superpowers/plans/2026-07-18-phase3-clinic-volume-hybrid.md`
+
 ### Outcome
 
 Deutlich mehr Kliniken in EU; Nutzer:innen erkennen **kuratierte** vs. **Verzeichnis**-Einträge und fehlende Felder.
 
 ### Approach
 
-- Seed bleibt Trusted-Core (handgepflegt, vollständigere Felder).
-- `sources.json`: Directory-/Association-Quellen aktivieren (Allowlist only); bestehende Crawler-Architektur (`docs/superpowers/specs/2026-07-16-clinic-crawler-design.md`) nutzen.
-- Modell-Erweiterung (inkrementell): sichtbare `languages`, optional Kontakt, erweiterte Kosten; fehlende Felder UI-seitig als unvollständig.
-- Badges: **Kuratiert** (Seed/trusted) vs. **Aus Verzeichnis**; `stale` weiter anzeigen.
-- Deduplizierung und Qualitätsregeln wie im Crawler-Design; keine offenen Crawls.
+- Seed bleibt Trusted-Core (handgepflegt, vollständigere Felder); parallel auf ~50–60 Einträge ausbauen.
+- `sources.json`: Directory-/Association-Quellen aktivieren (Allowlist only); bestehende Crawler-Architektur (`docs/superpowers/specs/2026-07-16-clinic-crawler-design.md`) nutzen; bei unscrapbaren Listen: datierte Static Directory Packs.
+- Feld `provenance`: `curated` | `directory` | `association`; Dedup bevorzugt kuratierte Felder.
+- Badges: **Kuratiert** vs. **Aus Verzeichnis**; `stale` weiter anzeigen.
+- Keine offenen Crawls; keine erfundenen Kosten/Bewertungen.
 
 ### Out of scope (Phase 3)
 
@@ -182,6 +185,7 @@ Deutlich mehr Kliniken in EU; Nutzer:innen erkennen **kuratierte** vs. **Verzeic
 - [ ] Badges Kuratiert / Verzeichnis in Card + Directory.
 - [ ] Unvollständige Einträge erkennbar; Enrichment-Fehler erhöhen nicht „fake completeness“.
 - [ ] Crawl-Meta/Stats weiterhin nachvollziehbar.
+- [ ] Spec + Plan: `2026-07-18-phase3-clinic-volume-hybrid-*`
 
 ### Messung (Phase 3)
 
