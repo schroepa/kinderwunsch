@@ -65,7 +65,6 @@ const currentPath = canonicalPath === '/' ? '/' : canonicalPath.replace(/\/$/, '
   </head>
   <body>
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
-    {showThemeToggle && <ThemeToggle client:load />}
     <header class="relative z-30 border-b border-border/60 bg-background/70 backdrop-blur-sm">
       <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <a
@@ -74,17 +73,20 @@ const currentPath = canonicalPath === '/' ? '/' : canonicalPath.replace(/\/$/, '
         >
           Kinderwunsch-Finder
         </a>
-        <nav aria-label="Hauptnavigation" class="flex items-center gap-5">
-          {navLinks.map((link) => (
-            <a
-              href={link.href}
-              class="text-fluid-sm font-medium text-foreground/70 transition-geist hover:text-primary aria-[current=page]:text-primary"
-              aria-current={currentPath === link.href ? 'page' : undefined}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <div class="flex items-center gap-4 sm:gap-5">
+          <nav aria-label="Hauptnavigation" class="flex items-center gap-5">
+            {navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="text-fluid-sm font-medium text-foreground/70 transition-geist hover:text-primary aria-[current=page]:text-primary"
+                aria-current={currentPath === link.href ? 'page' : undefined}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          {showThemeToggle && <ThemeToggle client:load variant="inline" />}
+        </div>
       </div>
     </header>
     <main id="main">

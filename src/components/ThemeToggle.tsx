@@ -4,7 +4,15 @@ import { applyTheme, getResolvedTheme, setTheme, type Theme } from '@/lib/theme'
 import { Button } from './ui/button';
 import { AnimatedIcon } from './icons/AnimatedIcon';
 
-export function ThemeToggle() {
+type ThemeToggleVariant = 'fixed' | 'inline';
+
+const variantClasses: Record<ThemeToggleVariant, string> = {
+  fixed: 'fixed right-4 top-4 z-50 shadow-card sm:right-6 sm:top-6',
+  inline: 'shrink-0',
+};
+
+export function ThemeToggle({ variant = 'fixed' }: { variant?: ThemeToggleVariant }) {
+  const className = variantClasses[variant];
   const [theme, setThemeState] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
@@ -26,7 +34,7 @@ export function ThemeToggle() {
       <Button
         variant="secondary"
         size="icon"
-        className="fixed right-4 top-4 z-50 sm:right-6 sm:top-6"
+        className={className}
         aria-label="Design umschalten"
         disabled
       >
@@ -41,7 +49,7 @@ export function ThemeToggle() {
     <Button
       variant="secondary"
       size="icon"
-      className="fixed right-4 top-4 z-50 shadow-card sm:right-6 sm:top-6"
+      className={className}
       onClick={handleToggle}
       aria-label={isDark ? 'Hellmodus aktivieren' : 'Dunkelmodus aktivieren'}
     >
