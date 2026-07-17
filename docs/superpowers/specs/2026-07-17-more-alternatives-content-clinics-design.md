@@ -215,6 +215,6 @@ Deutlich mehr Kliniken in EU; Nutzer:innen erkennen **kuratierte** vs. **Verzeic
 1. Exakte Legal-Regeln für AT/DK/NL/PT/IT/FR — erste Iteration konservativ (`restricted` bei Unsicherheit) vs. Recherche-Spike vor Coding?
 2. Production Custom Domain — festlegen bevor Phase-2-SEO hardcodiert wird.
 3. Wann Headless-CMS: nach Content-Product-Market-Fit (Traffic auf `/wissen`), nicht vorher.
-4. Map/mapcn (Geo-Marker, Routen): bewusst deferred — erst nach Phase-2-Wissen-Lieferung (Geo-Spike).
+4. Map/mapcn: Spike-Plan `docs/superpowers/plans/2026-07-17-map-spike-clinic-markers.md` — Marker auf `/kliniken` zuerst; MapRoute/OSRM später.
 
 **Default für Planung Phase 1:** konservative Legal-Defaults + kurze Rule-Kommentare; Feinschliff der Landesregeln als Follow-up-Tickets.
