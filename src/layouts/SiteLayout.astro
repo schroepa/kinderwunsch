@@ -1,7 +1,7 @@
 ---
 import '../styles/globals.css';
 import { SITE_ORIGIN } from '../lib/wissen';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { SiteHeader } from '../components/SiteHeader';
 
 export interface Props {
   title: string;
@@ -15,13 +15,6 @@ export interface Props {
 const { title, description, canonicalPath, jsonLd, keywords, showThemeToggle = true } = Astro.props;
 
 const canonicalUrl = `${SITE_ORIGIN}${canonicalPath}`;
-
-const navLinks = [
-  { href: '/', label: 'Finder' },
-  { href: '/kliniken', label: 'Kliniken' },
-  { href: '/wissen', label: 'Wissen' },
-];
-
 const currentPath = canonicalPath === '/' ? '/' : canonicalPath.replace(/\/$/, '');
 ---
 
@@ -32,7 +25,7 @@ const currentPath = canonicalPath === '/' ? '/' : canonicalPath.replace(/\/$/, '
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
-    <meta name="author" content="Kinderwunsch-Finder" />
+    <meta name="author" content="Roser" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
@@ -53,7 +46,7 @@ const currentPath = canonicalPath === '/' ? '/' : canonicalPath.replace(/\/$/, '
     )}
     <script is:inline>
       (function () {
-        var stored = localStorage.getItem('kinderwunsch-theme');
+        var stored = localStorage.getItem('roser-theme') || localStorage.getItem('kinderwunsch-theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var theme = stored === 'dark' || stored === 'light' ? stored : prefersDark ? 'dark' : 'light';
         if (theme === 'dark') {
@@ -65,30 +58,7 @@ const currentPath = canonicalPath === '/' ? '/' : canonicalPath.replace(/\/$/, '
   </head>
   <body>
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
-    <header class="relative z-30 border-b border-border/60 bg-background/70 backdrop-blur-sm">
-      <div class="mx-auto flex min-w-0 max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:gap-2.5 sm:px-6 lg:px-8">
-        <a
-          href="/"
-          class="min-w-0 truncate max-w-[9rem] label-geist text-foreground/80 transition-geist hover:text-primary sm:max-w-none"
-        >
-          Kinderwunsch-Finder
-        </a>
-        <div class="flex shrink-0 items-center gap-2 sm:gap-2.5">
-          <nav aria-label="Hauptnavigation" class="flex shrink-0 items-center gap-2 sm:gap-2.5">
-            {navLinks.map((link) => (
-              <a
-                href={link.href}
-                class="text-fluid-sm font-medium text-foreground/70 transition-geist hover:text-primary aria-[current=page]:text-primary"
-                aria-current={currentPath === link.href ? 'page' : undefined}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          {showThemeToggle && <ThemeToggle client:load variant="inline" />}
-        </div>
-      </div>
-    </header>
+    <SiteHeader client:load currentPath={currentPath} showThemeToggle={showThemeToggle} />
     <main id="main">
       <slot />
     </main>

@@ -1,6 +1,8 @@
-# Kinderwunsch-Finder
+# Roser
 
 Interaktive Web-App zur Suche nach geeigneten Kinderwunschbehandlungen und Kliniken in Europa. Nutzer geben Alter, Beziehungsstatus, Wohnort, Budget und gewünschte Behandlungen ein und erhalten priorisierte Länderempfehlungen sowie Klinikdaten.
+
+**Marke:** Roser — Logo-Mark (Rosenknospe) + Wortmarke in Geist Sans.
 
 ## Funktionen
 
@@ -71,7 +73,7 @@ Die Klinik-API nutzt stale-while-revalidate und begrenzt Crawl-Zyklen (u. a. max
 ## Design und Themes
 
 - Richtung: nordisch-klinisch (kühler Mist, tiefes Teal, Grain-Atmosphäre)
-- Marken-Hero mit Wordmark „Kinderwunsch / Finder“
+- Marken-Hero mit Logo-Mark und Wortmarke „Roser“ (Geist Sans)
 - Fonts: Geist Sans und Geist Mono unter `public/fonts/`
 - Dark Mode: Systempräferenz, Toggle, flash-freies Inline-Script
 - Utility-Klassen: `.label-geist`, `.data-geist`, `.app-atmosphere`, `.brand-wordmark`

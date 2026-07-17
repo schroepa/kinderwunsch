@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, Globe, Loader2, Search } from 'lucide-react';
-import type { Clinic } from '../lib/types';
+import type { Clinic, TreatmentType } from '../lib/types';
+import { matchesClinicFilters, PRICE_FILTER_OPTIONS } from '../lib/clinicFilters';
 import { loadClinics } from '../lib/loadClinics';
+import { TREATMENT_INFO, TREATMENT_ORDER } from '../lib/treatments';
 import { ClinicCard } from './ClinicCard';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -28,6 +30,8 @@ export default function ClinicsDirectoryPage() {
   const [refreshing, setRefreshing] = useState(false);
   const [q, setQ] = useState('');
   const [country, setCountry] = useState('all');
+  const [treatment, setTreatment] = useState<'all' | TreatmentType>('all');
+  const [maxPriceKey, setMaxPriceKey] = useState('all');
 
   useEffect(() => {
     const param = new URLSearchParams(window.location.search).get('country');
@@ -58,14 +62,24 @@ export default function ClinicsDirectoryPage() {
     [clinics],
   );
 
-  const filtered = useMemo(() => {
-    const query = q.trim().toLowerCase();
-    return clinics.filter((c) => {
-      if (country !== 'all' && c.countryCode !== country) return false;
-      if (!query) return true;
-      return `${c.name} ${c.city} ${c.countryCode}`.toLowerCase().includes(query);
-    });
-  }, [clinics, country, q]);
+  const maxPrice =
+    PRICE_FILTER_OPTIONS.find((option) => option.value === maxPriceKey)?.max ?? null;
+
+  const filtered = useMemo(
+    () =>
+      clinics.filter((c) =>
+        matchesClinicFilters(c, {
+          country,
+          treatment,
+          maxPrice,
+          query: q,
+        }),
+      ),
+    [clinics, country, treatment, maxPrice, q],
+  );
+
+  const filtersActive =
+    country !== 'all' || treatment !== 'all' || maxPriceKey !== 'all' || q.trim() !== '';
 
   return (
     <div className="app-atmosphere min-h-dvh">
@@ -87,8 +101,8 @@ export default function ClinicsDirectoryPage() {
             Kliniken in Europa
           </h1>
           <p className="measure mt-4 text-fluid-lg leading-relaxed text-muted-foreground">
-            Durchsuchen Sie die Klinikdatenbank nach Name, Stadt oder Land. Angaben ohne Gewähr —
-            bitte vor Ort und mit der Klinik bestätigen.
+            Filtern Sie nach Land, Behandlung und Preis — oder suchen Sie nach Name und Stadt.
+            Angaben ohne Gewähr; bitte vor Ort und mit der Klinik bestätigen.
           </p>
           <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-fluid-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5">
@@ -99,7 +113,7 @@ export default function ClinicsDirectoryPage() {
             <span aria-hidden>·</span>
             <span>
               <span className="data-geist text-foreground">{filtered.length}</span>
-              {filtered.length === 1 ? ' Treffer' : ' Treffer'}
+              {' Treffer'}
               {!loading && clinics.length > 0 && filtered.length !== clinics.length && (
                 <span className="text-muted-foreground"> von {clinics.length}</span>
               )}
@@ -117,8 +131,8 @@ export default function ClinicsDirectoryPage() {
           className="animate-fade-up sticky top-0 z-20 mb-6 border-b border-border/60 bg-background/85 py-4 backdrop-blur-md lg:rounded-2xl lg:border lg:px-5"
           style={{ animationDelay: '60ms' }}
         >
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <div className="relative flex-1">
+          <div className="flex flex-col gap-3">
+            <div className="relative w-full">
               <label htmlFor="clinic-search" className="sr-only">
                 Klinik oder Stadt suchen
               </label>
@@ -135,24 +149,89 @@ export default function ClinicsDirectoryPage() {
                 autoComplete="off"
               />
             </div>
-            <div className="w-full sm:w-52">
-              <label htmlFor="clinic-country" className="sr-only">
-                Nach Land filtern
-              </label>
-              <Select value={country} onValueChange={setCountry}>
-                <SelectTrigger id="clinic-country" className="min-h-11 w-full">
-                  <SelectValue placeholder="Land" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Alle Länder</SelectItem>
-                  {countries.map((code) => (
-                    <SelectItem key={code} value={code}>
-                      {COUNTRY_NAMES[code] ?? code} ({code})
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <div>
+                <label htmlFor="clinic-country" className="sr-only">
+                  Nach Land filtern
+                </label>
+                <Select value={country} onValueChange={setCountry}>
+                  <SelectTrigger id="clinic-country" className="min-h-11 w-full">
+                    <SelectValue placeholder="Land" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Alle Länder</SelectItem>
+                    {countries.map((code) => (
+                      <SelectItem key={code} value={code}>
+                        {COUNTRY_NAMES[code] ?? code} ({code})
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <label htmlFor="clinic-treatment" className="sr-only">
+                  Nach Behandlung filtern
+                </label>
+                <Select
+                  value={treatment}
+                  onValueChange={(value) => setTreatment(value as 'all' | TreatmentType)}
+                >
+                  <SelectTrigger id="clinic-treatment" className="min-h-11 w-full">
+                    <SelectValue placeholder="Behandlung" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Alle Behandlungen</SelectItem>
+                    {TREATMENT_ORDER.map((type) => {
+                      const info = TREATMENT_INFO[type];
+                      const label =
+                        info.shortLabel === info.methodName
+                          ? info.methodName
+                          : `${info.shortLabel} — ${info.methodName}`;
+                      return (
+                        <SelectItem key={type} value={type}>
+                          {label}
+                        </SelectItem>
+                      );
+                    })}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <label htmlFor="clinic-price" className="sr-only">
+                  Nach Preis filtern
+                </label>
+                <Select value={maxPriceKey} onValueChange={setMaxPriceKey}>
+                  <SelectTrigger id="clinic-price" className="min-h-11 w-full">
+                    <SelectValue placeholder="Preis" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {PRICE_FILTER_OPTIONS.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
+            {filtersActive && (
+              <div className="flex justify-end">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="min-h-10"
+                  onClick={() => {
+                    setQ('');
+                    setCountry('all');
+                    setTreatment('all');
+                    setMaxPriceKey('all');
+                  }}
+                >
+                  Filter zurücksetzen
+                </Button>
+              </div>
+            )}
           </div>
         </div>
 
@@ -167,7 +246,7 @@ export default function ClinicsDirectoryPage() {
               Keine Kliniken gefunden. Passen Sie Filter oder Suchbegriff an.
             </p>
           ) : (
-            <ul className="grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+            <ul className="flex list-none flex-col gap-4 p-0">
               {filtered.map((c) => (
                 <li key={c.id}>
                   <ClinicCard clinic={c} standLabel={standLabel} />

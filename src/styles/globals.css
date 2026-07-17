@@ -267,9 +267,10 @@
   }
 
   .brand-wordmark {
+    font-family: var(--font-sans);
     font-size: var(--text-display);
     line-height: 0.92;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.045em;
     font-weight: 650;
     color: hsl(var(--ink));
     max-width: 100%;

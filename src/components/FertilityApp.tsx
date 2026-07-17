@@ -3,6 +3,7 @@ import { ArrowDown, ArrowLeft } from 'lucide-react';
 import { loadClinics, shouldPrefetchOnMount } from '../lib/loadClinics';
 import type { UserData } from '../lib/types';
 import { AnimatedDrawIcon } from './icons/AnimatedIcon';
+import { RoserLogo } from './RoserLogo';
 import UserInputForm from './UserInputForm';
 import ResultsDashboard from './ResultsDashboard';
 import { Button } from './ui/button';
@@ -37,10 +38,8 @@ export default function FertilityApp() {
             <header className="relative mb-10 max-w-2xl pt-6 sm:mb-14 sm:pt-10 lg:mb-16">
               <div className="animate-fade-up brand-lockup">
                 <p className="label-geist mb-5 text-primary">IVF · ICSI · Europa</p>
-                <h1 className="brand-wordmark">
-                  Kinderwunsch
-                  <br />
-                  <em>Finder</em>
+                <h1>
+                  <RoserLogo size="hero" />
                 </h1>
                 <p className="measure mt-6 text-fluid-lg leading-relaxed text-muted-foreground">
                   Passende Länder und Kliniken — basierend auf Alter, Status, Budget und gewünschter
@@ -114,9 +113,7 @@ export default function FertilityApp() {
                 </a>
               </p>
             </div>
-            <p className="data-geist text-fluid-xs text-muted-foreground sm:text-right">
-              Kinderwunsch-Finder
-            </p>
+            <p className="data-geist text-fluid-xs text-muted-foreground sm:text-right">Roser</p>
           </div>
         </footer>
       </div>

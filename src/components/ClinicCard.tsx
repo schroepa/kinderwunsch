@@ -5,7 +5,9 @@ import { AnimatedIcon } from './icons/AnimatedIcon';
 
 function specialtyLabel(code: string): string {
   const info = TREATMENT_INFO[code as TreatmentType];
-  return info?.shortLabel ?? code;
+  if (!info) return code;
+  if (info.shortLabel === info.methodName) return info.methodName;
+  return `${info.shortLabel} — ${info.methodName}`;
 }
 
 export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?: string }) {
@@ -64,10 +66,38 @@ export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?
       )}
 
       {clinic.approximateCost ? (
-        <div className="data-geist text-fluid-xs text-muted-foreground">
-          IVF: ~{clinic.approximateCost.ivf.toLocaleString('de-DE')} € · ICSI: ~
-          {clinic.approximateCost.icsi.toLocaleString('de-DE')} €
-        </div>
+        <ul className="data-geist space-y-1 text-fluid-xs text-muted-foreground">
+          <li>
+            <span className="font-medium text-foreground/80">{TREATMENT_INFO.ivf.shortLabel}</span>
+            {' — '}
+            {TREATMENT_INFO.ivf.methodName}: ~{clinic.approximateCost.ivf.toLocaleString('de-DE')} €
+          </li>
+          <li>
+            <span className="font-medium text-foreground/80">{TREATMENT_INFO.icsi.shortLabel}</span>
+            {' — '}
+            {TREATMENT_INFO.icsi.methodName}: ~{clinic.approximateCost.icsi.toLocaleString('de-DE')} €
+          </li>
+          {clinic.approximateCost.eggDonation != null && (
+            <li>
+              <span className="font-medium text-foreground/80">
+                {TREATMENT_INFO['egg-donation'].shortLabel}
+              </span>
+              {' — '}
+              {TREATMENT_INFO['egg-donation'].methodName}: ~
+              {clinic.approximateCost.eggDonation.toLocaleString('de-DE')} €
+            </li>
+          )}
+          {clinic.approximateCost.spermDonation != null && (
+            <li>
+              <span className="font-medium text-foreground/80">
+                {TREATMENT_INFO['sperm-donation'].shortLabel}
+              </span>
+              {' — '}
+              {TREATMENT_INFO['sperm-donation'].methodName}: ~
+              {clinic.approximateCost.spermDonation.toLocaleString('de-DE')} €
+            </li>
+          )}
+        </ul>
       ) : (
         <div className="text-fluid-xs text-muted-foreground">Kosten: k. A.</div>
       )}

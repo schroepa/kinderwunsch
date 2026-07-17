@@ -41,4 +41,4 @@ export const INCREMENTAL_BATCH_SIZE = 5;
 export const CRAWL_TTL_MS = 24 * 60 * 60 * 1000;
 export const FETCH_TIMEOUT_MS = 12_000;
 export const CRAWLER_USER_AGENT =
-  'KinderwunschFinderBot/1.0 (+https://github.com/schroepa/kinderwunsch; clinic-data-refresh)';
+  'RoserBot/1.0 (+https://github.com/schroepa/kinderwunsch; clinic-data-refresh)';

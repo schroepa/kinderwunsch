@@ -1,6 +1,7 @@
 export type Theme = 'light' | 'dark';
 
-const STORAGE_KEY = 'kinderwunsch-theme';
+const STORAGE_KEY = 'roser-theme';
+const LEGACY_STORAGE_KEY = 'kinderwunsch-theme';
 
 const THEME_COLORS: Record<Theme, string> = {
   light: '#f4f8fa',
@@ -9,7 +10,7 @@ const THEME_COLORS: Record<Theme, string> = {
 
 export function getStoredTheme(): Theme | null {
   if (typeof localStorage === 'undefined') return null;
-  const value = localStorage.getItem(STORAGE_KEY);
+  const value = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY);
   return value === 'light' || value === 'dark' ? value : null;
 }
 
