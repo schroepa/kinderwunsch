@@ -139,6 +139,7 @@ Nutzer:innen können sich **in der App** zu Treatments, Kostenrahmen und Länder
 - Sanity/Contentful/Live-Preview
 - Autoren-Accounts, Kommentare
 - KI-generierte ungeprüfte Medizintexte ohne redaktionelle Freigabe
+- Map/mapcn (Marker oder Routes) — bewusst **nach** Phase 2 (Entscheidung 2026-07-17: zuerst Wissen, dann Geo-Spike)
 
 ### Acceptance criteria (Phase 2)
 
