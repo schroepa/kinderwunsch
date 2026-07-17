@@ -1,10 +1,11 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
+import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
-  site: 'https://schroepa-kinderwunsch.vercel.app',
+  site: 'https://roser.vercel.app',
   output: 'hybrid',
   adapter: vercel(),
   integrations: [
@@ -12,5 +13,6 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
+    mdx(),
   ],
 });

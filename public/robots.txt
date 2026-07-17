@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://schroepa-kinderwunsch.vercel.app/sitemap.xml
+Sitemap: https://roser.vercel.app/sitemap.xml
