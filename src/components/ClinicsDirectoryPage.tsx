@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
-import { ArrowLeft, Globe, Loader2, Search } from 'lucide-react';
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
+import { ArrowLeft, Globe, List, Loader2, Map as MapIcon, Search } from 'lucide-react';
 import type { Clinic, TreatmentType } from '../lib/types';
 import { matchesClinicFilters, PRICE_FILTER_OPTIONS } from '../lib/clinicFilters';
 import { loadClinics } from '../lib/loadClinics';
@@ -8,6 +8,14 @@ import { ClinicCard } from './ClinicCard';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+
+// maplibre-gl is heavy and only needed for the map view — keep it out of the
+// initial bundle so the default list view never pays for it.
+const ClinicsMap = lazy(() =>
+  import('./ClinicsMap').then((mod) => ({ default: mod.ClinicsMap })),
+);
+
+type DirectoryView = 'list' | 'map';
 
 const COUNTRY_NAMES: Record<string, string> = {
   DE: 'Deutschland',
@@ -32,6 +40,7 @@ export default function ClinicsDirectoryPage() {
   const [country, setCountry] = useState('all');
   const [treatment, setTreatment] = useState<'all' | TreatmentType>('all');
   const [maxPriceKey, setMaxPriceKey] = useState('all');
+  const [view, setView] = useState<DirectoryView>('list');
 
   useEffect(() => {
     const param = new URLSearchParams(window.location.search).get('country');
@@ -132,22 +141,52 @@ export default function ClinicsDirectoryPage() {
           style={{ animationDelay: '60ms' }}
         >
           <div className="flex flex-col gap-3">
-            <div className="relative w-full">
-              <label htmlFor="clinic-search" className="sr-only">
-                Klinik oder Stadt suchen
-              </label>
-              <Search
-                className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-                aria-hidden
-              />
-              <Input
-                id="clinic-search"
-                className="min-h-11 pl-10"
-                placeholder="Name oder Stadt…"
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                autoComplete="off"
-              />
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="relative flex-1">
+                <label htmlFor="clinic-search" className="sr-only">
+                  Klinik oder Stadt suchen
+                </label>
+                <Search
+                  className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+                  aria-hidden
+                />
+                <Input
+                  id="clinic-search"
+                  className="min-h-11 pl-10"
+                  placeholder="Name oder Stadt…"
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  autoComplete="off"
+                />
+              </div>
+              <div
+                role="group"
+                aria-label="Ansicht wählen"
+                className="flex shrink-0 gap-1.5 self-start sm:self-auto"
+              >
+                <Button
+                  type="button"
+                  variant={view === 'list' ? 'default' : 'outline'}
+                  size="default"
+                  aria-pressed={view === 'list'}
+                  className="min-h-11"
+                  onClick={() => setView('list')}
+                >
+                  <List className="h-4 w-4" aria-hidden />
+                  Liste
+                </Button>
+                <Button
+                  type="button"
+                  variant={view === 'map' ? 'default' : 'outline'}
+                  size="default"
+                  aria-pressed={view === 'map'}
+                  className="min-h-11"
+                  onClick={() => setView('map')}
+                >
+                  <MapIcon className="h-4 w-4" aria-hidden />
+                  Karte
+                </Button>
+              </div>
             </div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               <div>
@@ -245,6 +284,16 @@ export default function ClinicsDirectoryPage() {
             <p className="py-16 text-center text-fluid-sm text-muted-foreground">
               Keine Kliniken gefunden. Passen Sie Filter oder Suchbegriff an.
             </p>
+          ) : view === 'map' ? (
+            <Suspense
+              fallback={
+                <div className="flex h-[min(70vh,520px)] min-h-[420px] items-center justify-center text-fluid-xs text-muted-foreground">
+                  Karte wird geladen…
+                </div>
+              }
+            >
+              <ClinicsMap clinics={filtered} />
+            </Suspense>
           ) : (
             <ul className="flex list-none flex-col gap-4 p-0">
               {filtered.map((c) => (

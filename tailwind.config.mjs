@@ -2,6 +2,10 @@
 export default {
   darkMode: ['class'],
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  // MapLibre injects these class names into the DOM at runtime (never typed
+  // literally in our source), so the content scanner can't see them — without
+  // this safelist entry the @layer base overrides in globals.css get purged.
+  safelist: ['maplibregl-popup-content', 'maplibregl-popup-tip'],
   theme: {
     container: {
       center: true,

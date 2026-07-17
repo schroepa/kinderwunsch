@@ -16,6 +16,8 @@ export async function loadSeedSource(entry: SourceEntry, projectRoot: string): P
     approximateCost: c.approximateCost,
     description: c.description,
     languages: c.languages,
+    lat: c.lat,
+    lng: c.lng,
     source: 'directory' as const,
     sourceUrl: entry.path!,
   }));

@@ -1,4 +1,9 @@
+import { attachClinicCoords } from './attachClinicCoords';
 import type { ClinicsApiResponse } from './types';
+
+function withCoords(data: ClinicsApiResponse): ClinicsApiResponse {
+  return { ...data, clinics: attachClinicCoords(data.clinics) };
+}
 
 const CHECKED_KEY = 'clinicsCheckedAt';
 const SESSION_KEY = 'clinicsSessionLoaded';
@@ -12,7 +17,7 @@ export async function loadClinics(options?: { force?: boolean }): Promise<Clinic
     const checked = Number(localStorage.getItem(CHECKED_KEY) ?? '0');
     if (checked && now - checked < DAY_MS) {
       const cached = sessionStorage.getItem('clinicsPayload');
-      if (cached) return JSON.parse(cached) as ClinicsApiResponse;
+      if (cached) return withCoords(JSON.parse(cached) as ClinicsApiResponse);
     }
   }
 
@@ -20,7 +25,7 @@ export async function loadClinics(options?: { force?: boolean }): Promise<Clinic
   if (!res.ok) {
     const fallback = await fetch('/data/clinics.json');
     const clinics = await fallback.json();
-    return {
+    return withCoords({
       clinics,
       meta: {
         lastCrawledAt: null,
@@ -30,7 +35,7 @@ export async function loadClinics(options?: { force?: boolean }): Promise<Clinic
         stats: { directory: 0, association: 0, clinic_site: 0, errors: 0 },
         cursor: 0,
       },
-    };
+    });
   }
 
   const data = (await res.json()) as ClinicsApiResponse;
@@ -39,7 +44,7 @@ export async function loadClinics(options?: { force?: boolean }): Promise<Clinic
     sessionStorage.setItem('clinicsPayload', JSON.stringify(data));
     sessionStorage.setItem(SESSION_KEY, '1');
   }
-  return data;
+  return withCoords(data);
 }
 
 export function shouldPrefetchOnMount(): boolean {

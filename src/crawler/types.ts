@@ -14,6 +14,8 @@ export interface RawClinic {
   languages?: string[];
   source: ClinicSourceKind;
   sourceUrl: string;
+  lat?: number;
+  lng?: number;
 }
 
 export type SourceType = 'seed' | 'directory' | 'association' | 'clinic_site';

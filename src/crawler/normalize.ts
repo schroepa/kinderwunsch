@@ -43,5 +43,7 @@ export function normalizeRawClinic(raw: RawClinic, updatedAt = new Date().toISOS
     approximateCost: raw.approximateCost,
     description: raw.description?.trim() || undefined,
     languages: raw.languages,
+    lat: raw.lat,
+    lng: raw.lng,
   };
 }

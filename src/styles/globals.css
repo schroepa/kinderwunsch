@@ -199,6 +199,15 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* mapcn Map: strip MapLibre's default popup chrome so MarkerPopup/MarkerTooltip
+     can fully own their own surface styling. */
+  .maplibregl-popup-content {
+    @apply !bg-transparent !shadow-none !p-0 !rounded-none;
+  }
+  .maplibregl-popup-tip {
+    @apply !hidden;
+  }
 }
 
 @layer components {

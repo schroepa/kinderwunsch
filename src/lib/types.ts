@@ -52,6 +52,9 @@ export interface Clinic {
   description?: string;
   languages?: string[];
   stale?: boolean;
+  /** Optional city-level coordinates for map markers. */
+  lat?: number;
+  lng?: number;
 }
 
 export interface CrawlStats {

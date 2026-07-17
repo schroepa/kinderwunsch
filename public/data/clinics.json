@@ -26,7 +26,9 @@
       "en",
       "de"
     ],
-    "stale": false
+    "stale": false,
+    "lat": 52.52,
+    "lng": 13.405
   },
   {
     "id": "de-fertility-center-hamburg-hamburg",
@@ -49,7 +51,9 @@
       "icsi": 4800,
       "spermDonation": 1200
     },
-    "stale": true
+    "stale": true,
+    "lat": 53.551,
+    "lng": 9.994
   },
   {
     "id": "cz-ivf-clinic-prague-prag",
@@ -74,7 +78,9 @@
       "eggDonation": 5000,
       "spermDonation": 800
     },
-    "stale": true
+    "stale": true,
+    "lat": 50.075,
+    "lng": 14.438
   },
   {
     "id": "cz-reprofit-international-br-nn",
@@ -99,7 +105,9 @@
       "eggDonation": 5200,
       "spermDonation": 900
     },
-    "stale": true
+    "stale": true,
+    "lat": 49.195,
+    "lng": 16.607
   },
   {
     "id": "cz-gennet-klinik-prag",
@@ -124,7 +132,9 @@
       "eggDonation": 4800
     },
     "description": "Gennet nabízí komplexní péči v oblasti lékařské genetiky, prenatální péče, léčby neplodnosti, poruch reprodukce a IVF v Praze, Liberci a Ústí nad Labem.",
-    "stale": false
+    "stale": false,
+    "lat": 50.075,
+    "lng": 14.438
   },
   {
     "id": "pl-invicta-fertility-clinic-warschau",
@@ -147,7 +157,9 @@
       "icsi": 2300,
       "spermDonation": 600
     },
-    "stale": true
+    "stale": true,
+    "lat": 52.2297,
+    "lng": 21.0122
   },
   {
     "id": "pl-bocian-clinic-stettin",
@@ -168,7 +180,9 @@
       "ivf": 1500,
       "icsi": 2000
     },
-    "stale": true
+    "stale": true,
+    "lat": 53.4285,
+    "lng": 14.5528
   },
   {
     "id": "pl-nowe-ycie-clinic-posen",
@@ -192,7 +206,9 @@
       "spermDonation": 700
     },
     "description": "Dołącz do nasw każdą niedzielę o godz. 11:00A jeśli nie możesz uczestniczyć w nabożeństwie na żywo, bądź z nami online. Dołącz do nas, gdziekolwiek jesteś. Do zobaczenia! nabożeństwo online jesteśmy społecznościązwykłych ludzi zachwyconych niezwykłością Boga W co wierzymy? wierzy",
-    "stale": false
+    "stale": false,
+    "lat": 52.4064,
+    "lng": 16.9252
   },
   {
     "id": "es-ivi-barcelona-barcelona",
@@ -223,7 +239,9 @@
       "en",
       "de"
     ],
-    "stale": false
+    "stale": false,
+    "lat": 41.3851,
+    "lng": 2.1734
   },
   {
     "id": "es-eugin-barcelona-barcelona",
@@ -248,7 +266,9 @@
       "eggDonation": 7800,
       "spermDonation": 1400
     },
-    "stale": true
+    "stale": true,
+    "lat": 41.3851,
+    "lng": 2.1734
   },
   {
     "id": "es-instituto-bernabeu-alicante",
@@ -279,7 +299,9 @@
       "en",
       "de"
     ],
-    "stale": false
+    "stale": false,
+    "lat": 38.3452,
+    "lng": -0.481
   },
   {
     "id": "gr-embryolab-athens-athen",
@@ -306,7 +328,9 @@
       "spermDonation": 1000
     },
     "description": "Fertility treatments & IVF options. With unwavering dedication, the scientists and specialists at Embryolab remain up-to-date with the latest developments and advancements",
-    "stale": false
+    "stale": false,
+    "lat": 37.9838,
+    "lng": 23.7275
   },
   {
     "id": "gr-pelargos-ivf-medical-group-thessaloniki",
@@ -329,7 +353,9 @@
       "icsi": 3800,
       "eggDonation": 5800
     },
-    "stale": true
+    "stale": true,
+    "lat": 40.6401,
+    "lng": 22.9444
   },
   {
     "id": "gr-mediterranean-fertility-centre-kreta",
@@ -354,7 +380,9 @@
       "eggDonation": 6200,
       "spermDonation": 1100
     },
-    "stale": true
+    "stale": true,
+    "lat": 35.3387,
+    "lng": 25.1442
   },
   {
     "id": "pt-ivi-lisboa-lissabon",
@@ -372,7 +400,9 @@
     "source": "directory",
     "sourceUrl": "public/data/clinics.seed.json",
     "updatedAt": "2026-07-16T17:46:37.407Z",
-    "stale": true
+    "stale": true,
+    "lat": 38.7223,
+    "lng": -9.1393
   },
   {
     "id": "nl-ivf-centrum-rotterdam-rotterdam",
@@ -394,7 +424,9 @@
       "en",
       "de"
     ],
-    "stale": false
+    "stale": false,
+    "lat": 51.9244,
+    "lng": 4.4777
   },
   {
     "id": "dk-trianglen-fertility-clinic-kopenhagen",
@@ -415,7 +447,9 @@
     "languages": [
       "en"
     ],
-    "stale": false
+    "stale": false,
+    "lat": 55.6761,
+    "lng": 12.5683
   },
   {
     "id": "at-kinderwunschzentrum-wien-wien",
@@ -434,7 +468,9 @@
     "sourceUrl": "https://kinderwunsch.at",
     "updatedAt": "2026-07-16T17:46:48.772Z",
     "description": "Wir helfen Ihnen mit über 36 Jahren Erfahrung Ihren Kinderwunsch zu erfüllen! Jetzt Kontakt aufnehmen!",
-    "stale": false
+    "stale": false,
+    "lat": 48.2082,
+    "lng": 16.3738
   },
   {
     "id": "it-ivi-milano-mailand",
@@ -453,7 +489,9 @@
     "source": "directory",
     "sourceUrl": "public/data/clinics.seed.json",
     "updatedAt": "2026-07-16T17:46:37.407Z",
-    "stale": true
+    "stale": true,
+    "lat": 45.4642,
+    "lng": 9.19
   },
   {
     "id": "fr-ivi-paris-paris",
@@ -471,6 +509,8 @@
     "source": "directory",
     "sourceUrl": "public/data/clinics.seed.json",
     "updatedAt": "2026-07-16T17:46:37.407Z",
-    "stale": true
+    "stale": true,
+    "lat": 48.8566,
+    "lng": 2.3522
   }
 ]
