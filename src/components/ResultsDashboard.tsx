@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import type { UserData, CountryRecommendation, Clinic } from '../lib/types';
 import { getCountryRecommendations } from '../lib/countryLogic';
+import { loadClinics } from '../lib/loadClinics';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
+import { ClinicCard } from './ClinicCard';
+import { EuClinicBrowser } from './EuClinicBrowser';
 
 interface ResultsDashboardProps {
   userData: UserData;
@@ -12,15 +15,22 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
   const [recommendations, setRecommendations] = useState<CountryRecommendation[]>([]);
   const [clinics, setClinics] = useState<Clinic[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [browseOpen, setBrowseOpen] = useState(false);
+  const [standLabel, setStandLabel] = useState('Build-Daten');
+  const [metaRefreshing, setMetaRefreshing] = useState(false);
+
+  async function refreshClinics(force: boolean) {
+    const data = await loadClinics({ force });
+    setClinics(data.clinics);
+    const stamp = data.meta.lastCrawledAt ?? data.meta.lastPartialAt;
+    setStandLabel(stamp ? new Date(stamp).toLocaleDateString('de-DE') : 'Build-Daten');
+    setMetaRefreshing(data.meta.refreshing);
+  }
 
   useEffect(() => {
     const recs = getCountryRecommendations(userData);
     setRecommendations(recs);
-    
-    fetch('/data/clinics.json')
-      .then(res => res.json())
-      .then(data => setClinics(data))
-      .catch(err => console.error('Fehler beim Laden der Kliniken:', err));
+    void refreshClinics(false);
   }, [userData]);
 
   const getFilteredClinics = (countryId: string) => {
@@ -125,7 +135,11 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
 
               {/* Clinics Button */}
               <button
-                onClick={() => setSelectedCountry(selectedCountry === country.id ? null : country.id)}
+                onClick={() => {
+                  const next = selectedCountry === country.id ? null : country.id;
+                  setSelectedCountry(next);
+                  if (next) void refreshClinics(true);
+                }}
                 className="w-full mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors text-sm font-medium"
               >
                 {selectedCountry === country.id ? 'Kliniken ausblenden' : 'Kliniken anzeigen'}
@@ -136,36 +150,7 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
                 <div className="mt-4 space-y-3 pt-4 border-t">
                   <h4 className="font-semibold text-base">Top-Kliniken in {country.name}</h4>
                   {getFilteredClinics(country.id).map(clinic => (
-                    <div key={clinic.id} className="bg-muted/50 p-3 rounded-md">
-                      <div className="flex justify-between items-start mb-2">
-                        <div>
-                          <div className="font-medium">{clinic.name}</div>
-                          <div className="text-sm text-muted-foreground">{clinic.city}</div>
-                        </div>
-                        {clinic.rating != null && (
-                          <div className="text-sm font-semibold text-primary">
-                            ⭐ {clinic.rating}
-                          </div>
-                        )}
-                      </div>
-                      {clinic.approximateCost && (
-                        <div className="text-xs text-muted-foreground mb-2">
-                          IVF: ~{clinic.approximateCost.ivf.toLocaleString('de-DE')} € | 
-                          ICSI: ~{clinic.approximateCost.icsi.toLocaleString('de-DE')} €
-                          {clinic.approximateCost.eggDonation && (
-                            <> | Eizellspende: ~{clinic.approximateCost.eggDonation.toLocaleString('de-DE')} €</>
-                          )}
-                        </div>
-                      )}
-                      <a 
-                        href={clinic.website} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-xs text-primary hover:underline"
-                      >
-                        Website besuchen →
-                      </a>
-                    </div>
+                    <ClinicCard key={clinic.id} clinic={clinic} standLabel={standLabel} />
                   ))}
                 </div>
               )}
@@ -183,6 +168,27 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
           </AlertDescription>
         </Alert>
       )}
+
+      <p className="text-xs text-muted-foreground">
+        Angaben ohne Gewähr; bitte bei der Klinik bestätigen.
+        {metaRefreshing ? ' · Aktualisierung läuft…' : ''}
+      </p>
+      <button
+        type="button"
+        className="px-4 py-2 border rounded-md text-sm font-medium"
+        onClick={() => {
+          setBrowseOpen(true);
+          void refreshClinics(true);
+        }}
+      >
+        Alle EU-Kliniken durchsuchen
+      </button>
+      <EuClinicBrowser
+        open={browseOpen}
+        onClose={() => setBrowseOpen(false)}
+        clinics={clinics}
+        standLabel={standLabel}
+      />
     </div>
   );
 }
