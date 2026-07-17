@@ -1,6 +1,12 @@
-import type { Clinic, ClinicSourceKind, CrawlMeta, TreatmentType } from '../lib/types';
+import type {
+  Clinic,
+  ClinicProvenance,
+  ClinicSourceKind,
+  CrawlMeta,
+  TreatmentType,
+} from '../lib/types';
 
-export type { Clinic, ClinicSourceKind, CrawlMeta, TreatmentType };
+export type { Clinic, ClinicProvenance, ClinicSourceKind, CrawlMeta, TreatmentType };
 
 export interface RawClinic {
   name: string;
@@ -16,6 +22,7 @@ export interface RawClinic {
   sourceUrl: string;
   lat?: number;
   lng?: number;
+  provenance?: ClinicProvenance;
 }
 
 export type SourceType = 'seed' | 'directory' | 'association' | 'clinic_site';

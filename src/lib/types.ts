@@ -31,6 +31,8 @@ export interface CountryRecommendation extends Country {
 
 export type ClinicSourceKind = 'directory' | 'association' | 'clinic_site';
 
+export type ClinicProvenance = 'curated' | 'directory' | 'association';
+
 export interface Clinic {
   id: string;
   name: string;
@@ -55,6 +57,7 @@ export interface Clinic {
   /** Optional city-level coordinates for map markers. */
   lat?: number;
   lng?: number;
+  provenance?: ClinicProvenance;
 }
 
 export interface CrawlStats {

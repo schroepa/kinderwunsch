@@ -20,5 +20,6 @@ export async function loadSeedSource(entry: SourceEntry, projectRoot: string): P
     lng: c.lng,
     source: 'directory' as const,
     sourceUrl: entry.path!,
+    provenance: 'curated' as const,
   }));
 }

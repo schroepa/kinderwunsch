@@ -21,19 +21,25 @@ export function dedupeClinics(clinics: Clinic[]): Clinic[] {
       byKey.set(key, clinic);
       continue;
     }
+    const curated = existing.provenance === 'curated' ? existing : clinic;
+    const other = existing.provenance === 'curated' ? clinic : existing;
     byKey.set(key, {
-      ...existing,
-      ...clinic,
+      ...other,
+      ...curated,
       specialties: Array.from(new Set([...existing.specialties, ...clinic.specialties])),
       languages: Array.from(
         new Set([...(existing.languages ?? []), ...(clinic.languages ?? [])]),
       ),
-      description: clinic.description ?? existing.description,
-      rating: clinic.rating ?? existing.rating,
-      approximateCost: clinic.approximateCost ?? existing.approximateCost,
+      description: curated.description ?? other.description,
+      rating: curated.rating ?? other.rating,
+      approximateCost: curated.approximateCost ?? other.approximateCost,
       stale: clinic.stale ?? existing.stale,
       updatedAt: clinic.updatedAt > existing.updatedAt ? clinic.updatedAt : existing.updatedAt,
       source: clinic.source === 'clinic_site' ? 'clinic_site' : existing.source,
+      provenance:
+        existing.provenance === 'curated' || clinic.provenance === 'curated'
+          ? 'curated'
+          : (clinic.provenance ?? existing.provenance),
     });
   }
 

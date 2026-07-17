@@ -9,6 +9,7 @@ export function parseHtmlList(html: string, entry: SourceEntry): RawClinic[] {
   const websiteSel = entry.websiteSelector ?? nameSel;
   const websiteAttr = entry.websiteAttr ?? 'href';
   const source = entry.type === 'association' ? 'association' : 'directory';
+  const provenance = entry.type === 'association' ? 'association' : 'directory';
   const countryCode = (entry.countryCode ?? 'EU').toUpperCase();
 
   const rows: RawClinic[] = [];
@@ -33,6 +34,7 @@ export function parseHtmlList(html: string, entry: SourceEntry): RawClinic[] {
       website,
       source,
       sourceUrl: entry.url ?? entry.id,
+      provenance,
     });
   });
   return rows;

@@ -45,5 +45,6 @@ export function normalizeRawClinic(raw: RawClinic, updatedAt = new Date().toISOS
     languages: raw.languages,
     lat: raw.lat,
     lng: raw.lng,
+    provenance: raw.provenance,
   };
 }
