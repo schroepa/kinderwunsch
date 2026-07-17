@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Compass } from 'lucide-react';
 import type { UserData, RelationshipStatus, TreatmentType } from '../lib/types';
 import { Label } from './ui/label';
@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Slider } from './ui/slider';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { TREATMENT_ORDER } from '../lib/treatments';
 import { TreatmentToggle } from './TreatmentToggle';
 import { AnimatedIcon } from './icons/AnimatedIcon';
 
@@ -13,18 +14,23 @@ interface UserInputFormProps {
   onSubmit: (data: UserData) => void;
 }
 
-const TREATMENTS: TreatmentType[] = ['ivf', 'icsi', 'egg-donation', 'sperm-donation', 'pgd'];
-
 export default function UserInputForm({ onSubmit }: UserInputFormProps) {
+  const formId = useId();
   const [femaleAge, setFemaleAge] = useState<number>(32);
   const [maleAge, setMaleAge] = useState<number>(35);
   const [relationshipStatus, setRelationshipStatus] = useState<RelationshipStatus>('married');
   const [location, setLocation] = useState<string>('Berlin');
   const [budget, setBudget] = useState<number>(5000);
   const [treatments, setTreatments] = useState<TreatmentType[]>(['icsi']);
+  const [treatmentError, setTreatmentError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (treatments.length === 0) {
+      setTreatmentError('Bitte wählen Sie mindestens eine Behandlung.');
+      return;
+    }
+    setTreatmentError(null);
     onSubmit({
       femaleAge,
       maleAge,
@@ -36,112 +42,140 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
   };
 
   const toggleTreatment = (treatment: TreatmentType) => {
-    setTreatments((prev) =>
-      prev.includes(treatment) ? prev.filter((t) => t !== treatment) : [...prev, treatment],
-    );
+    setTreatments((prev) => {
+      const next = prev.includes(treatment)
+        ? prev.filter((t) => t !== treatment)
+        : [...prev, treatment];
+      if (next.length > 0) setTreatmentError(null);
+      return next;
+    });
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-fluid-2xl sm:text-fluid-3xl">Ihre persönlichen Daten</CardTitle>
-        <CardDescription>
-          Geben Sie Ihre Informationen ein, um passende Länder und Kliniken zu finden.
+    <Card className="overflow-hidden">
+      <CardHeader className="border-b border-border/50 bg-secondary/40 pb-6">
+        <p className="form-section-title mb-2 text-muted-foreground" id="eingabe-heading">
+          Schritt 1 von 1 · Eingabe
+        </p>
+        <CardTitle className="text-fluid-2xl sm:text-fluid-3xl">Ihre Situation</CardTitle>
+        <CardDescription className="measure text-fluid-base">
+          Alter, Status, Wohnort und Budget steuern, welche Länder und Kliniken sinnvoll sind.
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-8">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            <div className="space-y-4">
-              <Label htmlFor="female-age">
-                Alter der Frau{' '}
-                <span className="data-geist font-medium text-foreground normal-case tracking-normal">
-                  {femaleAge} Jahre
-                </span>
-              </Label>
-              <Slider
-                id="female-age"
-                min={20}
-                max={55}
-                step={1}
-                value={[femaleAge]}
-                onValueChange={(value) => setFemaleAge(value[0])}
-              />
+      <CardContent className="pt-6 sm:pt-8">
+        <form onSubmit={handleSubmit} className="space-y-10" noValidate>
+          <fieldset className="space-y-6">
+            <legend className="form-section-title mb-4 text-muted-foreground">Person & Rahmen</legend>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-6">
+              <div className="space-y-2">
+                <Label htmlFor={`${formId}-female-age`}>Alter der Frau</Label>
+                <Slider
+                  id={`${formId}-female-age`}
+                  min={20}
+                  max={55}
+                  step={1}
+                  value={[femaleAge]}
+                  onValueChange={(value) => setFemaleAge(value[0])}
+                  aria-valuetext={`${femaleAge} Jahre`}
+                  formatValue={(v) => `${v} J.`}
+                />
+                <div className="flex justify-between text-fluid-xs text-muted-foreground">
+                  <span className="data-geist">20</span>
+                  <span className="data-geist">55</span>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor={`${formId}-male-age`}>Alter des Mannes</Label>
+                <Slider
+                  id={`${formId}-male-age`}
+                  min={20}
+                  max={65}
+                  step={1}
+                  value={[maleAge]}
+                  onValueChange={(value) => setMaleAge(value[0])}
+                  aria-valuetext={`${maleAge} Jahre`}
+                  formatValue={(v) => `${v} J.`}
+                />
+                <div className="flex justify-between text-fluid-xs text-muted-foreground">
+                  <span className="data-geist">20</span>
+                  <span className="data-geist">65</span>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-4">
-              <Label htmlFor="male-age">
-                Alter des Mannes{' '}
-                <span className="data-geist font-medium text-foreground normal-case tracking-normal">
-                  {maleAge} Jahre
-                </span>
-              </Label>
-              <Slider
-                id="male-age"
-                min={20}
-                max={65}
-                step={1}
-                value={[maleAge]}
-                onValueChange={(value) => setMaleAge(value[0])}
-              />
-            </div>
-          </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+              <div className="space-y-2">
+                <Label htmlFor={`${formId}-relationship`}>Beziehungsstatus</Label>
+                <Select
+                  value={relationshipStatus}
+                  onValueChange={(value) => setRelationshipStatus(value as RelationshipStatus)}
+                >
+                  <SelectTrigger id={`${formId}-relationship`} className="min-h-11">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="married">Verheiratet</SelectItem>
+                    <SelectItem value="unmarried">Unverheiratet (Paar)</SelectItem>
+                    <SelectItem value="single">Single</SelectItem>
+                    <SelectItem value="same-sex">Gleichgeschlechtliches Paar</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-          <div className="space-y-3">
-            <Label htmlFor="relationship">Beziehungsstatus</Label>
-            <Select
-              value={relationshipStatus}
-              onValueChange={(value) => setRelationshipStatus(value as RelationshipStatus)}
+              <div className="space-y-2">
+                <Label htmlFor={`${formId}-location`}>Wohnort</Label>
+                <Select value={location} onValueChange={setLocation}>
+                  <SelectTrigger id={`${formId}-location`} className="min-h-11">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Berlin">Berlin</SelectItem>
+                    <SelectItem value="Hamburg">Hamburg</SelectItem>
+                    <SelectItem value="München">München</SelectItem>
+                    <SelectItem value="Köln">Köln</SelectItem>
+                    <SelectItem value="Frankfurt">Frankfurt</SelectItem>
+                  </SelectContent>
+                </Select>
+                <p className="text-fluid-xs text-muted-foreground">Für ungefähre Entfernungen</p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor={`${formId}-budget`}>Budget</Label>
+              <Slider
+                id={`${formId}-budget`}
+                min={1000}
+                max={15000}
+                step={500}
+                value={[budget]}
+                onValueChange={(value) => setBudget(value[0])}
+                aria-valuetext={`${budget.toLocaleString('de-DE')} Euro`}
+                formatValue={(v) => `${v.toLocaleString('de-DE')} €`}
+              />
+              <div className="flex justify-between text-fluid-xs text-muted-foreground">
+                <span className="data-geist">1.000 €</span>
+                <span className="data-geist">15.000 €</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset className="space-y-3">
+            <legend className="form-section-title mb-1 text-muted-foreground">Behandlungen</legend>
+            <p id={`${formId}-treatments-hint`} className="mb-3 text-fluid-sm text-muted-foreground">
+              Mehrfachauswahl möglich. Kurze Erklärungen stehen unter jedem Begriff. Mindestens eine
+              Option wählen.
+            </p>
+            <div
+              className="grid grid-cols-1 gap-2.5 sm:grid-cols-2"
+              role="group"
+              aria-describedby={
+                treatmentError
+                  ? `${formId}-treatments-hint ${formId}-treatments-error`
+                  : `${formId}-treatments-hint`
+              }
             >
-              <SelectTrigger id="relationship">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="married">Verheiratet</SelectItem>
-                <SelectItem value="unmarried">Unverheiratet (Paar)</SelectItem>
-                <SelectItem value="single">Single</SelectItem>
-                <SelectItem value="same-sex">Gleichgeschlechtliches Paar</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-3">
-            <Label htmlFor="location">Wohnort (für Entfernungsberechnung)</Label>
-            <Select value={location} onValueChange={setLocation}>
-              <SelectTrigger id="location">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Berlin">Berlin</SelectItem>
-                <SelectItem value="Hamburg">Hamburg</SelectItem>
-                <SelectItem value="München">München</SelectItem>
-                <SelectItem value="Köln">Köln</SelectItem>
-                <SelectItem value="Frankfurt">Frankfurt</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-4">
-            <Label htmlFor="budget">
-              Budget{' '}
-              <span className="data-geist font-medium text-foreground normal-case tracking-normal">
-                {budget.toLocaleString('de-DE')} €
-              </span>
-            </Label>
-            <Slider
-              id="budget"
-              min={1000}
-              max={15000}
-              step={500}
-              value={[budget]}
-              onValueChange={(value) => setBudget(value[0])}
-            />
-          </div>
-
-          <div className="space-y-3">
-            <Label>Gewünschte Behandlungen</Label>
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-              {TREATMENTS.map((treatment) => (
+              {TREATMENT_ORDER.map((treatment) => (
                 <TreatmentToggle
                   key={treatment}
                   treatment={treatment}
@@ -150,9 +184,18 @@ export default function UserInputForm({ onSubmit }: UserInputFormProps) {
                 />
               ))}
             </div>
-          </div>
+            {treatmentError && (
+              <p
+                id={`${formId}-treatments-error`}
+                role="alert"
+                className="text-fluid-sm text-destructive"
+              >
+                {treatmentError}
+              </p>
+            )}
+          </fieldset>
 
-          <Button type="submit" className="w-full" size="lg">
+          <Button type="submit" className="min-h-12 w-full" size="lg">
             <AnimatedIcon icon={Compass} size={18} />
             Empfehlungen anzeigen
           </Button>

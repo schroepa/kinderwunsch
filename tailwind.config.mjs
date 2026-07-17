@@ -21,6 +21,7 @@ export default {
       },
       transitionTimingFunction: {
         geist: 'cubic-bezier(0.175, 0.885, 0.32, 1.1)',
+        'out-soft': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -47,6 +48,8 @@ export default {
         warning: {
           DEFAULT: 'hsl(var(--warning))',
           foreground: 'hsl(var(--warning-foreground))',
+          muted: 'hsl(var(--warning-muted))',
+          'muted-foreground': 'hsl(var(--warning-muted-foreground))',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
@@ -69,8 +72,8 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
-        xl: 'calc(var(--radius) + 6px)',
-        '2xl': 'calc(var(--radius) + 10px)',
+        xl: 'calc(var(--radius) + 4px)',
+        '2xl': 'calc(var(--radius) + 8px)',
       },
       boxShadow: {
         soft: 'var(--shadow-soft)',
@@ -89,12 +92,12 @@ export default {
         display: 'var(--text-display)',
       },
       animation: {
-        'fade-up': 'fade-up 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1) both',
-        'fade-in': 'fade-in 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1) both',
+        'fade-up': 'fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'fade-in': 'fade-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both',
       },
       keyframes: {
         'fade-up': {
-          from: { opacity: '0', transform: 'translateY(8px)' },
+          from: { opacity: '0', transform: 'translateY(14px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         'fade-in': {

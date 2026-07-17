@@ -19,7 +19,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import { Button } from './ui/button';
 import { ClinicCard } from './ClinicCard';
-import { EuClinicBrowser } from './EuClinicBrowser';
 import { AnimatedIcon } from './icons/AnimatedIcon';
 import { cn } from '@/lib/utils';
 
@@ -31,7 +30,6 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
   const [recommendations, setRecommendations] = useState<CountryRecommendation[]>([]);
   const [clinics, setClinics] = useState<Clinic[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
-  const [browseOpen, setBrowseOpen] = useState(false);
   const [standLabel, setStandLabel] = useState('Build-Daten');
   const [metaRefreshing, setMetaRefreshing] = useState(false);
 
@@ -71,17 +69,15 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
         </Alert>
       )}
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-fluid-2xl sm:text-fluid-3xl">Ihre Top-Empfehlungen</CardTitle>
-          <CardDescription>
-            Basierend auf Ihren Angaben haben wir die {recommendations.length} besten Länder für Sie
-            ermittelt.
-          </CardDescription>
-        </CardHeader>
-      </Card>
+      <div className="mb-2">
+        <p className="form-section-title mb-2 text-muted-foreground">Ländervergleich</p>
+        <p className="measure text-fluid-base text-muted-foreground">
+          Die {recommendations.length} besten Länder für Ihre Angaben — Kosten, Distanz und rechtlicher
+          Rahmen auf einen Blick.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
+      <div className="flex flex-col gap-5 sm:gap-6">
         {recommendations.map((country, index) => {
           const isSelected = selectedCountry === country.id;
           return (
@@ -136,7 +132,7 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
 
               <CardContent className="space-y-5 pt-5">
                 {country.legalStatus === 'restricted' && (
-                  <div className="flex items-start gap-2.5 rounded-lg border border-warning/30 bg-warning/10 px-4 py-3 text-fluid-sm text-warning-foreground">
+                  <div className="surface-warning flex items-start gap-2.5 rounded-lg px-4 py-3 text-fluid-sm">
                     <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
                     Eingeschränkt verfügbar für Ihre Konstellation
                   </div>
@@ -176,7 +172,6 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
 
                 <Button
                   variant={isSelected ? 'secondary' : 'default'}
-                  className="w-full"
                   onClick={() => {
                     const next = isSelected ? null : country.id;
                     setSelectedCountry(next);
@@ -233,27 +228,14 @@ export default function ResultsDashboard({ userData }: ResultsDashboardProps) {
             </span>
           )}
         </p>
-        <Button
-          variant="secondary"
-          size="lg"
-          className="w-full sm:w-auto"
-          onClick={() => {
-            setBrowseOpen(true);
-            void refreshClinics(true);
-          }}
-        >
-          <AnimatedIcon icon={Search} size={18} />
-          Alle EU-Kliniken durchsuchen
-          <Globe className="h-4 w-4 opacity-60" aria-hidden />
+        <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
+          <a href="/kliniken">
+            <AnimatedIcon icon={Search} size={18} />
+            Alle EU-Kliniken durchsuchen
+            <Globe className="h-4 w-4 opacity-60" aria-hidden />
+          </a>
         </Button>
       </div>
-
-      <EuClinicBrowser
-        open={browseOpen}
-        onClose={() => setBrowseOpen(false)}
-        clinics={clinics}
-        standLabel={standLabel}
-      />
     </div>
   );
 }

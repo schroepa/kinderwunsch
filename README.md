@@ -7,7 +7,7 @@ Interaktive Web-App zur Suche nach geeigneten Kinderwunschbehandlungen und Klini
 - Interaktives Eingabeformular (Alter, Status, Ort, Budget, Behandlungen)
 - Dynamische Länderempfehlungen anhand rechtlicher und praktischer Regeln
 - Hybrid-Klinikdaten: Build-Fallback plus Runtime-API mit optionalem Vercel-Blob-Cache
-- EU-Klinikbrowser mit Suche und Länderfilter
+- Eigenes EU-Klinikverzeichnis unter `/kliniken` (Suche, Länderfilter, Karten-Grid)
 - Dark Mode (Systempräferenz, manuell umschaltbar, ohne Flash beim Laden)
 - Design-System angelehnt an Vercel Geist (neutrale Surfaces, Teal-Akzent, Geist Sans/Mono)
 - Lucide-Icons statt Emojis; dezente Motion
@@ -70,11 +70,11 @@ Die Klinik-API nutzt stale-while-revalidate und begrenzt Crawl-Zyklen (u. a. max
 
 ## Design und Themes
 
+- Richtung: nordisch-klinisch (kühler Mist, tiefes Teal, Grain-Atmosphäre)
+- Marken-Hero mit Wordmark „Kinderwunsch / Finder“
 - Fonts: Geist Sans und Geist Mono unter `public/fonts/`
-- Light: weiße/neutrale Surfaces; Dark: nahe Schwarz (`#000` / dunkle Cards)
-- Primärfarbe: Teal nur für CTAs, Fokus und aktive Zustände
-- Theme-Persistenz: `localStorage` (`kinderwunsch-theme`), Inline-Script in `index.astro` verhindert Flash
-- Utility-Klassen: `.label-geist`, `.data-geist` (Mono / Tabular Numbers)
+- Dark Mode: Systempräferenz, Toggle, flash-freies Inline-Script
+- Utility-Klassen: `.label-geist`, `.data-geist`, `.app-atmosphere`, `.brand-wordmark`
 
 ## Projektstruktur
 
@@ -98,7 +98,7 @@ Die Klinik-API nutzt stale-while-revalidate und begrenzt Crawl-Zyklen (u. a. max
 │   │   ├── UserInputForm.tsx
 │   │   ├── ResultsDashboard.tsx
 │   │   ├── ClinicCard.tsx
-│   │   ├── EuClinicBrowser.tsx
+│   │   ├── ClinicsDirectoryPage.tsx
 │   │   ├── ThemeToggle.tsx
 │   │   └── TreatmentToggle.tsx
 │   ├── crawler/                 # Allowlist-Crawler
@@ -108,9 +108,11 @@ Die Klinik-API nutzt stale-while-revalidate und begrenzt Crawl-Zyklen (u. a. max
 │   │   ├── loadClinics.ts
 │   │   ├── theme.ts
 │   │   ├── countryCodes.ts
+│   │   ├── treatments.ts
 │   │   └── utils.ts
 │   ├── pages/
 │   │   ├── index.astro
+│   │   ├── kliniken.astro       # EU-Klinikverzeichnis
 │   │   └── api/clinics.ts
 │   └── styles/
 │       └── globals.css

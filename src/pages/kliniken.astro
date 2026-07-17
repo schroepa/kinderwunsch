@@ -2,12 +2,13 @@
 export const prerender = true;
 
 import '../styles/globals.css';
-import FertilityApp from '../components/FertilityApp';
+import ClinicsDirectoryPage from '../components/ClinicsDirectoryPage';
 
-const title = 'Kinderwunsch-Finder | IVF & ICSI Kliniken in Europa';
+const title = 'EU-Kliniken durchsuchen | Kinderwunsch-Finder';
 const description =
-  'Kinderwunsch-Finder hilft Paaren und Alleinstehenden, passende IVF- und ICSI-Länder sowie Kliniken in Europa zu finden — nach Alter, Beziehungsstatus, Budget und Behandlung.';
+  'Durchsuchen Sie Kinderwunschkliniken in Europa nach Name, Stadt und Land — IVF, ICSI und weitere Behandlungen.';
 const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
+const pageUrl = siteUrl ? `${siteUrl}/kliniken` : '/kliniken';
 ---
 
 <!doctype html>
@@ -16,50 +17,20 @@ const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="Kinderwunsch, IVF, ICSI, Klinik Europa, Eizellspende, Samenspende, PID, Fertilität"
-    />
-    <meta name="author" content="Kinderwunsch-Finder" />
     <meta name="robots" content="index, follow" />
-    {siteUrl && <link rel="canonical" href={siteUrl} />}
+    <link rel="canonical" href={pageUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {siteUrl && <meta property="og:url" content={siteUrl} />}
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content={pageUrl} />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="theme-color" content="#f4f8fa" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0b1114" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <title>{title}</title>
-    <script
-      type="application/ld+json"
-      is:inline
-      set:html={JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Kinderwunsch-Finder',
-        applicationCategory: 'HealthApplication',
-        operatingSystem: 'Web',
-        inLanguage: 'de',
-        description,
-        url: siteUrl || undefined,
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'EUR',
-        },
-        about: [
-          { '@type': 'Thing', name: 'IVF' },
-          { '@type': 'Thing', name: 'ICSI' },
-          { '@type': 'Thing', name: 'Kinderwunschbehandlung Europa' },
-        ],
-      })}
-    />
     <script is:inline>
       (function () {
         var stored = localStorage.getItem('kinderwunsch-theme');
@@ -75,7 +46,7 @@ const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
   <body>
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <main id="main">
-      <FertilityApp client:load />
+      <ClinicsDirectoryPage client:load />
     </main>
   </body>
 </html>

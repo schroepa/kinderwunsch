@@ -1,21 +1,30 @@
-import type { Clinic } from '../lib/types';
+import type { Clinic, TreatmentType } from '../lib/types';
+import { TREATMENT_INFO } from '../lib/treatments';
 import { ExternalLink, MapPin, Star } from 'lucide-react';
 import { AnimatedIcon } from './icons/AnimatedIcon';
 
+function specialtyLabel(code: string): string {
+  const info = TREATMENT_INFO[code as TreatmentType];
+  return info?.shortLabel ?? code;
+}
+
 export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?: string }) {
   return (
-    <div className="surface-muted space-y-3 p-4 sm:p-5">
+    <article className="surface-muted flex h-full flex-col space-y-3 p-4 sm:p-5">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="text-fluid-base font-semibold leading-snug">{clinic.name}</div>
-          <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-fluid-xs text-muted-foreground">
+          <h2 className="text-fluid-base font-semibold leading-snug tracking-tight">{clinic.name}</h2>
+          <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-fluid-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1">
               <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden />
               {clinic.city}
+              {clinic.countryCode ? (
+                <span className="data-geist text-foreground/70">· {clinic.countryCode}</span>
+              ) : null}
             </span>
             {standLabel && <span>Stand: {standLabel}</span>}
             {clinic.stale && (
-              <span className="rounded-full bg-warning/15 px-2 py-0.5 text-warning-foreground">
+              <span className="badge-warning rounded-md px-2 py-0.5 text-fluid-xs font-medium">
                 Daten veraltet
               </span>
             )}
@@ -26,6 +35,7 @@ export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?
             <>
               <Star className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
               <span>{clinic.rating}</span>
+              <span className="sr-only"> von 5</span>
             </>
           ) : (
             <span className="text-muted-foreground">k. A.</span>
@@ -34,7 +44,9 @@ export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?
       </div>
 
       {clinic.description && (
-        <p className="line-clamp-3 text-fluid-xs leading-relaxed text-muted-foreground">{clinic.description}</p>
+        <p className="line-clamp-3 flex-1 text-fluid-xs leading-relaxed text-muted-foreground">
+          {clinic.description}
+        </p>
       )}
 
       {clinic.specialties.length > 0 && (
@@ -42,9 +54,10 @@ export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?
           {clinic.specialties.map((s) => (
             <span
               key={s}
-              className="rounded-md border border-border/60 bg-secondary px-2 py-0.5 text-fluid-xs text-muted-foreground"
+              title={TREATMENT_INFO[s as TreatmentType]?.description}
+              className="rounded-md border border-border/60 bg-secondary px-2 py-0.5 text-fluid-xs text-foreground/80"
             >
-              {s}
+              {specialtyLabel(s)}
             </span>
           ))}
         </div>
@@ -63,11 +76,11 @@ export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?
         href={clinic.website}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 text-fluid-xs font-medium text-primary transition-colors hover:text-primary/80"
+        className="inline-flex items-center gap-1.5 pt-1 text-fluid-xs font-medium text-primary transition-colors hover:text-primary/80"
       >
         <AnimatedIcon icon={ExternalLink} size={14} />
         Website besuchen
       </a>
-    </div>
+    </article>
   );
 }

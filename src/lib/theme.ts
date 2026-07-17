@@ -3,8 +3,8 @@ export type Theme = 'light' | 'dark';
 const STORAGE_KEY = 'kinderwunsch-theme';
 
 const THEME_COLORS: Record<Theme, string> = {
-  light: '#ffffff',
-  dark: '#000000',
+  light: '#f4f8fa',
+  dark: '#0b1114',
 };
 
 export function getStoredTheme(): Theme | null {

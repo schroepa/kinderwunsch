@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { ArrowLeft, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowLeft } from 'lucide-react';
 import { loadClinics, shouldPrefetchOnMount } from '../lib/loadClinics';
 import type { UserData } from '../lib/types';
-import { AnimatedDrawIcon, AnimatedPulseIcon } from './icons/AnimatedIcon';
+import { AnimatedDrawIcon } from './icons/AnimatedIcon';
 import UserInputForm from './UserInputForm';
 import ResultsDashboard from './ResultsDashboard';
 import { ThemeToggle } from './ThemeToggle';
@@ -31,48 +31,90 @@ export default function FertilityApp() {
   };
 
   return (
-    <div className="min-h-screen px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
+    <div className="app-atmosphere min-h-dvh">
       <ThemeToggle />
-      <div className="container mx-auto max-w-6xl">
-        <header className="mb-10 sm:mb-14 text-center animate-fade-up">
-          <p className="label-geist mb-4 inline-flex items-center justify-center gap-2">
-            <AnimatedPulseIcon icon={Sparkles} size={12} className="text-primary" />
-            IVF & ICSI in Europa
-          </p>
-          <h1 className="text-fluid-display font-semibold text-foreground">
-            Kinderwunsch-Finder
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-fluid-lg text-muted-foreground leading-relaxed">
-            Finden Sie die passende Behandlung und Klinik — individuell auf Ihre Situation zugeschnitten.
-          </p>
-        </header>
 
+      <div className="relative mx-auto w-full min-w-0 max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pb-24 sm:pt-8 lg:px-8">
         {!showResults ? (
-          <div className="mx-auto max-w-3xl animate-fade-up" style={{ animationDelay: '80ms' }}>
-            <UserInputForm onSubmit={handleFormSubmit} />
-          </div>
+          <>
+            <header className="relative mb-10 max-w-2xl pt-6 sm:mb-14 sm:pt-10 lg:mb-16">
+              <div className="animate-fade-up brand-lockup">
+                <p className="label-geist mb-5 text-primary">IVF · ICSI · Europa</p>
+                <h1 className="brand-wordmark">
+                  Kinderwunsch
+                  <br />
+                  <em>Finder</em>
+                </h1>
+                <p className="measure mt-6 text-fluid-lg leading-relaxed text-muted-foreground">
+                  Passende Länder und Kliniken — basierend auf Alter, Status, Budget und gewünschter
+                  Behandlung.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Button asChild size="lg" className="min-h-11 px-6">
+                    <a href="#eingabe">
+                      Jetzt starten
+                      <ArrowDown className="h-4 w-4 opacity-80" aria-hidden />
+                    </a>
+                  </Button>
+                  <p className="text-fluid-xs text-muted-foreground">Kostenlos · ohne Registrierung</p>
+                </div>
+              </div>
+            </header>
+
+            <section
+              id="eingabe"
+              aria-labelledby="eingabe-heading"
+              className="animate-fade-up scroll-mt-8"
+              style={{ animationDelay: '100ms' }}
+            >
+              <UserInputForm onSubmit={handleFormSubmit} />
+            </section>
+          </>
         ) : (
-          <div className="animate-fade-up">
-            <div className="mb-6 sm:mb-8">
-              <Button variant="ghost" size="sm" onClick={handleReset} className="-ml-2">
+          <div className="animate-fade-up pt-10 sm:pt-14">
+            <div className="mb-8 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="label-geist mb-2 text-primary">Ergebnisse</p>
+                <h2 className="text-fluid-3xl font-semibold tracking-tight text-foreground">
+                  Ihre Empfehlungen
+                </h2>
+                <p className="mt-2 max-w-xl text-fluid-sm text-muted-foreground">
+                  Länder und Kliniken sortiert nach Ihrer Situation. Angaben ohne Gewähr — bitte mit der
+                  Klinik und einem Facharzt prüfen.
+                </p>
+              </div>
+              <Button variant="secondary" size="sm" onClick={handleReset} className="min-h-10 self-start">
                 <AnimatedDrawIcon icon={ArrowLeft} size={18} />
                 Zurück zur Eingabe
               </Button>
             </div>
-            {userData && <ResultsDashboard userData={userData} />}
+            <div aria-live="polite" aria-atomic="false">
+              {userData && <ResultsDashboard userData={userData} />}
+            </div>
           </div>
         )}
 
-        <footer className="mt-16 sm:mt-20">
-          <div className="divider-soft mb-6" />
-          <div className="space-y-2 text-center text-fluid-sm text-muted-foreground">
-            <p>
-              <span className="font-medium text-foreground/80">Hinweis:</span> Diese Empfehlungen basieren
-              auf allgemeinen Informationen und ersetzen keine individuelle medizinische Beratung.
-            </p>
-            <p>
-              Bitte konsultieren Sie einen Facharzt und informieren Sie sich über die aktuellen rechtlichen
-              Bestimmungen in den jeweiligen Ländern.
+        <footer className="mt-20 sm:mt-28">
+          <div className="divider-soft mb-8" />
+          <div className="grid gap-6 sm:grid-cols-[1fr_auto] sm:items-start">
+            <div className="space-y-2 text-fluid-sm text-muted-foreground">
+              <p>
+                <span className="font-medium text-foreground/85">Medizinischer Hinweis:</span> Diese
+                Empfehlungen basieren auf allgemeinen Informationen und ersetzen keine individuelle
+                Beratung durch Fachärzte.
+              </p>
+              <p>
+                Rechtliche Regelungen und Kosten ändern sich. Bitte aktuelle Bestimmungen und
+                Klinikangaben vor Ort bestätigen.
+              </p>
+              <p>
+                <a href="/kliniken" className="font-medium text-primary hover:underline">
+                  Alle EU-Kliniken durchsuchen
+                </a>
+              </p>
+            </div>
+            <p className="data-geist text-fluid-xs text-muted-foreground sm:text-right">
+              Kinderwunsch-Finder
             </p>
           </div>
         </footer>

@@ -13,7 +13,7 @@ const Alert = React.forwardRef<
       {
         'border-border/60 bg-card text-foreground': variant === 'default',
         'border-destructive/20 bg-destructive/8 text-destructive': variant === 'destructive',
-        'border-warning/30 bg-warning/10 text-warning-foreground': variant === 'warning',
+        'surface-warning': variant === 'warning',
       },
       className,
     )}
