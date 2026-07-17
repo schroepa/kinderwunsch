@@ -81,6 +81,108 @@ const countries: Country[] = [
       'Weite Anreise (Flug erforderlich)',
       'Sprachbarriere möglich'
     ]
+  },
+  {
+    id: 'austria',
+    name: 'Österreich',
+    flagEmoji: '🇦🇹',
+    baseCost: 4200,
+    distanceFromBerlin: 520,
+    pros: [
+      'Keine Sprachbarriere',
+      'Kurze Anreise (ca. 5h)',
+      'Hohe medizinische Standards',
+      'Gute Erreichbarkeit mit dem Auto'
+    ],
+    cons: [
+      'Eizellspende verboten',
+      'Eingeschränkter Zugang für Alleinstehende und gleichgeschlechtliche Paare'
+    ]
+  },
+  {
+    id: 'denmark',
+    name: 'Dänemark',
+    flagEmoji: '🇩🇰',
+    baseCost: 4500,
+    distanceFromBerlin: 360,
+    pros: [
+      'Liberale Gesetze',
+      'Hohe medizinische Standards',
+      'Gute Erfahrung mit internationalen Patienten',
+      'Kurze Anreise (ca. 4h)'
+    ],
+    cons: [
+      'Höhere Kosten',
+      'Sprachbarriere möglich'
+    ]
+  },
+  {
+    id: 'netherlands',
+    name: 'Niederlande',
+    flagEmoji: '🇳🇱',
+    baseCost: 4300,
+    distanceFromBerlin: 580,
+    pros: [
+      'Hohe medizinische Standards',
+      'Gute Erreichbarkeit',
+      'Gute Erfahrung mit internationalen Patienten',
+      'Transparente Preisgestaltung'
+    ],
+    cons: [
+      'Höhere Kosten',
+      'Wartezeiten möglich'
+    ]
+  },
+  {
+    id: 'portugal',
+    name: 'Portugal',
+    flagEmoji: '🇵🇹',
+    baseCost: 3800,
+    distanceFromBerlin: 2300,
+    pros: [
+      'Liberale Gesetze',
+      'Eizellspende legal',
+      'Gutes Preis-Leistungs-Verhältnis',
+      'Hohe Erfolgsraten'
+    ],
+    cons: [
+      'Weite Anreise (Flug erforderlich)',
+      'Sprachbarriere möglich'
+    ]
+  },
+  {
+    id: 'italy',
+    name: 'Italien',
+    flagEmoji: '🇮🇹',
+    baseCost: 4200,
+    distanceFromBerlin: 1200,
+    pros: [
+      'Hohe medizinische Standards',
+      'Erfahrene Kliniken',
+      'Gutes Preis-Leistungs-Verhältnis'
+    ],
+    cons: [
+      'Eizellspende eingeschränkt',
+      'Eingeschränkter Zugang für Alleinstehende und gleichgeschlechtliche Paare',
+      'Weite Anreise (Flug erforderlich)'
+    ]
+  },
+  {
+    id: 'france',
+    name: 'Frankreich',
+    flagEmoji: '🇫🇷',
+    baseCost: 4400,
+    distanceFromBerlin: 880,
+    pros: [
+      'Hohe medizinische Standards',
+      'Umfassende Nachsorge möglich',
+      'Gute Erreichbarkeit (Zug/Flug)'
+    ],
+    cons: [
+      'Altersgrenzen für Behandlung',
+      'Sprachbarriere möglich',
+      'Höhere Kosten'
+    ]
   }
 ];
 
@@ -109,6 +211,38 @@ function checkLegalStatus(country: Country, userData: UserData): 'allowed' | 're
 
     case 'greece':
       if (femaleAge > 50) return 'restricted';
+      return 'allowed';
+
+    // conservative default — verify
+    case 'austria':
+      if (treatments.includes('egg-donation')) return 'forbidden';
+      if (relationshipStatus === 'same-sex' || relationshipStatus === 'single') return 'restricted';
+      return 'allowed';
+
+    // conservative default — verify
+    case 'denmark':
+      if (femaleAge > 50) return 'restricted';
+      return 'allowed';
+
+    // conservative default — verify
+    case 'netherlands':
+      if (femaleAge > 50) return 'restricted';
+      return 'allowed';
+
+    // conservative default — verify
+    case 'portugal':
+      if (femaleAge > 50) return 'restricted';
+      return 'allowed';
+
+    // conservative default — verify
+    case 'italy':
+      if (treatments.includes('egg-donation')) return 'restricted';
+      if (relationshipStatus === 'same-sex' || relationshipStatus === 'single') return 'restricted';
+      return 'allowed';
+
+    // conservative default — verify
+    case 'france':
+      if (femaleAge > 45) return 'restricted';
       return 'allowed';
 
     default:
@@ -215,6 +349,86 @@ function getDynamicProsAndCons(country: Country, userData: UserData): { pros: st
         dynamicPros.push('Günstiger als Spanien bei ähnlicher Liberalität');
       }
       break;
+
+    case 'austria':
+      if (treatments.includes('egg-donation')) {
+        dynamicCons.push('Eizellspende in Österreich verboten');
+      }
+
+      if (relationshipStatus === 'single' || relationshipStatus === 'same-sex') {
+        dynamicCons.push('Eingeschränkter Zugang für Ihre Konstellation');
+      }
+
+      if (costEstimate <= budget) {
+        dynamicPros.push('Passt gut in Ihr Budget');
+      }
+      break;
+
+    case 'denmark':
+      if (femaleAge > 50) {
+        dynamicCons.push('Altersgrenze überschritten');
+      }
+
+      if (treatments.includes('egg-donation')) {
+        dynamicPros.push('Eizellspende legal');
+      }
+
+      if (costEstimate > budget) {
+        dynamicCons.push('Überschreitet Ihr Budget');
+      }
+      break;
+
+    case 'netherlands':
+      if (femaleAge > 50) {
+        dynamicCons.push('Altersgrenze überschritten');
+      }
+
+      if (treatments.includes('egg-donation')) {
+        dynamicPros.push('Eizellspende legal');
+      }
+
+      if (costEstimate > budget) {
+        dynamicCons.push('Überschreitet Ihr Budget');
+      }
+      break;
+
+    case 'portugal':
+      if (femaleAge > 50) {
+        dynamicCons.push('Altersgrenze überschritten');
+      }
+
+      if (treatments.includes('egg-donation')) {
+        dynamicPros.push('Eizellspende legal und etabliert');
+      }
+
+      if (costEstimate < budget * 0.7) {
+        dynamicPros.push('Sehr günstiger Preis - ideal für begrenztes Budget');
+      }
+      break;
+
+    case 'italy':
+      if (treatments.includes('egg-donation')) {
+        dynamicCons.push('Eizellspende nur eingeschränkt möglich');
+      }
+
+      if (relationshipStatus === 'single' || relationshipStatus === 'same-sex') {
+        dynamicCons.push('Eingeschränkter Zugang für Ihre Konstellation');
+      }
+
+      if (costEstimate <= budget) {
+        dynamicPros.push('Passt gut in Ihr Budget');
+      }
+      break;
+
+    case 'france':
+      if (femaleAge > 45) {
+        dynamicCons.push('Altersgrenze überschritten (max. 45 Jahre)');
+      }
+
+      if (costEstimate > budget) {
+        dynamicCons.push('Überschreitet Ihr Budget');
+      }
+      break;
   }
 
   return { pros: dynamicPros, cons: dynamicCons };
@@ -237,6 +451,18 @@ function calculateCostEstimate(country: Country, userData: UserData): number {
         break;
       case 'czech':
         cost += 2000;
+        break;
+      case 'portugal':
+        cost += 2500;
+        break;
+      case 'denmark':
+        cost += 2800;
+        break;
+      case 'netherlands':
+        cost += 2800;
+        break;
+      case 'italy':
+        cost += 2200;
         break;
     }
   }
@@ -287,6 +513,10 @@ function calculateScore(country: Country, userData: UserData, costEstimate: numb
     score += 15;
   }
 
+  if (country.id === 'austria' || country.id === 'denmark' || country.id === 'netherlands') {
+    score += 5;
+  }
+
   return Math.max(0, Math.min(100, score));
 }
 
@@ -310,5 +540,5 @@ export function getCountryRecommendations(userData: UserData): CountryRecommenda
     .filter(rec => rec.legalStatus !== 'forbidden')
     .sort((a, b) => b.score - a.score);
 
-  return recommendations.slice(0, 4);
+  return recommendations;
 }
