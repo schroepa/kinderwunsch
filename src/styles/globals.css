@@ -410,3 +410,19 @@
 .animate-fade-in {
   animation: fade-in 0.35s var(--ease-out-soft) both;
 }
+
+.wissen-prose h2 {
+  @apply mt-10 mb-3 text-fluid-2xl font-semibold tracking-tight text-foreground;
+}
+.wissen-prose h3 {
+  @apply mt-8 mb-2 text-fluid-xl font-semibold text-foreground;
+}
+.wissen-prose p {
+  @apply mb-4 text-fluid-base leading-relaxed text-foreground/85;
+}
+.wissen-prose ul {
+  @apply mb-4 list-disc space-y-2 pl-5 text-fluid-base text-foreground/85;
+}
+.wissen-prose a {
+  @apply font-medium text-primary underline-offset-2 hover:underline;
+}

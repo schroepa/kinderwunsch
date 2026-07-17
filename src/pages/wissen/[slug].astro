@@ -1,0 +1,53 @@
+---
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('wissen');
+  return entries
+    .filter((e) => !e.data.draft)
+    .map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const canonicalPath = `/wissen/${entry.slug}`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': entry.data.category === 'faq' ? 'FAQPage' : 'MedicalWebPage',
+  name: entry.data.title,
+  description: entry.data.description,
+  dateModified: entry.data.updatedAt.toISOString(),
+  inLanguage: 'de',
+};
+---
+
+<SiteLayout
+  title={`${entry.data.title} | Kinderwunsch-Finder`}
+  description={entry.data.description}
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <div class="app-atmosphere min-h-dvh">
+    <article class="wissen-prose measure mx-auto max-w-3xl px-4 py-10 sm:py-14">
+      <p class="label-geist text-primary mb-3">Wissen</p>
+      <h1 class="text-fluid-3xl font-semibold tracking-tight text-foreground">{entry.data.title}</h1>
+      <p class="mt-4 text-fluid-lg text-muted-foreground">{entry.data.description}</p>
+      <Content />
+      <aside class="mt-12 rounded-xl border border-border/60 bg-secondary/40 p-4 text-fluid-sm text-muted-foreground">
+        Dieser Artikel dient der allgemeinen Information und ersetzt keine individuelle
+        medizinische oder rechtliche Beratung.
+      </aside>
+      <p class="mt-8 text-fluid-sm">
+        <a href="/wissen" class="font-medium text-primary hover:underline">Alle Wissensartikel</a>
+        {' · '}
+        <a href="/" class="font-medium text-primary hover:underline">Zum Finder</a>
+      </p>
+    </article>
+  </div>
+</SiteLayout>

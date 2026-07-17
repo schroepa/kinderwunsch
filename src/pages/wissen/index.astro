@@ -1,0 +1,78 @@
+---
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { CATEGORY_LABELS, type WissenCategory } from '../../lib/wissen';
+
+const entries = (await getCollection('wissen'))
+  .filter((e) => !e.data.draft)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'de'));
+
+const categories = Object.keys(CATEGORY_LABELS) as WissenCategory[];
+const byCategory = (cat: WissenCategory) => entries.filter((e) => e.data.category === cat);
+---
+
+<SiteLayout
+  title="Wissen | Kinderwunsch-Finder"
+  description="Guides zu IVF, ICSI, Spenderbehandlungen, Kosten und rechtlichen Rahmenbedingungen in Europa."
+  canonicalPath="/wissen"
+>
+  <div class="app-atmosphere min-h-dvh">
+    <div class="relative mx-auto w-full min-w-0 max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pb-24 sm:pt-8 lg:px-8">
+      <header class="animate-fade-up mb-10 max-w-2xl sm:mb-14">
+        <p class="label-geist mb-3 text-primary">Wissen</p>
+        <h1 class="text-fluid-3xl font-semibold tracking-tight text-foreground sm:text-fluid-display">
+          Guides & Hintergrundwissen
+        </h1>
+        <p class="measure mt-4 text-fluid-lg leading-relaxed text-muted-foreground">
+          Behandlungen, Länder, Kosten und rechtliche Rahmenbedingungen — verständlich erklärt und
+          ohne individuelle Beratung zu ersetzen.
+        </p>
+      </header>
+
+      {entries.length === 0 ? (
+        <p class="text-fluid-base text-muted-foreground">
+          Es sind noch keine Artikel veröffentlicht.
+        </p>
+      ) : (
+        <div class="space-y-12">
+          {categories.map((cat) => {
+            const items = byCategory(cat);
+            if (items.length === 0) return null;
+            return (
+              <section aria-labelledby={`section-${cat}`} class="animate-fade-up">
+                <h2 id={`section-${cat}`} class="text-fluid-xl font-semibold tracking-tight text-foreground">
+                  {CATEGORY_LABELS[cat]}
+                </h2>
+                <ul class="mt-4 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
+                  {items.map((entry) => (
+                    <li>
+                      <a
+                        href={`/wissen/${entry.slug}`}
+                        class="surface-card group block h-full p-5 transition-geist hover:surface-selected"
+                      >
+                        <h3 class="text-fluid-lg font-semibold text-foreground group-hover:text-primary">
+                          {entry.data.title}
+                        </h3>
+                        <p class="mt-2 text-fluid-sm text-muted-foreground">{entry.data.description}</p>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </div>
+      )}
+
+      <footer class="mt-20 sm:mt-28">
+        <div class="divider-soft mb-6" />
+        <p class="text-fluid-sm text-muted-foreground">
+          Dieser Bereich dient der allgemeinen Information und ersetzt keine individuelle
+          medizinische oder rechtliche Beratung.
+        </p>
+      </footer>
+    </div>
+  </div>
+</SiteLayout>

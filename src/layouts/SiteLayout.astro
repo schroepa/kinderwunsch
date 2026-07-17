@@ -1,0 +1,94 @@
+---
+import '../styles/globals.css';
+import { SITE_ORIGIN } from '../lib/wissen';
+import { ThemeToggle } from '../components/ThemeToggle';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  jsonLd?: Record<string, unknown>;
+  keywords?: string;
+  showThemeToggle?: boolean;
+}
+
+const { title, description, canonicalPath, jsonLd, keywords, showThemeToggle = true } = Astro.props;
+
+const canonicalUrl = `${SITE_ORIGIN}${canonicalPath}`;
+
+const navLinks = [
+  { href: '/', label: 'Finder' },
+  { href: '/kliniken', label: 'Kliniken' },
+  { href: '/wissen', label: 'Wissen' },
+];
+
+const currentPath = canonicalPath === '/' ? '/' : canonicalPath.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="author" content="Kinderwunsch-Finder" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#f4f8fa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1114" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <title>{title}</title>
+    {jsonLd && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+    )}
+    <script is:inline>
+      (function () {
+        var stored = localStorage.getItem('kinderwunsch-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored === 'dark' || stored === 'light' ? stored : prefersDark ? 'dark' : 'light';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = 'dark';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    {showThemeToggle && <ThemeToggle client:load />}
+    <header class="relative z-30 border-b border-border/60 bg-background/70 backdrop-blur-sm">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <a
+          href="/"
+          class="label-geist text-foreground/80 transition-geist hover:text-primary"
+        >
+          Kinderwunsch-Finder
+        </a>
+        <nav aria-label="Hauptnavigation" class="flex items-center gap-5">
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-fluid-sm font-medium text-foreground/70 transition-geist hover:text-primary aria-[current=page]:text-primary"
+              aria-current={currentPath === link.href ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+  </body>
+</html>

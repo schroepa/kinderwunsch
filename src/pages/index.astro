@@ -1,81 +1,42 @@
 ---
 export const prerender = true;
 
-import '../styles/globals.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
 import FertilityApp from '../components/FertilityApp';
+import { SITE_ORIGIN } from '../lib/wissen';
 
 const title = 'Kinderwunsch-Finder | IVF & ICSI Kliniken in Europa';
 const description =
   'Kinderwunsch-Finder hilft Paaren und Alleinstehenden, passende IVF- und ICSI-Länder sowie Kliniken in Europa zu finden — nach Alter, Beziehungsstatus, Budget und Behandlung.';
-const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Kinderwunsch-Finder',
+  applicationCategory: 'HealthApplication',
+  operatingSystem: 'Web',
+  inLanguage: 'de',
+  description,
+  url: SITE_ORIGIN,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+  },
+  about: [
+    { '@type': 'Thing', name: 'IVF' },
+    { '@type': 'Thing', name: 'ICSI' },
+    { '@type': 'Thing', name: 'Kinderwunschbehandlung Europa' },
+  ],
+};
 ---
 
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="Kinderwunsch, IVF, ICSI, Klinik Europa, Eizellspende, Samenspende, PID, Fertilität"
-    />
-    <meta name="author" content="Kinderwunsch-Finder" />
-    <meta name="robots" content="index, follow" />
-    {siteUrl && <link rel="canonical" href={siteUrl} />}
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    {siteUrl && <meta property="og:url" content={siteUrl} />}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="theme-color" content="#f4f8fa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b1114" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <title>{title}</title>
-    <script
-      type="application/ld+json"
-      is:inline
-      set:html={JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Kinderwunsch-Finder',
-        applicationCategory: 'HealthApplication',
-        operatingSystem: 'Web',
-        inLanguage: 'de',
-        description,
-        url: siteUrl || undefined,
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'EUR',
-        },
-        about: [
-          { '@type': 'Thing', name: 'IVF' },
-          { '@type': 'Thing', name: 'ICSI' },
-          { '@type': 'Thing', name: 'Kinderwunschbehandlung Europa' },
-        ],
-      })}
-    />
-    <script is:inline>
-      (function () {
-        var stored = localStorage.getItem('kinderwunsch-theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = stored === 'dark' || stored === 'light' ? stored : prefersDark ? 'dark' : 'light';
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-          document.documentElement.style.colorScheme = 'dark';
-        }
-      })();
-    </script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Zum Inhalt springen</a>
-    <main id="main">
-      <FertilityApp client:load />
-    </main>
-  </body>
-</html>
+<SiteLayout
+  title={title}
+  description={description}
+  canonicalPath="/"
+  keywords="Kinderwunsch, IVF, ICSI, Klinik Europa, Eizellspende, Samenspende, PID, Fertilität"
+  jsonLd={jsonLd}
+  showThemeToggle={false}
+>
+  <FertilityApp client:load />
+</SiteLayout>

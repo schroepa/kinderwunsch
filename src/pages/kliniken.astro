@@ -1,52 +1,14 @@
 ---
 export const prerender = true;
 
-import '../styles/globals.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
 import ClinicsDirectoryPage from '../components/ClinicsDirectoryPage';
 
 const title = 'EU-Kliniken durchsuchen | Kinderwunsch-Finder';
 const description =
   'Durchsuchen Sie Kinderwunschkliniken in Europa nach Name, Stadt und Land — IVF, ICSI und weitere Behandlungen.';
-const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
-const pageUrl = siteUrl ? `${siteUrl}/kliniken` : '/kliniken';
 ---
 
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={pageUrl} />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={pageUrl} />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="theme-color" content="#f4f8fa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b1114" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-    <script is:inline>
-      (function () {
-        var stored = localStorage.getItem('kinderwunsch-theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = stored === 'dark' || stored === 'light' ? stored : prefersDark ? 'dark' : 'light';
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-          document.documentElement.style.colorScheme = 'dark';
-        }
-      })();
-    </script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Zum Inhalt springen</a>
-    <main id="main">
-      <ClinicsDirectoryPage client:load />
-    </main>
-  </body>
-</html>
+<SiteLayout title={title} description={description} canonicalPath="/kliniken" showThemeToggle={false}>
+  <ClinicsDirectoryPage client:load />
+</SiteLayout>
