@@ -29,6 +29,12 @@ const COUNTRY_NAMES: Record<string, string> = {
   PT: 'Portugal',
   IT: 'Italien',
   FR: 'Frankreich',
+  CH: 'Schweiz',
+  IE: 'Irland',
+  BE: 'Belgien',
+  HU: 'Ungarn',
+  SE: 'Schweden',
+  SK: 'Slowakei',
 };
 
 export default function ClinicsDirectoryPage() {

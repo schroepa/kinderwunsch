@@ -1,9 +1,9 @@
 {
   "lastCrawledAt": "2026-07-16T17:46:48.956Z",
-  "lastPartialAt": "2026-07-17T23:37:46.745Z",
-  "clinicCount": 64,
+  "lastPartialAt": "2026-07-18T13:17:58.470Z",
+  "clinicCount": 584,
   "stats": {
-    "directory": 32,
+    "directory": 569,
     "association": 0,
     "clinic_site": 9,
     "errors": 11
