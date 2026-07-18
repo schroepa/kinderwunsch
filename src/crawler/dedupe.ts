@@ -8,7 +8,8 @@ function fallbackKey(c: Clinic): string {
 function websiteKey(c: Clinic): string | null {
   const n = normalizeWebsite(c.website);
   if (!n || n.includes('unknown.invalid')) return null;
-  return n;
+  // Multi-branch brands share one host — keep city-distinct locations.
+  return `${n}|${c.city.toLowerCase()}|${c.countryCode}`;
 }
 
 export function dedupeClinics(clinics: Clinic[]): Clinic[] {

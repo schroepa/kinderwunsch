@@ -16,7 +16,7 @@ describe('countryMap', () => {
   });
 
   it('falls back to lowercase ISO for unmapped countries', () => {
-    expect(toCountrySlug('BE')).toBe('be');
+    expect(toCountrySlug('NO')).toBe('no');
     expect(toCountryCode('germany')).toBe('DE');
   });
 });
@@ -77,5 +77,27 @@ describe('normalize + dedupe', () => {
       sourceUrl: 'https://example.com/dir',
     });
     expect(dedupeClinics([berlin, munich])).toHaveLength(2);
+  });
+
+  it('keeps same-host clinics in different cities', () => {
+    const a = normalizeRawClinic({
+      name: 'IVI Valencia',
+      countryCode: 'ES',
+      city: 'Valencia',
+      website: 'https://www.ivi.es',
+      source: 'directory',
+      sourceUrl: 'https://example.com/dir',
+      provenance: 'directory',
+    });
+    const b = normalizeRawClinic({
+      name: 'IVI Zaragoza',
+      countryCode: 'ES',
+      city: 'Zaragoza',
+      website: 'https://www.ivi.es',
+      source: 'directory',
+      sourceUrl: 'https://example.com/dir',
+      provenance: 'directory',
+    });
+    expect(dedupeClinics([a, b])).toHaveLength(2);
   });
 });
