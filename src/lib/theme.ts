@@ -4,8 +4,8 @@ const STORAGE_KEY = 'roser-theme';
 const LEGACY_STORAGE_KEY = 'kinderwunsch-theme';
 
 const THEME_COLORS: Record<Theme, string> = {
-  light: '#f4f8fa',
-  dark: '#0b1114',
+  light: '#f8f5ee',
+  dark: '#253528',
 };
 
 export function getStoredTheme(): Theme | null {
