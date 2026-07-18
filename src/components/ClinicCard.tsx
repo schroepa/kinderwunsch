@@ -1,5 +1,6 @@
 import type { Clinic, TreatmentType } from '../lib/types';
 import { TREATMENT_INFO, TREATMENT_ORDER } from '../lib/treatments';
+import { provenanceLabel, resolveProvenance } from '../lib/clinicProvenance';
 import { ExternalLink, MapPin, Star } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -38,6 +39,8 @@ export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?
   const rows = costRows(clinic);
   const fromPrice = rows.length ? Math.min(...rows.map((row) => row.amount)) : null;
   const location = [clinic.city, clinic.countryCode].filter(Boolean).join(' · ');
+  const provenance = resolveProvenance(clinic);
+  const isCurated = provenance === 'curated';
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/90 shadow-soft transition-geist hover:border-border hover:shadow-card">
@@ -56,6 +59,15 @@ export function ClinicCard({ clinic, standLabel }: { clinic: Clinic; standLabel?
                     {location}
                   </span>
                 )}
+                <span
+                  className={
+                    isCurated
+                      ? 'rounded-md bg-primary/10 px-2 py-0.5 text-fluid-xs font-medium text-primary'
+                      : 'rounded-md bg-secondary px-2 py-0.5 text-fluid-xs font-medium text-foreground/75'
+                  }
+                >
+                  {provenanceLabel(provenance)}
+                </span>
                 {standLabel && (
                   <>
                     <span className="text-border" aria-hidden>
