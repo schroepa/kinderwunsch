@@ -6,6 +6,111 @@
     "enabled": true
   },
   {
+    "id": "de-dir-members-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/de-dir-members-2026-07-18.json",
+    "countryCode": "DE",
+    "enabled": true
+  },
+  {
+    "id": "cz-fertility-cz-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/cz-fertility-cz-2026-07-18.json",
+    "countryCode": "CZ",
+    "enabled": true
+  },
+  {
+    "id": "sk-fertility-cz-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/sk-fertility-cz-2026-07-18.json",
+    "countryCode": "SK",
+    "enabled": true
+  },
+  {
+    "id": "es-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/es-ivf-worldwide-2026-07-18.json",
+    "countryCode": "ES",
+    "enabled": true
+  },
+  {
+    "id": "pl-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/pl-ivf-worldwide-2026-07-18.json",
+    "countryCode": "PL",
+    "enabled": true
+  },
+  {
+    "id": "be-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/be-ivf-worldwide-2026-07-18.json",
+    "countryCode": "BE",
+    "enabled": true
+  },
+  {
+    "id": "hu-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/hu-ivf-worldwide-2026-07-18.json",
+    "countryCode": "HU",
+    "enabled": true
+  },
+  {
+    "id": "se-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/se-ivf-worldwide-2026-07-18.json",
+    "countryCode": "SE",
+    "enabled": true
+  },
+  {
+    "id": "gr-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/gr-ivf-worldwide-2026-07-18.json",
+    "countryCode": "GR",
+    "enabled": true
+  },
+  {
+    "id": "pt-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/pt-ivf-worldwide-2026-07-18.json",
+    "countryCode": "PT",
+    "enabled": true
+  },
+  {
+    "id": "it-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/it-ivf-worldwide-2026-07-18.json",
+    "countryCode": "IT",
+    "enabled": true
+  },
+  {
+    "id": "fr-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/fr-ivf-worldwide-2026-07-18.json",
+    "countryCode": "FR",
+    "enabled": true
+  },
+  {
+    "id": "at-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/at-ivf-worldwide-2026-07-18.json",
+    "countryCode": "AT",
+    "enabled": true
+  },
+  {
+    "id": "nl-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/nl-ivf-worldwide-2026-07-18.json",
+    "countryCode": "NL",
+    "enabled": true
+  },
+  {
+    "id": "dk-ivf-worldwide-pack",
+    "type": "directory_pack",
+    "path": "public/data/directory-packs/dk-ivf-worldwide-2026-07-18.json",
+    "countryCode": "DK",
+    "enabled": true
+  },
+  {
     "id": "ch-swissmom-directory-pack",
     "type": "directory_pack",
     "path": "public/data/directory-packs/ch-swissmom-2026-07-18.json",

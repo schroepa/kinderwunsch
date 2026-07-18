@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "sourceUrl": "https://ivf-worldwide.com/ivf-directory/europe/france.html",
+    "accessedAt": "2026-07-18",
+    "note": "Clinic directory entries from IVF-Worldwide (Europe/FR). Allowlisted public directory; websites only when listed; no costs/ratings."
+  },
+  "clinics": [
+    {
+      "name": "Clinique Mutualiste La Sagesse",
+      "city": "Rennes",
+      "countryCode": "FR",
+      "website": "https://cliniquemutualistelasagesse.com"
+    },
+    {
+      "name": "Clinique L\\'Arc-en-Ciel",
+      "city": "Epinal",
+      "countryCode": "FR",
+      "website": "https://www.epinal-sante.com/arcenciel"
+    },
+    {
+      "name": "Clinique Du Tertre Rouge",
+      "city": "Le Mans",
+      "countryCode": "FR",
+      "website": "https://www.tertrerouge.fr"
+    },
+    {
+      "name": "CHR De Toulouse",
+      "city": "Toulouse",
+      "countryCode": "FR",
+      "website": "https://www.chu-toulouse.fr"
+    },
+    {
+      "name": "CHR De Lyon Hopital De La Croix Rousse",
+      "city": "Lyon",
+      "countryCode": "FR",
+      "website": "https://www.chu-lyon.fr"
+    },
+    {
+      "name": "CHG De Roanne",
+      "city": "Roanne",
+      "countryCode": "FR",
+      "website": "https://centrehospitalierroanne.fr"
+    },
+    {
+      "name": "CHG Du Havre",
+      "city": "Le Havre",
+      "countryCode": "FR",
+      "website": "https://www.ch-havre.fr"
+    },
+    {
+      "name": "CH Intercommunal Jean Rostand",
+      "city": "Sevres",
+      "countryCode": "FR",
+      "website": "https://www.ch-4villes.fr"
+    },
+    {
+      "name": "CHG De Cayenne",
+      "city": "Cayenne",
+      "countryCode": "FR",
+      "website": "https://www.ch-cayenne.com"
+    },
+    {
+      "name": "CH Intercommunal De Poissy",
+      "city": "Poissy",
+      "countryCode": "FR",
+      "website": "https://www.chi-poissy-st-germain.fr"
+    },
+    {
+      "name": "CH De Rouen",
+      "city": "Rouen",
+      "countryCode": "FR",
+      "website": "https://www.chu-rouen.fr"
+    }
+  ]
+}

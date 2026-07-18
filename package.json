@@ -13,7 +13,9 @@
     "astro": "astro",
     "test": "vitest run",
     "test:watch": "vitest",
-    "crawl:clinics": "npx tsx scripts/crawl-clinics.ts"
+    "crawl:clinics": "npx tsx scripts/crawl-clinics.ts",
+    "packs:build": "npx tsx scripts/build-directory-packs.ts",
+    "packs:merge": "npx tsx scripts/merge-directory-packs.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",

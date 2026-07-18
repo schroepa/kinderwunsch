@@ -1,0 +1,249 @@
+{
+  "_meta": {
+    "sourceUrl": "https://ivf-worldwide.com/ivf-directory/europe/netherlands.html",
+    "accessedAt": "2026-07-18",
+    "note": "Clinic directory entries from IVF-Worldwide (Europe/NL). Allowlisted public directory; websites only when listed; no costs/ratings."
+  },
+  "clinics": [
+    {
+      "name": "Poli-Zuid",
+      "city": "Arnhem",
+      "countryCode": "NL",
+      "website": "https://www.alysiszorggroep.nl"
+    },
+    {
+      "name": "Albert Schweitzerziekenhuis",
+      "city": "Zwijndrecht",
+      "countryCode": "NL",
+      "website": "https://www.asz.nl"
+    },
+    {
+      "name": "Erasmus MC Sophia",
+      "city": "Rotterdam",
+      "countryCode": "NL",
+      "website": "https://www.erasmusmc.nl"
+    },
+    {
+      "name": "Reinier De Graafgroep - Diaconessenhuis Voor",
+      "city": "Voorburg",
+      "countryCode": "NL",
+      "website": "https://www.rdgg.nl"
+    },
+    {
+      "name": "St Franciscus Gasthuis",
+      "city": "Rotterdam",
+      "countryCode": "NL",
+      "website": "https://www.sfg.nl"
+    },
+    {
+      "name": "Maasstad Ziekenhuis Zuiderziekenhuis",
+      "city": "Rotterdam",
+      "countryCode": "NL",
+      "website": "https://www.maasstadziekenhuis.nl"
+    },
+    {
+      "name": "Priklocatie Rijnsburg",
+      "city": "Rijnsburg",
+      "countryCode": "NL",
+      "website": "https://www.diaconessenhuis.nl"
+    },
+    {
+      "name": "Reinier De Graafgroep Naaldwijk",
+      "city": "Naaldwijk",
+      "countryCode": "NL",
+      "website": "https://www.rdgg.nl"
+    },
+    {
+      "name": "Medisch Centrum Kinderwens",
+      "city": "Leiderdorp",
+      "countryCode": "NL",
+      "website": "https://www.mckinderwens.nl"
+    },
+    {
+      "name": "Diaconessenhuis Leiden",
+      "city": "Leiden",
+      "countryCode": "NL",
+      "website": "https://www.diaconessenhuis.nl"
+    },
+    {
+      "name": "St Franciscus Gasthuis Locatie Berkel",
+      "city": "Berkel en Rodenrijs",
+      "countryCode": "NL",
+      "website": "https://www.sfg.nl"
+    },
+    {
+      "name": "Academisch Ziekenhuis Leiden",
+      "city": "Leiden",
+      "countryCode": "NL",
+      "website": "https://www.lumc.nl"
+    },
+    {
+      "name": "Priklocatie Noordwijkerhout",
+      "city": "Noordwijkerhout",
+      "countryCode": "NL",
+      "website": "https://www.diaconessenhuis.nl"
+    },
+    {
+      "name": "Medisch Centrum Haaglanden Locatie Antoniushove",
+      "city": "Leidschendam",
+      "countryCode": "NL",
+      "website": "https://www.mchaaglanden.nl"
+    },
+    {
+      "name": "Groene Hart Ziekenhuis Polikliniek Gynaecologie & Verloskunde",
+      "city": "Gouda",
+      "countryCode": "NL",
+      "website": "https://www.ghz.nl"
+    },
+    {
+      "name": "Rivas Medizorg Beatrix Ziekenhuis",
+      "city": "Gorinchem",
+      "countryCode": "NL",
+      "website": "https://www.gynaecologen.nl"
+    },
+    {
+      "name": "Albert Schweitzer Ziekenhuis",
+      "city": "Dordrecht",
+      "countryCode": "NL",
+      "website": "https://www.asz.nl"
+    },
+    {
+      "name": "HagaZiekenhuis Rode Kruis",
+      "city": "Den Haag",
+      "countryCode": "NL",
+      "website": "https://www.hagaziekenhuis.nl/nl"
+    },
+    {
+      "name": "Bronovo-Nebo Ziekenhuis",
+      "city": "Den Haag",
+      "countryCode": "NL",
+      "website": "https://www.bronovo.nl"
+    },
+    {
+      "name": "Medisch Centrum Haaglanden Locatie Westeinde",
+      "city": "Den Haag",
+      "countryCode": "NL",
+      "website": "https://www.mchaaglanden.nl"
+    },
+    {
+      "name": "Medisch Centrum Bijdorp",
+      "city": "Barendrecht",
+      "countryCode": "NL",
+      "website": "https://www.donorsperma.nl"
+    },
+    {
+      "name": "Reinier De Graafgroep Delft",
+      "city": "Delft",
+      "countryCode": "NL",
+      "website": "https://www.rdgg.nl"
+    },
+    {
+      "name": "Spreekuren Dagelijks Volgens Afspraak Rijnoordziekenhuis",
+      "city": "Alphen aan Den Rijn",
+      "countryCode": "NL",
+      "website": "https://www.rijnland.nl"
+    },
+    {
+      "name": "Ziekenhuis Walcheren",
+      "city": "Vlissingen",
+      "countryCode": "NL",
+      "website": "https://www.zwv.nl"
+    },
+    {
+      "name": "Ziekenhuis Zeeuws Vlaanderen Locatie De Honte",
+      "city": "Terneuzen",
+      "countryCode": "NL",
+      "website": "https://www.zz.nl"
+    },
+    {
+      "name": "Diakonessenhuis Zeist",
+      "city": "Zeist",
+      "countryCode": "NL",
+      "website": "https://www.diakonessenhuis.nl"
+    },
+    {
+      "name": "ViaZorg",
+      "city": "Goes",
+      "countryCode": "NL",
+      "website": "https://www.zz.nl"
+    },
+    {
+      "name": "Ziekenhuis De Gelderse Vallei Veenendaal",
+      "city": "Veenendaal",
+      "countryCode": "NL",
+      "website": "https://www.geldersevallei.nl"
+    },
+    {
+      "name": "Diakonessenhuis Utrecht",
+      "city": "Utrecht",
+      "countryCode": "NL",
+      "website": "https://www.diakonessenhuis.nl"
+    },
+    {
+      "name": "NVOG - Nederlandse Vereniging Voor Obstetrie En Gynaecologie",
+      "city": "Utrecht",
+      "countryCode": "NL",
+      "website": "https://nvog.nl"
+    },
+    {
+      "name": "Academisch Ziekenhuis Utrecht",
+      "city": "Utrecht",
+      "countryCode": "NL",
+      "website": "https://www.umcutrecht.nl/subsite/IVF"
+    },
+    {
+      "name": "Ziekenhuis Eemland Soest",
+      "city": "Soest",
+      "countryCode": "NL",
+      "website": "https://www.meandermedischcentrum.nl"
+    },
+    {
+      "name": "St. Antonius Ziekenhuis",
+      "city": "Nieuwegein",
+      "countryCode": "NL",
+      "website": "https://www.antoniusziekenhuis.nl"
+    },
+    {
+      "name": "Diakonessenhuis Doorn",
+      "city": "Doorn",
+      "countryCode": "NL",
+      "website": "https://www.diakonessenhuis.nl"
+    },
+    {
+      "name": "Ziekenhuis Eemland Baarn",
+      "city": "Baarn",
+      "countryCode": "NL",
+      "website": "https://www.meandermedischcentrum.nl"
+    },
+    {
+      "name": "Ziekenhuis Eemland Amersfoort Lichtenberg",
+      "city": "Amersfoort",
+      "countryCode": "NL",
+      "website": "https://www.meandermedischcentrum.nl"
+    },
+    {
+      "name": "Isala - Sophia Ziekenhuis",
+      "city": "Zwolle",
+      "countryCode": "NL",
+      "website": "https://www.isala.nl"
+    },
+    {
+      "name": "Medisch Spectrum Twente Oldenzaal",
+      "city": "Oldenzaal",
+      "countryCode": "NL",
+      "website": "https://www.mstwente.nl"
+    },
+    {
+      "name": "Isala - Kampen",
+      "city": "Kampen",
+      "countryCode": "NL",
+      "website": "https://www.isala.nl"
+    },
+    {
+      "name": "Medisch Spectrum Twente Losser",
+      "city": "Losser",
+      "countryCode": "NL",
+      "website": "https://www.mstwente.nl"
+    }
+  ]
+}

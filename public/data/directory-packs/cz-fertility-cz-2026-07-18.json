@@ -1,0 +1,237 @@
+{
+  "_meta": {
+    "sourceUrl": "https://www.fertility.cz/kontakty/centra-asistovane-reprodukce.html",
+    "accessedAt": "2026-07-18",
+    "note": "Public list of assisted reproduction centres (ČR) from fertility.cz. No costs/ratings."
+  },
+  "clinics": [
+    {
+      "name": "Pronatal Repro",
+      "city": "České Budějovice",
+      "countryCode": "CZ",
+      "website": "https://www.pronatalrepro.cz"
+    },
+    {
+      "name": "Sanatorium ART, spol. s r.o.",
+      "city": "České Budějovice",
+      "countryCode": "CZ",
+      "website": "https://www.sanatoriunart.cz"
+    },
+    {
+      "name": "CAR SANUS s.r.o.",
+      "city": "Hradec Králové",
+      "countryCode": "CZ",
+      "website": "https://www.sanus.cz"
+    },
+    {
+      "name": "CAR SANUS s.r.o.",
+      "city": "Jihlava",
+      "countryCode": "CZ",
+      "website": "https://www.sanus-jihlava.cz"
+    },
+    {
+      "name": "Institut reprod.medicíny a endokrinologie KV",
+      "city": "Karlovy Vary",
+      "countryCode": "CZ",
+      "website": "https://www.ivf-karlovyvary.cz"
+    },
+    {
+      "name": "Pronatal Spa s.r.o.",
+      "city": "Karlovy Vary",
+      "countryCode": "CZ",
+      "website": "https://www.pronatalspa.cz"
+    },
+    {
+      "name": "ARLETA s.r.o.",
+      "city": "Kostelec n.O.",
+      "countryCode": "CZ",
+      "website": "https://www.arleta.cz"
+    },
+    {
+      "name": "GENNET Liberec",
+      "city": "Liberec",
+      "countryCode": "CZ",
+      "website": "https://www.gennet.cz"
+    },
+    {
+      "name": "CAR SANUS s.r.o.",
+      "city": "Pardubice",
+      "countryCode": "CZ",
+      "website": "https://www.sanus.cz"
+    },
+    {
+      "name": "IVF Zentren prof.Zech - Pilsen s.r.o.",
+      "city": "Plzeň",
+      "countryCode": "CZ",
+      "website": "https://www.ivf-institut.cz"
+    },
+    {
+      "name": "NATALART s.r.o.",
+      "city": "Plzeň",
+      "countryCode": "CZ",
+      "website": "https://www.natalart.cz"
+    },
+    {
+      "name": "CAR gyn-por.kliniky 1.LF UK a VFN",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://apolinar.vfn.cz/index.php?grp=66"
+    },
+    {
+      "name": "CAR gyn.-por.kliniky 2.LF UK",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.ivf-motol.cz"
+    },
+    {
+      "name": "Europe IVF International s.r.o.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.fertility-ivf.eu"
+    },
+    {
+      "name": "GENNET s.r.o.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.gennet.cz"
+    },
+    {
+      "name": "GEST, s.r.o.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.gest.cz"
+    },
+    {
+      "name": "ISCARE IVF, a.s.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.iscare.cz"
+    },
+    {
+      "name": "IVF CUBE s.r.o.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.ivf-cube.eu"
+    },
+    {
+      "name": "Prague Fertility Centre s.r.o.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.pragueivf.com"
+    },
+    {
+      "name": "Sanatorium PRONATAL Plus s.r.o.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.pronatalplus.cz"
+    },
+    {
+      "name": "Sanatorium PRONATAL s.r.o.",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.pronatal.cz"
+    },
+    {
+      "name": "ÚPMD Praha",
+      "city": "Praha",
+      "countryCode": "CZ",
+      "website": "https://www.upmd.cz"
+    },
+    {
+      "name": "PRONATAL Nord",
+      "city": "Teplice",
+      "countryCode": "CZ",
+      "website": "https://www.pronatalnord.cz"
+    },
+    {
+      "name": "Stellart s.r.o.",
+      "city": "Teplice",
+      "countryCode": "CZ",
+      "website": "https://www.stellart.cz"
+    },
+    {
+      "name": "CAR I.gyn.-por.kliniky MU",
+      "city": "Brno",
+      "countryCode": "CZ",
+      "website": "https://www.ivfbrno.cz"
+    },
+    {
+      "name": "L´ART klinika",
+      "city": "Brno",
+      "countryCode": "CZ",
+      "website": "https://www.ivf.cz"
+    },
+    {
+      "name": "REPROFIT International s.r.o.",
+      "city": "Brno",
+      "countryCode": "CZ",
+      "website": "https://www.reprofit.cz"
+    },
+    {
+      "name": "Reprogenesis s.r.o.",
+      "city": "Brno",
+      "countryCode": "CZ",
+      "website": "https://www.reprogenesis.cz"
+    },
+    {
+      "name": "Sanatorium HELIOS, s.r.o.",
+      "city": "Brno",
+      "countryCode": "CZ",
+      "website": "https://www.sanatoriumhelios.cz"
+    },
+    {
+      "name": "Sanatorium REPROMEDA s.r.o.",
+      "city": "Brno",
+      "countryCode": "CZ",
+      "website": "https://www.repromeda.cz"
+    },
+    {
+      "name": "UNICA Brno, s.r.o.",
+      "city": "Brno",
+      "countryCode": "CZ",
+      "website": "https://www.unica.cz"
+    },
+    {
+      "name": "EUROFERTIL CZ, a.s.",
+      "city": "Moravská Ostrava",
+      "countryCode": "CZ",
+      "website": "https://www.eurofertil.cz"
+    },
+    {
+      "name": "CAR Por.-gyn.kliniky FN",
+      "city": "Olomouc",
+      "countryCode": "CZ",
+      "website": "https://www.ivf.upol.cz"
+    },
+    {
+      "name": "FERTIMED s.r.o.",
+      "city": "Olomouc",
+      "countryCode": "CZ",
+      "website": "https://www.fertimed.cz"
+    },
+    {
+      "name": "REPROFIT International s.r.o.",
+      "city": "Olomouc",
+      "countryCode": "CZ",
+      "website": "https://www.reprofit.cz"
+    },
+    {
+      "name": "Gyncentrum Ostrava, s.r.o.",
+      "city": "Ostrava",
+      "countryCode": "CZ",
+      "website": "https://www.gyncentrum.com"
+    },
+    {
+      "name": "FERTIMED Polanka nad Odrou",
+      "city": "Polanka nad Odrou",
+      "countryCode": "CZ",
+      "website": "https://www.fertimed.cz"
+    },
+    {
+      "name": "CRM Zlín",
+      "city": "Zlín",
+      "countryCode": "CZ",
+      "website": "https://www.crmzlin.cz"
+    }
+  ]
+}

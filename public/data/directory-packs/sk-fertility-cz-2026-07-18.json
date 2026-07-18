@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "sourceUrl": "https://www.fertility.cz/kontakty/centra-asistovane-reprodukce.html",
+    "accessedAt": "2026-07-18",
+    "note": "Public list of assisted reproduction centres (SK) from fertility.cz. No costs/ratings."
+  },
+  "clinics": [
+    {
+      "name": "Ferticent",
+      "city": "Bratislava",
+      "countryCode": "SK",
+      "website": "https://www.ferticent.com"
+    },
+    {
+      "name": "Gyn-Fiv",
+      "city": "Bratislava",
+      "countryCode": "SK",
+      "website": "https://www.gyn-fiv.sk"
+    },
+    {
+      "name": "Reprodukcia s.r.o.",
+      "city": "Bratislava",
+      "countryCode": "SK",
+      "website": "https://www.reprodukcia.sk"
+    },
+    {
+      "name": "ISCARE Bratislava",
+      "city": "Bratislava",
+      "countryCode": "SK",
+      "website": "https://www.iscare.sk"
+    },
+    {
+      "name": "ISCARE Martin",
+      "city": "Martin",
+      "countryCode": "SK",
+      "website": "https://www.iscare.sk"
+    },
+    {
+      "name": "Helios",
+      "city": "Martin",
+      "countryCode": "SK",
+      "website": "https://www.sanatoriumhelios.sk"
+    },
+    {
+      "name": "Gyncare, s.r.o.",
+      "city": "Košice",
+      "countryCode": "SK",
+      "website": "https://www.gyncare-sk.com"
+    },
+    {
+      "name": "Sanatorium pro liečbu neplodnosti (SPLN s.r.o.)",
+      "city": "Košice",
+      "countryCode": "SK",
+      "website": "https://www.spln.eu"
+    }
+  ]
+}

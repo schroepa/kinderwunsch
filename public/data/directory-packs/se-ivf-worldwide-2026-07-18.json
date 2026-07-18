@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "sourceUrl": "https://ivf-worldwide.com/ivf-directory/europe/sweden.html",
+    "accessedAt": "2026-07-18",
+    "note": "Clinic directory entries from IVF-Worldwide (Europe/SE). Allowlisted public directory; websites only when listed; no costs/ratings."
+  },
+  "clinics": [
+    {
+      "name": "Lucina Kliniken",
+      "city": "Varmdo",
+      "countryCode": "SE",
+      "website": "https://www.lucinakliniken.com"
+    },
+    {
+      "name": "Akademiska SjukhusetReproduktionscentrum",
+      "city": "Uppsala",
+      "countryCode": "SE",
+      "website": "https://www.akademiska.se"
+    },
+    {
+      "name": "IVF Kliniken Umea",
+      "city": "Umea",
+      "countryCode": "SE",
+      "website": "https://www.ivfsverige.se"
+    },
+    {
+      "name": "Carl Von Linne Kliniken",
+      "city": "Uppsala",
+      "countryCode": "SE",
+      "website": "https://www.linne.se"
+    },
+    {
+      "name": "Lucina Kliniken",
+      "city": "Stockholm",
+      "countryCode": "SE",
+      "website": "https://www.lucinakliniken.com"
+    },
+    {
+      "name": "Karolinska Universitetssjukhuset Fertilitetsenheten",
+      "city": "Stockholm",
+      "countryCode": "SE",
+      "website": "https://www.karolinska.se"
+    },
+    {
+      "name": "Sophiahemmet IVF Mottagningen",
+      "city": "Stockholm",
+      "countryCode": "SE",
+      "website": "https://www.ivf-gruppen.se"
+    },
+    {
+      "name": "Fertilitetscentrum",
+      "city": "Stockholm",
+      "countryCode": "SE",
+      "website": "https://www.fertilitetscentrum.se"
+    },
+    {
+      "name": "IVF Kliniken Stockholm",
+      "city": "Stockholm",
+      "countryCode": "SE",
+      "website": "https://www.ivfstockholm.se"
+    },
+    {
+      "name": "Universitetssjukhuset Orebro Fertilitetsenheten",
+      "city": "orebro",
+      "countryCode": "SE",
+      "website": "https://www.orebroll.se"
+    },
+    {
+      "name": "RMC- Reproduktionsmedicinskt Centrum",
+      "city": "Malmo",
+      "countryCode": "SE",
+      "website": "https://www.rmc.umas.se"
+    },
+    {
+      "name": "IVF Kliniken Oresund",
+      "city": "Malmo",
+      "countryCode": "SE",
+      "website": "https://www.ivfkliniken.com"
+    },
+    {
+      "name": "Universitetssjukhuset Linkoping RMC Kvinnokliniken",
+      "city": "Linkoping",
+      "countryCode": "SE",
+      "website": "https://www.lio.se"
+    },
+    {
+      "name": "IVF Kliniken Cura I Malmo",
+      "city": "Malmo",
+      "countryCode": "SE",
+      "website": "https://www.ivfsverige.se"
+    },
+    {
+      "name": "Fertilitetscentrum- Fertility Center Scandinavia",
+      "city": "Goteborg",
+      "countryCode": "SE",
+      "website": "https://www.fertilitetscentrum.se"
+    },
+    {
+      "name": "IVF Kliniken Goteborg",
+      "city": "Goteborg",
+      "countryCode": "SE",
+      "website": "https://www.ivfsverige.se"
+    },
+    {
+      "name": "IVF Kliniken Falun",
+      "city": "Falun",
+      "countryCode": "SE",
+      "website": "https://www.ivfsverige.se"
+    },
+    {
+      "name": "Enheten for Reproduktionsmedicin IVF",
+      "city": "Goteborg",
+      "countryCode": "SE",
+      "website": "https://www.sahlgrenska.se"
+    },
+    {
+      "name": "Nordic IVF Center",
+      "city": "Gothemburg",
+      "countryCode": "SE",
+      "website": "https://www.nordicivfcenter.se"
+    }
+  ]
+}

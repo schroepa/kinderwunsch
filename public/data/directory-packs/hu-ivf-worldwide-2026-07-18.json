@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "sourceUrl": "https://ivf-worldwide.com/ivf-directory/europe/hungary.html",
+    "accessedAt": "2026-07-18",
+    "note": "Clinic directory entries from IVF-Worldwide (Europe/HU). Allowlisted public directory; websites only when listed; no costs/ratings."
+  },
+  "clinics": [
+    {
+      "name": "Robert Karoly Private Klinik",
+      "city": "Budapest",
+      "countryCode": "HU",
+      "website": "https://www.robertklinika.hu"
+    },
+    {
+      "name": "Dévai Intézet",
+      "city": "Budapest",
+      "countryCode": "HU",
+      "website": "https://www.devaiintezet.hu"
+    },
+    {
+      "name": "Forgács Institute",
+      "city": "Budapest",
+      "countryCode": "HU",
+      "website": "https://www.forgacsintezet.hu"
+    },
+    {
+      "name": "Kaáli Institute Debrecen Univ.Med.School",
+      "city": "Debrecen",
+      "countryCode": "HU",
+      "website": "https://www.kaalideb.hu"
+    },
+    {
+      "name": "Pannon Reproduction Institute",
+      "city": "Tapolca",
+      "countryCode": "HU",
+      "website": "https://www.pri.hu"
+    },
+    {
+      "name": "CIRIS Budapest Klinika",
+      "city": "Budapest",
+      "countryCode": "HU",
+      "website": "https://www.ciris.hu"
+    },
+    {
+      "name": "Kaali Inst",
+      "city": "Gy?r",
+      "countryCode": "HU",
+      "website": "https://www.ivfpregnancycenter.com"
+    },
+    {
+      "name": "Versys Clinics HRI",
+      "city": "Budapest",
+      "countryCode": "HU",
+      "website": "https://www.versysclinics.com"
+    },
+    {
+      "name": "PTE AOK Dep. of Obs. Repruduction Center",
+      "city": "Pécs",
+      "countryCode": "HU",
+      "website": "https://www.pecsimeddoseg.hu"
+    },
+    {
+      "name": "Versys Clinics Human Reproduction Institute",
+      "city": "Budapest",
+      "countryCode": "HU",
+      "website": "https://english.versysclinics.com"
+    },
+    {
+      "name": "kaali Intezet",
+      "city": "Szeged",
+      "countryCode": "HU",
+      "website": "https://kaali.hu"
+    }
+  ]
+}

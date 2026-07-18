@@ -1,0 +1,849 @@
+{
+  "_meta": {
+    "sourceUrl": "https://www.deutsches-ivf-register.de/perch/resources/adressen-dir-mitglieder-260609.pdf",
+    "accessedAt": "2026-07-18",
+    "note": "Static snapshot of D·I·R® member centres (PDF address list, sorted by PLZ). Public register; no costs/ratings transcribed."
+  },
+  "clinics": [
+    {
+      "name": "Liste der Mitglieder / Mitgliedszentren",
+      "city": "Dresden",
+      "countryCode": "DE",
+      "website": "https://www.ivf-dresden.de"
+    },
+    {
+      "name": "Gynäkologische Endokrinologie und Reproduktionsmedizin der Universitätsfrauenklinik",
+      "city": "Dresden",
+      "countryCode": "DE",
+      "website": "https://www.uniklinikum-dresden.de/kinderwunschzentrum"
+    },
+    {
+      "name": "Kinderwunschzentrum Leipzig-Chemnitz",
+      "city": "Leipzig",
+      "countryCode": "DE",
+      "website": "https://www.ivf-leipzig.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Praxisklinik City Leipzig",
+      "city": "Leipzig",
+      "countryCode": "DE",
+      "website": "https://www.praxisklinik-city-leipzig.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Halle",
+      "city": "Halle",
+      "countryCode": "DE",
+      "website": "https://www.kiwu-halle.de"
+    },
+    {
+      "name": "Zentrum für Reproduktionsmedizin Jena",
+      "city": "Jena",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-thueringen.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Leipzig-Chemnitz",
+      "city": "Chemnitz",
+      "countryCode": "DE",
+      "website": "https://www.ivf-chemnitz.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Praxisklinik City Chemnitz",
+      "city": "Chemnitz",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-chemnitz.de"
+    },
+    {
+      "name": "Kinderwunschzentrum am Potsdamer Platz",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-potsdamerplatz.de"
+    },
+    {
+      "name": "MVZ Kinderwunschteam Berlin GmbH",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschteam.berlin"
+    },
+    {
+      "name": "PRAXIS für FERTILITÄT",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.fertilitaet.de"
+    },
+    {
+      "name": "MVZ Kinderwunsch am Gendarmenmarkt GmbH",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.mvz-kinderwunsch.com/kinderwunschzentren/berlin"
+    },
+    {
+      "name": "Wunschkinder Berlin",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.wunschkinder-berlin.de"
+    },
+    {
+      "name": "Ceres – Kinderwunschzentrum Dr. Hannen und Dr. Stoll",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum.de"
+    },
+    {
+      "name": "Kinderwunschzentrum an der Gedächtniskirche",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-berlin.de"
+    },
+    {
+      "name": "Kinderwunschzentrum am Innsbrucker Platz Berlin",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschpraxis-berlin.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Dres. Hoffmann",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.praxisklinik-dres-hoffmann.de"
+    },
+    {
+      "name": "MVZ für Gynäkologie Helle-Mitte",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.berliner-kinderwunsch.de"
+    },
+    {
+      "name": "MVZ Fertility Center Berlin",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.fertilitycenterberlin.de"
+    },
+    {
+      "name": "Kinderwunschärzte Berlin GbR",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschaerzte-berlin.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Potsdam MVZ GmbH",
+      "city": "Potsdam",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-potsdam.de"
+    },
+    {
+      "name": "Praxis für Fertilität",
+      "city": "Rostock",
+      "countryCode": "DE",
+      "website": "https://www.ivf-rostock.de"
+    },
+    {
+      "name": "Medizinisches Versorgungszentrum",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.fertility-center-hh.de"
+    },
+    {
+      "name": "amedes fertility",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.fertility-hamburg-barkhof.de"
+    },
+    {
+      "name": "Kinderwunsch Valentinshof",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-valentinshof.de"
+    },
+    {
+      "name": "Kinderwunsch Hamburg Mitte",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-hh-mitte.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Altonaer Straße (MVZ)",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.ivf-hamburg.de"
+    },
+    {
+      "name": "KinderwunschZentrum HAFENCITY Hamburg",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-hafencity.de"
+    },
+    {
+      "name": "Kinderwunsch Praxisklinik Fleetinsel Hamburg",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschfleetinsel.de"
+    },
+    {
+      "name": "Praxis für Kinderwunsch & Hormone – Hamburger Straße",
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "website": "https://www.ivf-hh.de"
+    },
+    {
+      "name": "Universitäres Kinderwunschzentrum Lübeck und Manhagen",
+      "city": "Lübeck",
+      "countryCode": "DE",
+      "website": "https://www.uksh.de/Kinderwunsch_Luebeck"
+    },
+    {
+      "name": "Kinderwunsch Holstein",
+      "city": "Bad Schwartau",
+      "countryCode": "DE",
+      "website": "https://www.ivf-badschwartau.de"
+    },
+    {
+      "name": "fertilitycenter Schleswig-Holstein",
+      "city": "Kiel",
+      "countryCode": "DE",
+      "website": "https://www.fertilitycenter.de"
+    },
+    {
+      "name": "Universitäres Kinderwunschzentrum Kiel, Flensburg und Heide",
+      "city": "Kiel",
+      "countryCode": "DE",
+      "website": "https://www.uksh.de/Kinderwunsch_Kiel"
+    },
+    {
+      "name": "KinderwunschKiel",
+      "city": "Kiel",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschkiel.de"
+    },
+    {
+      "name": "Team Kinderwunsch Oldenburg GbR MVZ",
+      "city": "Oldenburg",
+      "countryCode": "DE",
+      "website": "https://www.teamkinderwunsch.de"
+    },
+    {
+      "name": "Tagesklinik Oldenburg",
+      "city": "Oldenburg",
+      "countryCode": "DE",
+      "website": "https://www.tagesklinik-oldenburg.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Ostfriesland",
+      "city": "Leer",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschostfriesland.de"
+    },
+    {
+      "name": "Kinderwunsch Bremen",
+      "city": "Bremen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschbremen.de"
+    },
+    {
+      "name": "Bremer Zentrum für Fortpflanzungsmedizin (BZF)",
+      "city": "Bremen",
+      "countryCode": "DE",
+      "website": "https://www.icsi.de"
+    },
+    {
+      "name": "Team Kinderwunsch Hannover",
+      "city": "Hannover",
+      "countryCode": "DE",
+      "website": "https://www.team-kinderwunsch-hannover.de"
+    },
+    {
+      "name": "Medizinische Hochschule Hannover (MHH)",
+      "city": "Hannover",
+      "countryCode": "DE",
+      "website": "https://www.mh-hannover.de/kinderwunsch.html"
+    },
+    {
+      "name": "Kinderwunschzentrum Langenhagen & Wolfsburg MVZ",
+      "city": "Langenhagen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-langenhagen.de"
+    },
+    {
+      "name": "MVZ für Reproduktionsmedizin & Humangenetik Hildesheim",
+      "city": "Hildesheim",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-hildesheim.de"
+    },
+    {
+      "name": "Deutsche Klinik Bad Münder – Hannover",
+      "city": "Bad Münder",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch.com"
+    },
+    {
+      "name": "Zentrum für Kinderwunschbehandlung und pränatale Medizin",
+      "city": "Minden",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch.net"
+    },
+    {
+      "name": "Praxisklinik Prof. Volz",
+      "city": "Bielefeld",
+      "countryCode": "DE",
+      "website": "https://www.frog.de.com"
+    },
+    {
+      "name": "Kleine Wunder",
+      "city": "Bielefeld",
+      "countryCode": "DE",
+      "website": "https://www.kleinewunder.net"
+    },
+    {
+      "name": "Bielefeld Fertility-Center",
+      "city": "Bielefeld",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-bielefeld.de"
+    },
+    {
+      "name": "MVZ für Reproduktionsmedizin am Klinikum Kassel",
+      "city": "Kassel",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-kassel.de"
+    },
+    {
+      "name": "Reproduktionsmedizinisches Kompetenzzentrum am Universitätsklinikum Gießen und",
+      "city": "Marburg",
+      "countryCode": "DE",
+      "website": "https://www.ukgm.de/ugm_2/deu/umr_gyn/65260.html"
+    },
+    {
+      "name": "Kinderwunschzentrum Mittelhessen",
+      "city": "Wetzlar",
+      "countryCode": "DE",
+      "website": "https://www.ivf-mh.de"
+    },
+    {
+      "name": "Kinderwunschpraxis Göttingen",
+      "city": "Göttingen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschpraxis-goettingen.de"
+    },
+    {
+      "name": "MVZ Kinderwunschzentrum Göttingen",
+      "city": "Göttingen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-zentrum-goettingen.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Magdeburg",
+      "city": "Magdeburg",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-magdeburg.de"
+    },
+    {
+      "name": "Otto-von-Guericke-Universität Magdeburg",
+      "city": "Magdeburg",
+      "countryCode": "DE",
+      "website": "https://www.krep.ovgu.de"
+    },
+    {
+      "name": "Kinderwunsch-Kö",
+      "city": "Düsseldorf",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-koe.de"
+    },
+    {
+      "name": "UniKiD",
+      "city": "Düsseldorf",
+      "countryCode": "DE",
+      "website": "https://www.unikid.de"
+    },
+    {
+      "name": "MVZ Kinderwunsch am Seestern GmbH",
+      "city": "Düsseldorf",
+      "countryCode": "DE",
+      "website": "https://www.mvz-kinderwunsch.com/kinderwunschzentren/duesseldorf"
+    },
+    {
+      "name": "Kinderwunschzentrum im Prinzenpark",
+      "city": "Düsseldorf",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-prinzenpark.de"
+    },
+    {
+      "name": "Ki.Nd",
+      "city": "Mönchengladbach",
+      "countryCode": "DE",
+      "website": "https://www.ki-nd.de"
+    },
+    {
+      "name": "green-ivf",
+      "city": "Grevenbroich",
+      "countryCode": "DE",
+      "website": "https://www.green-ivf.de"
+    },
+    {
+      "name": "Bergisches Kinderwunschzentrum Remscheid",
+      "city": "Remscheid",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-remscheid.de"
+    },
+    {
+      "name": "Überörtliche Berufsausübungsgemeinschaft Kinderwunsch Dortmund, Siegen, Dorsten,",
+      "city": "Dortmund",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum.org"
+    },
+    {
+      "name": "novum - Zentrum für Reproduktionsmedizin",
+      "city": "Essen",
+      "countryCode": "DE",
+      "website": "https://www.ivfzentrum.de"
+    },
+    {
+      "name": "REProVita",
+      "city": "Recklinghausen",
+      "countryCode": "DE",
+      "website": "https://www.reprovita.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Gelsenkirchen",
+      "city": "Gelsenkirchen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-gelsenkirchen.de"
+    },
+    {
+      "name": "Kinderwunschpraxis an der Promenade",
+      "city": "Münster",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-promenade.de"
+    },
+    {
+      "name": "MVZ Kinderwunsch- und Hormonzentrum Münster GmbH",
+      "city": "Münster",
+      "countryCode": "DE",
+      "website": "https://www.muenster-kinderwunschzentrum.de"
+    },
+    {
+      "name": "UKM Kinderwunschzentrum",
+      "city": "Münster",
+      "countryCode": "DE",
+      "website": "https://ukm-kinderwunschzentrum.de"
+    },
+    {
+      "name": "Wunschkinder Münster",
+      "city": "Münster",
+      "countryCode": "DE",
+      "website": "https://www.wunschkinder.ms"
+    },
+    {
+      "name": "Zentrum für Kinderwunschbehandlung Osnabrück / Nordhorn",
+      "city": "Osnabrück",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch123.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Königsdorf",
+      "city": "Frechen-Königsdorf",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-koenigsdorf.de"
+    },
+    {
+      "name": "MVZ PAN Institut GmbH",
+      "city": "Köln",
+      "countryCode": "DE",
+      "website": "https://www.mvz-pan-institut.de"
+    },
+    {
+      "name": "MVZ amedes Kinderwunschzentrum Köln GmbH",
+      "city": "Köln",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-koeln.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Aachen",
+      "city": "Aachen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-aachen.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Heinsberger Höfe GbR",
+      "city": "Heinsberg",
+      "countryCode": "DE",
+      "website": "https://www.cuypers-cuypers.com"
+    },
+    {
+      "name": "Universitätsklinikum Bonn",
+      "city": "Bonn",
+      "countryCode": "DE",
+      "website": "https://www.ukbonn.de/gynaekologische-endokrinologie-und-reproduktionsmedizin"
+    },
+    {
+      "name": "MVZ Kinderwunschzentrum Godesberger Allee GbR",
+      "city": "Bonn",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-bonn.de"
+    },
+    {
+      "name": "kiwup®",
+      "city": "Bonn",
+      "countryCode": "DE",
+      "website": "https://www.kiwup.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Bonner Bogen",
+      "city": "Bonn",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-bonnerbogen.de"
+    },
+    {
+      "name": "amedes MVZ Kinderwunschzentrum Trier GmbH",
+      "city": "Trier",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-trier.de"
+    },
+    {
+      "name": "Kinderwunsch Zentrum Mainz",
+      "city": "Mainz",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-mainz.de"
+    },
+    {
+      "name": "Kinderwunschzentrum der Universitätsmedizin Mainz",
+      "city": "Mainz",
+      "countryCode": "DE",
+      "website": "https://www.unimedizin-mainz.de/kinderwunschzentrum"
+    },
+    {
+      "name": "Kinderwunschpraxis Koblenz",
+      "city": "Koblenz",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschpraxis-koblenz.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Mittelrhein",
+      "city": "Neuwied",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-mittelrhein.de"
+    },
+    {
+      "name": "Freyja Kinderwunschzentrum IVF Hagen",
+      "city": "Hagen",
+      "countryCode": "DE",
+      "website": "https://www.freyaivf.com"
+    },
+    {
+      "name": "repromedicum Kinderwunschzentrum",
+      "city": "Frankfurt am Main",
+      "countryCode": "DE",
+      "website": "https://www.repromedicum.de"
+    },
+    {
+      "name": "Kinderwunsch- und Hormonzentrum Frankfurt am Main",
+      "city": "Frankfurt am Main",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-frankfurt.de"
+    },
+    {
+      "name": "Gynäkologische Endokrinologie und Reproduktionsmedizin Re·Pro·Gyn",
+      "city": "Frankfurt am Main",
+      "countryCode": "DE",
+      "website": "https://www.unimedizin-ffm.de/reprogyn"
+    },
+    {
+      "name": "MVZ Kinderwunsch- und Endometriose Zentrum am Büsing Park – Offenbach GmbH",
+      "city": "Offenbach",
+      "countryCode": "DE",
+      "website": "https://www.offenbach-kinderwunsch.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Darmstadt MVZ",
+      "city": "Darmstadt",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrumdarmstadt.de"
+    },
+    {
+      "name": "MVZ Kinderwunsch Rhein-Main GmbH",
+      "city": "Wiesbaden",
+      "countryCode": "DE",
+      "website": "https://www.mvz-kinderwunsch.com/kinderwunschzentren/wiesbaden"
+    },
+    {
+      "name": "IVF-SAAR Saarbrücken-Kaiserslautern",
+      "city": "Saarbrücken",
+      "countryCode": "DE",
+      "website": "https://www.ivf-saar.de"
+    },
+    {
+      "name": "Klinik für Frauenheilkunde, Geburtshilfe und Reproduktionsmedizin",
+      "city": "Homburg",
+      "countryCode": "DE",
+      "website": "https://www.uks.eu/frauenklinik/kinderwunsch"
+    },
+    {
+      "name": "Kinderwunschzentrum Ludwigshafen",
+      "city": "Ludwigshafen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-ludwigshafen.de"
+    },
+    {
+      "name": "Kinderwunschzentrum der Universitätsmedizin Mannheim",
+      "city": "Mannheim",
+      "countryCode": "DE",
+      "website": "https://www.umm.de"
+    },
+    {
+      "name": "Viernheimer Institut für Fertilität",
+      "city": "Viernheim",
+      "countryCode": "DE",
+      "website": "https://www.vif-kinderwunsch.de"
+    },
+    {
+      "name": "Praxisgemeinschaft Kinderwunschzentrum Heidelberg",
+      "city": "Heidelberg",
+      "countryCode": "DE",
+      "website": "https://www.kwz-hd.de"
+    },
+    {
+      "name": "Universitäts-Frauenklinik Heidelberg",
+      "city": "Heidelberg",
+      "countryCode": "DE",
+      "website": "https://www.klinikum.uni-heidelberg.de"
+    },
+    {
+      "name": "Kinderwunsch am Schlossplatz",
+      "city": "Stuttgart",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-am-schlossplatz.de"
+    },
+    {
+      "name": "Kinderwunsch-Zentrum Stuttgart",
+      "city": "Stuttgart",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschpraxis.de"
+    },
+    {
+      "name": "Kinderwunschärzte Stuttgart",
+      "city": "Stuttgart",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschaerzte-stuttgart.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Bad Cannstatt",
+      "city": "Stuttgart / Bad-Cannstatt",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-badcannstatt.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Ludwigsburg",
+      "city": "Ludwigsburg",
+      "countryCode": "DE",
+      "website": "https://www.kiwu-lb.de"
+    },
+    {
+      "name": "KinderwunschPraxis Dres. Göhring",
+      "city": "Tübingen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschpraxis.com"
+    },
+    {
+      "name": "IVF-Zentrum des Department für Frauengesundheit",
+      "city": "Tübingen",
+      "countryCode": "DE",
+      "website": "https://www.uni-frauenklinik-tuebingen.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Aalen",
+      "city": "Aalen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-aalen.de"
+    },
+    {
+      "name": "IVF Zentrum Esslingen",
+      "city": "Esslingen",
+      "countryCode": "DE",
+      "website": "https://www.ivf-praxis.com"
+    },
+    {
+      "name": "Kinderwunsch Frauenaerzte",
+      "city": "Neckarsulm",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-frauenaerzte.de"
+    },
+    {
+      "name": "ivf Baden-Baden GmbH",
+      "city": "Baden-Baden",
+      "countryCode": "DE",
+      "website": "https://www.ivf-baden-baden.com"
+    },
+    {
+      "name": "Kinderwunsch Bodensee",
+      "city": "Singen",
+      "countryCode": "DE",
+      "website": "https://www.endlichnachwuchs.de"
+    },
+    {
+      "name": "CERF Centrum für Gynäkologische Endokrinologie & Reproduktionsmedizin Freiburg",
+      "city": "Freiburg",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-hormone.de"
+    },
+    {
+      "name": "Universitätsklinikum Freiburg",
+      "city": "Freiburg",
+      "countryCode": "DE",
+      "website": "https://www.uniklinik-freiburg.de/frauenheilkunde/endokrinologie-und-reproduktionsmedizin.html"
+    },
+    {
+      "name": "Reproduktionsmedizin München im Tal – MVZ Partnergesellschaft mbH",
+      "city": "München",
+      "countryCode": "DE",
+      "website": "https://www.ivf-tal.de"
+    },
+    {
+      "name": "Privatzentrum 'Die Kinderwunschärztin'",
+      "city": "München",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschaerztin.de"
+    },
+    {
+      "name": "kïz) kinderwunsch im zentrum",
+      "city": "München",
+      "countryCode": "DE",
+      "website": "https://www.kiiz.de"
+    },
+    {
+      "name": "Kinderwunschzentrum an der Oper",
+      "city": "München",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-an-der-oper.de"
+    },
+    {
+      "name": "Kinderwunsch Centrum München",
+      "city": "München",
+      "countryCode": "DE",
+      "website": "https://www.ivf-muenchen.de"
+    },
+    {
+      "name": "Hormon- und Kinderwunschzentrum",
+      "city": "München",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-LMU.de"
+    },
+    {
+      "name": "Kinderwunschzentrum A.R.T. Bogenhausen",
+      "city": "München",
+      "countryCode": "DE",
+      "website": "https://www.ivf-muenchen.com"
+    },
+    {
+      "name": "Kinderwunsch Centrum Chiemsee",
+      "city": "Prien am Chiemsee",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-chiemsee.de"
+    },
+    {
+      "name": "Kinderwunschpraxis München Nord",
+      "city": "Garching b. München",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschpraxis-muenchen-nord.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Augsburg",
+      "city": "Augsburg",
+      "countryCode": "DE",
+      "website": "https://www.ivf-augsburg.de"
+    },
+    {
+      "name": "KinderWunschKempten (KWK)",
+      "city": "Kempten",
+      "countryCode": "DE",
+      "website": "https://klinikverbund-allgaeu.de/fachbereiche-institute/frauenheilkunde-"
+    },
+    {
+      "name": "EM Bestfertility GmbH",
+      "city": "Ulm",
+      "countryCode": "DE",
+      "website": "https://www.bestfertility.de/kinderwunschzentrum-ulm"
+    },
+    {
+      "name": "MVZ Next Fertility Ulm GmbH",
+      "city": "Ulm",
+      "countryCode": "DE",
+      "website": "https://www.next-fertilityulm.de"
+    },
+    {
+      "name": "Universitätsfrauenklinik Ulm",
+      "city": "Ulm",
+      "countryCode": "DE",
+      "website": "https://www.unifee.de"
+    },
+    {
+      "name": "Kinderwunsch und Frauen-Hormon Centrum Nürnberg",
+      "city": "Nürnberg",
+      "countryCode": "DE",
+      "website": "https://www.ivf-nuernberg.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Erlangen",
+      "city": "Erlangen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-erlangen.de"
+    },
+    {
+      "name": "Gynäkologische Endokrinologie & Reproduktionsmedizin KINDERWUNSCH ERLANGEN",
+      "city": "Erlangen",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-erlangen.de"
+    },
+    {
+      "name": "Universitäts-Fortpflanzungszentrum Franken (UFF)",
+      "city": "Erlangen",
+      "countryCode": "DE",
+      "website": "https://www.reproduktionsmedizin.uk-erlangen.de"
+    },
+    {
+      "name": "MVZ Kinderwunschzentrum Amberg",
+      "city": "Amberg",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunschzentrum-amberg.de"
+    },
+    {
+      "name": "MVZ KITZ Regensburg GmbH",
+      "city": "Regensburg",
+      "countryCode": "DE",
+      "website": "https://www.kitz-regensburg.de"
+    },
+    {
+      "name": "profertilita",
+      "city": "Regensburg",
+      "countryCode": "DE",
+      "website": "https://www.profertilita.de"
+    },
+    {
+      "name": "Kinderwunschzentrum Niederbayern",
+      "city": "Deggendorf",
+      "countryCode": "DE",
+      "website": "https://www.kinderwunsch-niederbayern.de"
+    },
+    {
+      "name": "MVZ Fertility Center Bayreuth GmbH",
+      "city": "Bayreuth",
+      "countryCode": "DE",
+      "website": "https://www.fertility-center-bayreuth.de"
+    },
+    {
+      "name": "MainKid",
+      "city": "Würzburg",
+      "countryCode": "DE",
+      "website": "https://www.mainkid-kinderwunsch.de"
+    },
+    {
+      "name": "Zentrum für Reproduktionsmedizin und Pränataldiagnostik",
+      "city": "Würzburg",
+      "countryCode": "DE",
+      "website": "https://www.drs-mai-mulfinger-jakob.de"
+    },
+    {
+      "name": "Universitätsklinikum Würzburg",
+      "city": "Würzburg",
+      "countryCode": "DE",
+      "website": "https://www.frauenklinik.ukw.de/kinderwunsch.html"
+    }
+  ]
+}
